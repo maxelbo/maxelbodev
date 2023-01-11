@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-white font-serif;
+  }
+
+  body {
+    @apply mx-auto max-w-4xl p-4 leading-loose;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  h1 {
+    @apply text-3xl font-bold;
+  }
+
+  a {
+    @apply text-gray-600 no-underline hover:text-gray-800 hover:underline;
+  }
+}

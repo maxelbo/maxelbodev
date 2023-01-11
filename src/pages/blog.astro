@@ -1,10 +1,7 @@
 ---
 import Navigation from "@/components/Navigation.astro";
-import Card from "@/components/Card.astro";
 import Footer from "@/components/Footer.astro";
 import "@/styles/global.css";
-
-const pageTitle = "Home";
 ---
 
 <html lang="en">
@@ -13,19 +10,11 @@ const pageTitle = "Home";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
+    <title>Elborium</title>
   </head>
   <body>
     <Navigation />
-    <h1>{pageTitle}</h1>
-    <div class="flex flex-wrap justify-center">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-    </div>
+    <h1>Blog</h1>
     <Footer />
   </body>
 </html>

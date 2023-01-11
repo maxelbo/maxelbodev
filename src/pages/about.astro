@@ -1,4 +1,28 @@
 ---
+import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
+import Footer from "src/components/Footer.astro";
+
+const pageTitle = "About";
+const identity = {
+  name: "Max Elbo",
+  country: "Japan",
+  occupation: "Frontend Engineer",
+  hobbies: ["Drawing", "Programming"],
+};
+const skills = [
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Node.js",
+  "CSS/SCSS/Tailwind",
+];
+
+const showSkills = true;
+
+const skillColor = "#575757";
+const padding = "2rem";
 ---
 
 <html lang="en">
@@ -7,11 +31,41 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Elborium</title>
+    <title>{pageTitle}</title>
+    <style define:vars={{ skillColor, padding }}>
+      h1 {
+        color: #777777;
+      }
+      .skill {
+        background-color: var(--skillColor);
+        padding: var(--padding);
+      }
+    </style>
   </head>
   <body>
-    <h1>About</h1>
-    <p>Content</p>
-    <a href="/">Back</a>
+    <Navigation />
+    <h1>{pageTitle}</h1>
+    <p>Hi,</p>
+    <p>
+      I am {identity.name}, a {identity.occupation} who lives in {
+        identity.country
+      }.
+    </p>
+    {
+      showSkills && (
+        <div class="skill">
+          <h4>Skills:</h4>
+          <ul>
+            {skills.map((skill) => (
+              <li>{skill}</li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+    <p>
+      <a href="/">Back</a>
+    </p>
+    <Footer />
   </body>
 </html>
