@@ -1,5 +1,5 @@
 ---
-let title = "Boecker";
+const { title } = Astro.props;
 ---
 
 <a
@@ -8,7 +8,7 @@ let title = "Boecker";
 >
   <img
     alt="{title} card"
-    src={`/assets/card-${title}.jpg`}
+    src={`/assets/cards/card-${title}.png`}
     width="250px"
     height="350px"
   />
