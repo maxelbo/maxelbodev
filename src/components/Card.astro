@@ -3,14 +3,14 @@ const { title } = Astro.props;
 ---
 
 <a
-  href="/posts/boecker"
+  href={`/posts/${title}`}
   class="m-4 p-6 transition hover:no-underline text-gray-700 hover:text-gray-500 focus:text-gray-500"
 >
   <img
     alt="{title} card"
     src={`/assets/cards/card-${title}.png`}
-    width="250px"
-    height="350px"
+    width="250"
+    height="350"
   />
   <h3 class="text-center">{title}</h3>
 </a>
