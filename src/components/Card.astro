@@ -1,16 +1,23 @@
 ---
-const { title } = Astro.props;
+const { title, url, description } = Astro.props;
+import { Image } from "@astrojs/image/components";
 ---
 
 <a
-  href={`/posts/${title}`}
-  class="m-4 p-6 transition hover:no-underline text-gray-700 hover:text-gray-500 focus:text-gray-500"
+  id={title}
+  href={url}
+  class="m-4 text-gray-700 transition hover:text-gray-500 hover:no-underline focus:text-gray-500"
 >
   <img
-    alt="{title} card"
+    alt={`${title} card`}
     src={`/assets/cards/card-${title}.png`}
-    width="250"
+    width="252"
     height="350"
   />
-  <h3 class="text-center">{title}</h3>
+  <div class="text-center">
+    <h3>{title}</h3>
+    <p class="-mt-3 italic text-gray-400">
+      —{description}—
+    </p>
+  </div>
 </a>

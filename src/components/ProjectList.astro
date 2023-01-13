@@ -1,0 +1,38 @@
+---
+import Card from "@/components/Card.astro";
+// const projectList = [
+//   {
+//     title: "Boecker",
+//     description: "Print Ad Campaign",
+//   },
+//   {
+//     title: "AMIA",
+//     description: "Activation Ad Campaign",
+//   },
+//   {
+//     title: "7up",
+//     description: "Activation Ad Campaign",
+//   },
+//   {
+//     title: "Branding",
+//     description: "Branding & Design",
+//   },
+// ];
+
+const posts = await Astro.glob("../pages/posts/*.mdx");
+posts.sort((a, b) => {
+  return a.frontmatter.order - b.frontmatter.order;
+});
+---
+
+<section class="flex flex-wrap justify-center">
+  {
+    posts.map((project) => (
+      <Card
+        title={project.frontmatter.title}
+        url={project.url}
+        description={project.frontmatter.description}
+      />
+    ))
+  }
+</section>

@@ -1,8 +1,15 @@
 ---
+import Logo from "@/components/Logo.astro";
+import Hamburger from "@/components/Hamburger.astro";
 import Navigation from "@/components/Navigation.astro";
 ---
 
-<header class="">
-  <img alt="logo" src="/logo.png" width="400" height="100" class="mx-auto" />
-  <Navigation />
+<header class="sm:mb-4">
+  <div class="grid grid-cols-2 sm:block">
+    <Logo />
+    <Hamburger />
+  </div>
+  <div class="nav-links hidden justify-center sm:block">
+    <Navigation />
+  </div>
 </header>

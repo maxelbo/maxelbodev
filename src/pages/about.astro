@@ -1,71 +1,160 @@
 ---
-import "../styles/global.css";
-import Navigation from "../components/Navigation.astro";
-import Footer from "src/components/Footer.astro";
-
+import BaseLayout from "@/layouts/BaseLayout.astro";
 const pageTitle = "About";
-const identity = {
+
+const profile = {
   name: "Max Elbo",
-  country: "Japan",
-  occupation: "Frontend Engineer",
-  hobbies: ["Drawing", "Programming"],
+  firstCompany: "Ogilvy & Mather",
+  firstTitle: "a Junior Art Director",
+  secondTitle: "an Art Director",
+  secondCompany: "BBDO",
+  thirdCompany: "J. Walter Thompson Dubai",
+  fourthCompany: "Amplifier",
+  currentCompany: "Deloitte",
+  currentTitle: "a Frontend Developer",
+  currentLocation: "Tokyo, Japan",
+  creativeAwards: [
+    {
+      title: "Cannes Lions",
+      awards: ["Silver + Bronce - AMIA - The Bread of Memory (2013)"],
+    },
+    {
+      title: "Dubai Lynx",
+      awards: [
+        "Grand Prix - Kinokuniya - Cost (2017)",
+        "Silver + Bronze (x2) - Boecker - Pestryoshkas (2017)",
+      ],
+    },
+    {
+      title: "New York Festivals",
+      awards: ["Bronze - Boecker - Pestryoshkas (2017)"],
+    },
+    {
+      title: "Clio",
+      awards: ["Bronze (x2) - AMIA - The Bread of Memory (2013)"],
+    },
+    {
+      title: "EFFIE",
+      awards: ["Silver - AMIA - The Bread of Memory (2013)"],
+    },
+    {
+      title: "Wave Festival",
+      awards: [
+        "Gold (x2) + Silver + Bronze - AMIA - The Bread of Memory (2013)",
+      ],
+    },
+    {
+      title: "El sol",
+      awards: [
+        "Gold - AMMAR - Mom Calling Cards (2012)",
+        "Gold + Bronze - AMIA - The Bread of Memory (2013)",
+      ],
+    },
+    {
+      title: "Yahoo Big Idea Chair Argentina",
+      awards: ["Winner - AMIA - The Bread of Memory (2012)"],
+    },
+    {
+      title: "Lories",
+      awards: [
+        "Silver - Infiniti - See What You Don't (2019) (as an illustrator)",
+      ],
+    },
+    {
+      title: "El diente",
+      awards: [
+        "Gold - AMIA - The Bread of Memory (2012)",
+        "Bronze - Dr. Lemon - Kung Fu (2013)",
+        "Bronze - Mercado - Make Sense where the World Doesn't (2015) (as an illustrator)",
+      ],
+    },
+    {
+      title: "FIAP",
+      awards: [
+        "Gold - AMIA - The Bread of Memory (2014)",
+        "Silver + Bronze - AMMAR - Mom Calling Cards (2012)",
+      ],
+    },
+    {
+      title: "Antigua Festival",
+      awards: ["Gold - AMIA - The Bread of Memory (2013)"],
+    },
+  ],
+  exhibitions: [
+    "2009 - Grand Small Works, juried art exhibition, F.U.E.L Collection Gallery, Philadelphia, PA",
+    "2010 - Solo Exhibition, Centro Cultural Belleasco, Buenos Aires, Argentina",
+    "2015 - Café con Cuento, Galería Escaparate, Valparaíso, Chile",
+    "2015 - Solo Exhibition, Biblioteca Viva Norte, Santiago, Chile",
+    "2016 - Dē Rādīcibus —a show with my siblings—, Biblioteca Viva Tobalaba, Santiago, Chile",
+    "2016 - Solo Exhibition, Biblioteca Viva Sur, Santiago, Chile",
+    "2016 - Art Stgo, GAM, Santiago, Chile",
+  ],
 };
-const skills = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "CSS/SCSS/Tailwind",
-];
-
-const showSkills = true;
-
-const skillColor = "#575757";
-const padding = "2rem";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-    <style define:vars={{ skillColor, padding }}>
-      h1 {
-        color: #777777;
-      }
-      .skill {
-        background-color: var(--skillColor);
-        padding: var(--padding);
-      }
-    </style>
-  </head>
-  <body>
-    <Navigation />
-    <h1>{pageTitle}</h1>
-    <p>Hi,</p>
-    <p>
-      I am {identity.name}, a {identity.occupation} who lives in {
-        identity.country
-      }.
-    </p>
-    {
-      showSkills && (
-        <div class="skill">
-          <h4>Skills:</h4>
-          <ul>
-            {skills.map((skill) => (
-              <li>{skill}</li>
-            ))}
-          </ul>
+<BaseLayout pageTitle={pageTitle}>
+  <div class="mx-auto max-w-full">
+    <img
+      alt="head image"
+      src="/assets/about/head.jpg"
+      width={1904}
+      height={354}
+      class="mx-auto"
+    />
+    <div class="mx-auto max-w-3xl space-y-14 px-8 text-center">
+      <section>
+        <p class="font-bold">Hi,</p>
+        <p>{`I'm ${profile.name}.`}</p>
+        <p>
+          {
+            `I'm currently working as ${profile.currentTitle} at ${profile.currentCompany} in ${profile.currentLocation}.`
+          }
+        </p>
+        <p>
+          {
+            `I was born in Chile and started working in 2011 at ${profile.firstCompany} in Buenos Aires,
+        Argentina, as ${profile.firstTitle}. By the end of 2012 I moved to BBDO Argentina, and a year later
+        I started working as a full-time Freelance Illustrator doing editorial
+        and advertising work, part of it while living in a small town in the
+        mountains of Mexico, in the middle of nowhere. In 2016 I started working
+        as ${profile.secondTitle} at ${profile.thirdCompany}, and since January 2018
+        I've been working in ${profile.currentLocation}, first at ${profile.fourthCompany}, doing illustration and animation, and since June 2020, at
+        ${profile.currentCompany}, where I started working as ${profile.currentTitle}.`
+          }
+        </p>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold">Awards</h2>
+        <div class="my-4 space-y-4">
+          {
+            profile.creativeAwards.map(({ title, awards }) => (
+              <div id={title}>
+                <h3 class="font-bold">{title}</h3>
+                {awards.map((award) => (
+                  <p id={award}>{award}</p>
+                ))}
+              </div>
+            ))
+          }
         </div>
-      )
-    }
-    <p>
-      <a href="/">Back</a>
-    </p>
-    <Footer />
-  </body>
-</html>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold">Exhibitions as an Illustrator</h2>
+        <div class="my-4 space-y-4">
+          {
+            profile.exhibitions.map((exhibition) => (
+              <p id={exhibition}>{exhibition}</p>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+    <img
+      alt="head image"
+      src="/assets/about/shoes.jpg"
+      width="1340"
+      height="309"
+      class="my-8 mx-auto"
+    />
+  </div>
+</BaseLayout>

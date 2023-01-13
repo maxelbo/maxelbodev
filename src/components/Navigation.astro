@@ -1,5 +1,9 @@
+---
+const pageTitle = Astro.props;
+// TODO: Change About in About page
+---
+
 <nav class="flex justify-center space-x-8">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
+  {pageTitle === "About" ? <a href="/">Home</a> : <a href="/about/">About</a>}
   <a href="/blog/">Blog</a>
 </nav>
