@@ -1,23 +1,5 @@
 ---
 import Card from "@/components/Card.astro";
-// const projectList = [
-//   {
-//     title: "Boecker",
-//     description: "Print Ad Campaign",
-//   },
-//   {
-//     title: "AMIA",
-//     description: "Activation Ad Campaign",
-//   },
-//   {
-//     title: "7up",
-//     description: "Activation Ad Campaign",
-//   },
-//   {
-//     title: "Branding",
-//     description: "Branding & Design",
-//   },
-// ];
 
 const posts = await Astro.glob("../pages/posts/*.mdx");
 posts.sort((a, b) => {
