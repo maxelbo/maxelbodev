@@ -2,14 +2,13 @@
 import Logo from "@/components/Logo.astro";
 import Hamburger from "@/components/Hamburger.astro";
 import Navigation from "@/components/Navigation.astro";
+const { pageTitle } = Astro.props;
 ---
 
 <header class="sm:mb-4">
-  <div class="grid grid-cols-2 sm:block">
+  <div class="flex flex-row space-x-14 sm:block">
     <Logo />
     <Hamburger />
   </div>
-  <div class="nav-links hidden justify-center sm:block">
-    <Navigation />
-  </div>
+  <Navigation pageTitle={pageTitle} />
 </header>

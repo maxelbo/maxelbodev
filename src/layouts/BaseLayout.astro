@@ -15,7 +15,7 @@ const { pageTitle } = Astro.props;
     <title>Elborium - {pageTitle}</title>
   </head>
   <body>
-    <Header />
+    <Header pageTitle={pageTitle} />
     <main class="py-2 sm:py-4">
       <slot />
     </main>
