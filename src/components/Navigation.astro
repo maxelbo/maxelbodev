@@ -1,5 +1,6 @@
 ---
 const { pageTitle } = Astro.props;
+const pathname = Astro.url.pathname;
 ---
 
 <nav class="nav-links hidden sm:block">
@@ -7,4 +8,5 @@ const { pageTitle } = Astro.props;
     {pageTitle === "About" ? <a href="/">Home</a> : <a href="/about/">About</a>}
     {pageTitle === "Blog" ? <a href="/">Home</a> : <a href="/posts/">Blog</a>}
   </div>
+  {pathname}
 </nav>
