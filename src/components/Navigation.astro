@@ -1,12 +1,16 @@
 ---
-const { pageTitle } = Astro.props;
 const pathname = Astro.url.pathname;
 ---
 
 <nav class="nav-links hidden sm:block">
   <div class="flex justify-center space-x-8">
-    {pageTitle === "About" ? <a href="/">Home</a> : <a href="/about/">About</a>}
-    {pageTitle === "Blog" ? <a href="/">Home</a> : <a href="/posts/">Blog</a>}
+    {
+      pathname === "/about/" ? (
+        <a href="/">Home</a>
+      ) : (
+        <a href="/about/">About</a>
+      )
+    }
+    {pathname === "/posts/" ? <a href="/">Home</a> : <a href="/posts/">Blog</a>}
   </div>
-  {pathname}
 </nav>
