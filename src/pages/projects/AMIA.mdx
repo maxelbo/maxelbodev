@@ -1,7 +1,16 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+layout: ../../layouts/MarkdownProjectLayout.astro
 title: "AMIA"
 description: "Activation Campaign"
 order: 2
 tags: ["advertising", "cannes lions"]
+video: svFaxUi0Fwk
+# video: IncckvPM5vU
 ---
+
+A campaign for AMIA with me as Art Director at Ogilvy & Mather Argentina.
+It won silver and bronze at Cannes Lions 2013, two bronze at Clio, and Silver at Effie.
+
+import YTiframe from "../../components/YTiframe.astro";
+
+<YTiframe video={frontmatter.video} />
