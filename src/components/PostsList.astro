@@ -1,0 +1,18 @@
+---
+// export async function getStaticPaths({ paginate }) {
+//   // const posts = await Astro.glob("../pages/posts/*.mdx");
+//   const posts = [{ post: "1" }, { post: "2" }, { post: "3" }, { post: "4" }];
+//   return paginate(posts, { pageSize: 2 });
+// }
+
+// const { page } = Astro.porps;
+
+const posts = await Astro.glob("../pages/posts/*.mdx");
+---
+
+<section class="flex flex-wrap justify-center gap-4">
+  <!-- <h1>Page {page.currentPage}</h1>
+  {page.data.map(({ post }) => <li>{post}</li>)}
+  {page.url.prev ? <a href={page.url.prev}>{page.url.prev}</a> : null} -->
+  {posts.map((post) => <a href={post.url}>{post.frontmatter.title}</a>)}
+</section>

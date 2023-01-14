@@ -1,6 +1,6 @@
 ---
 import Header from "@/components/Header.astro";
-import ProjectList from "@/components/ProjectList.astro";
+import ProjectsList from "@/components/ProjectsList.astro";
 import Footer from "@/components/Footer.astro";
 import "@/styles/global.css";
 const { pageTitle } = Astro.props;
@@ -19,7 +19,7 @@ const { pageTitle } = Astro.props;
     <main class="py-2 sm:py-4">
       <slot />
     </main>
-    <ProjectList />
+    <ProjectsList />
     <Footer />
     <script>
       import "@/scripts/menu.js";
