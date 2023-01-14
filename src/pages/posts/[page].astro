@@ -1,0 +1,30 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const pageTitle = "Blog";
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await Astro.glob("./*.mdx");
+  return paginate(allPosts, { pageSize: 2 });
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <section class="">
+    <h1>{pageTitle}</h1>
+    {
+      page.data.map((post: any) => (
+        <a href={post.url}>{post.frontmatter.title}</a>
+      ))
+    }
+    <div>
+      {page.url.prev ? <a href={page.url.prev}>Previous</a> : null}
+      {page.url.next ? <a href={page.url.next}>Next</a> : null}
+      <p class="-mt-2 text-gray-400">
+        {page.currentPage}/{page.lastPage}
+      </p>
+    </div>
+  </section>
+</BaseLayout>

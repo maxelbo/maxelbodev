@@ -11,6 +11,12 @@ const pathname = Astro.url.pathname;
         <a href="/about/">About</a>
       )
     }
-    {pathname === "/posts/" ? <a href="/">Home</a> : <a href="/posts/">Blog</a>}
+    {
+      pathname.indexOf("/posts/") ? (
+        <a href="/posts/1">Blog</a>
+      ) : (
+        <a href="/">Home</a>
+      )
+    }
   </div>
 </nav>
