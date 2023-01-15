@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 const pageTitle = "About";
+const currentInfo = false;
 
 const profile = {
   name: "Max Elbo",
@@ -105,11 +106,13 @@ const profile = {
       <section>
         <p class="font-bold">Hi,</p>
         <p>{`I'm ${profile.name}.`}</p>
-        <p>
-          {
-            `I'm currently working as ${profile.currentTitle} at ${profile.currentCompany} in ${profile.currentLocation}.`
-          }
-        </p>
+        {
+          currentInfo ? (
+            <p>
+              {`I'm currently working as ${profile.currentTitle} at ${profile.currentCompany} in ${profile.currentLocation}.`}
+            </p>
+          ) : null
+        }
         <p>
           {
             `I was born in Chile and started working in 2011 at ${profile.firstCompany} in Buenos Aires,
@@ -119,7 +122,7 @@ const profile = {
         mountains of Mexico, in the middle of nowhere. In 2016 I started working
         as ${profile.secondTitle} at ${profile.thirdCompany}, and since January 2018
         I've been working in ${profile.currentLocation}, first at ${profile.fourthCompany}, doing illustration and animation, and since June 2020, at
-        ${profile.currentCompany}, where I started working as ${profile.currentTitle}.`
+        ${profile.currentCompany}.`
           }
         </p>
       </section>

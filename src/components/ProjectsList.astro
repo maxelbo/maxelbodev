@@ -12,6 +12,7 @@ posts.sort((a, b) => {
     posts.map((project) => (
       <Card
         title={project.frontmatter.title}
+        displayTitle={project.frontmatter.displayTitle}
         url={project.url}
         description={project.frontmatter.description}
       />
