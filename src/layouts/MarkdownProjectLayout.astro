@@ -11,5 +11,14 @@ const { frontmatter } = Astro.props;
       <p class="italic text-gray-400">—{frontmatter.description}—</p>
     </div>
     <slot />
+    <img
+      alt="max elbo"
+      src="/signature.png"
+      width={202}
+      height={204}
+      class="w-[30px]"
+    />
+    <hr />
   </article>
+  <h2 class="-smb-4 mt-8">More Work</h2>
 </BaseLayout>

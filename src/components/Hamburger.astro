@@ -1,5 +1,9 @@
 <div class="hamburger flex flex-1 justify-end sm:hidden">
-  <button class="space-y-2">
-    {[1, 2, 3].map((i) => <span class="block h-1 w-10 bg-gray-500" />)}
+  <button class="space-y-1.5">
+    {
+      [1, 2, 3].map((i) => (
+        <span class="mr-4 block h-0.5 w-6 rounded bg-gray-900 focus:bg-gray-600" />
+      ))
+    }
   </button>
 </div>
