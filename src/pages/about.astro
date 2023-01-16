@@ -107,11 +107,11 @@ const profile = {
         <p class="font-bold">Hi,</p>
         <p>{`I'm ${profile.name}.`}</p>
         {
-          currentInfo ? (
+          currentInfo && (
             <p>
               {`I'm currently working as ${profile.currentTitle} at ${profile.currentCompany} in ${profile.currentLocation}.`}
             </p>
-          ) : null
+          )
         }
         <p>
           {

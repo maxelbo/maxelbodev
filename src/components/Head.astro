@@ -1,0 +1,26 @@
+---
+const { pageTitle } = Astro.props;
+---
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <title>Elborium - {pageTitle}</title>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    type="text/partytown"
+    src="https://www.googletagmanager.com/gtag/js?id=G-GE5E4YE6YL"
+  ></script>
+  <script type="text/partytown">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-GE5E4YE6YL");
+  </script>
+</head>

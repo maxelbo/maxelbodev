@@ -1,4 +1,5 @@
 ---
+import Head from "@/components/Head.astro";
 import Header from "@/components/Header.astro";
 import ProjectsList from "@/components/ProjectsList.astro";
 import Footer from "@/components/Footer.astro";
@@ -7,13 +8,7 @@ const { pageTitle } = Astro.props;
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Elborium - {pageTitle}</title>
-  </head>
+  <Head pageTitle={pageTitle} />
   <body>
     <Header />
     <main class="py-2 sm:py-4">
