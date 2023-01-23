@@ -15,11 +15,15 @@ const { page } = Astro.props;
 <BaseLayout pageTitle={pageTitle}>
   <section class="">
     <h1>{pageTitle}</h1>
+
     <div class="mx-auto max-w-lg divide-y divide-gray-200">
       {
         page.data.map((post: any) => (
           <div class="mx-auto max-w-6xl py-4">
             <img src={post.frontmatter.img?.src} />
+            {post.frontmatter.video && (
+              <YTiframe video={post.frontmatter.video} />
+            )}
             <div class="mx-auto max-w-md">
               <p class="text-left">{post.frontmatter.text}</p>
               <p class="text-left text-gray-400">{post.frontmatter.pubDate}</p>
