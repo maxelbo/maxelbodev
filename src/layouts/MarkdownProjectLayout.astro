@@ -8,7 +8,11 @@ const { frontmatter } = Astro.props;
   <article class="mx-auto mb-8 max-w-lg text-center">
     <div class="pb-4">
       <h1>{frontmatter.displayTitle}</h1>
-      <p class="italic text-gray-400">—{frontmatter.description}—</p>
+      {
+        frontmatter.description && (
+          <p class="italic text-gray-400">—{frontmatter.description}—</p>
+        )
+      }
     </div>
     <slot />
     <img

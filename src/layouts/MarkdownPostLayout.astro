@@ -4,7 +4,7 @@ const { frontmatter } = Astro.props;
 
 <div class="mx-auto max-w-md py-4">
   <img src={frontmatter.img.src} />
-  <p>{frontmatter.text}</p>
+  <p>{frontmatter.body}</p>
   <slot />
   <p class="text-left text-gray-400">{frontmatter.pubDate}</p>
 </div>
