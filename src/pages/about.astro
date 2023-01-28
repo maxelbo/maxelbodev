@@ -113,21 +113,30 @@ const profile = {
             </p>
           )
         }
-        <p>
-          {
-            `I was born in Chile and started working in 2011 at ${profile.firstCompany} in Buenos Aires,
-        Argentina, as ${profile.firstTitle}. By the end of 2012 I moved to BBDO Argentina, and a year later
-        I started working as a full-time Freelance Illustrator doing editorial
-        and advertising work, part of it while living in a small town in the
-        mountains of Mexico, in the middle of nowhere. In 2016 I started working
-        as ${profile.secondTitle} at ${profile.thirdCompany}, and since January 2018
-        I've been working in ${profile.currentLocation}, first at ${profile.fourthCompany}, doing illustration and animation, and since June 2020, at
-        ${profile.currentCompany}, where I'm currently doing frontend development.`
-          }
-        </p>
       </section>
-      <section>
-        <h2 class="text-2xl font-bold">Awards</h2>
+      <details>
+        <summary>
+          <h2 class="text-2xl font-bold">Career</h2>
+        </summary>
+        <div class="my-4 space-y-4">
+          <p>
+            {
+              `I was born in Chile and started working in 2011 at ${profile.firstCompany} in Buenos Aires,
+          Argentina, as ${profile.firstTitle}. By the end of 2012 I moved to BBDO Argentina, and a year later
+          I started working as a full-time Freelance Illustrator doing editorial
+          and advertising work, part of it while living in a small town in the
+          mountains of Mexico, in the middle of nowhere. In 2016 I started working
+          as ${profile.secondTitle} at ${profile.thirdCompany}, and since January 2018
+          I've been working in ${profile.currentLocation}, first at ${profile.fourthCompany}, doing illustration and animation, and since June 2020, at
+          ${profile.currentCompany}, where I'm currently doing frontend development.`
+            }
+          </p>
+        </div>
+      </details>
+      <details>
+        <summary>
+          <h2 class="text-2xl font-bold">Awards</h2>
+        </summary>
         <div class="my-4 space-y-4">
           {
             profile.creativeAwards.map(({ title, awards }) => (
@@ -140,9 +149,11 @@ const profile = {
             ))
           }
         </div>
-      </section>
-      <section>
-        <h2 class="text-2xl font-bold">Exhibitions as an Illustrator</h2>
+      </details>
+      <details>
+        <summary>
+          <h2 class="text-2xl font-bold">Exhibitions</h2>
+        </summary>
         <div class="my-4 space-y-4">
           {
             profile.exhibitions.map((exhibition) => (
@@ -150,7 +161,7 @@ const profile = {
             ))
           }
         </div>
-      </section>
+      </details>
     </div>
     <img
       alt="head image"
@@ -160,4 +171,15 @@ const profile = {
       class="my-8 mx-auto"
     />
   </div>
+  <h2 class="mt-16">This is My Work</h2>
 </BaseLayout>
+
+<style>
+  summary::marker {
+    content: url(/assets/about/eye-closed.png);
+  }
+
+  details[open] summary::marker {
+    content: url(/assets/about/eye-open.png);
+  }
+</style>
