@@ -7,9 +7,9 @@ import "@/styles/global.css";
 const { pageTitle } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="mx-auto bg-white font-serif">
   <Head pageTitle={pageTitle} />
-  <body>
+  <body class="mx-auto max-w-4xl p-4 text-center leading-relaxed">
     <Header />
     <main class="py-2 sm:py-4">
       <slot />
