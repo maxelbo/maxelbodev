@@ -109,16 +109,16 @@ const profile = {
         {
           currentInfo && (
             <p>
-              {`I'm currently working as ${profile.currentTitle} at ${profile.currentCompany} in ${profile.currentLocation}.`}
+              {`I'm currently working at ${profile.currentCompany} in ${profile.currentLocation}.`}
             </p>
           )
         }
       </section>
-      <details>
-        <summary>
+      <div class="accordion">
+        <button class="accordion-title relative" aria-expanded="false">
           <h2 class="text-2xl font-bold">Career</h2>
-        </summary>
-        <div class="my-4 space-y-4">
+        </button>
+        <div class="accordion-content my-4 space-y-4" hidden>
           <p>
             {
               `I was born in Chile and started working in 2011 at ${profile.firstCompany} in Buenos Aires,
@@ -132,12 +132,12 @@ const profile = {
             }
           </p>
         </div>
-      </details>
-      <details>
-        <summary>
+      </div>
+      <div class="accordion">
+        <button class="accordion-title relative" aria-expanded="false">
           <h2 class="text-2xl font-bold">Awards</h2>
-        </summary>
-        <div class="my-4 space-y-4">
+        </button>
+        <div class="accordion-content my-4 space-y-4" hidden>
           {
             profile.creativeAwards.map(({ title, awards }) => (
               <div id={title}>
@@ -149,19 +149,19 @@ const profile = {
             ))
           }
         </div>
-      </details>
-      <details>
-        <summary>
+      </div>
+      <div class="accordion">
+        <button class="accordion-title relative" aria-expanded="false">
           <h2 class="text-2xl font-bold">Exhibitions</h2>
-        </summary>
-        <div class="my-4 space-y-4">
+        </button>
+        <div class="acoordion-content my-4 space-y-4" hidden>
           {
             profile.exhibitions.map((exhibition) => (
               <p id={exhibition}>{exhibition}</p>
             ))
           }
         </div>
-      </details>
+      </div>
     </div>
     <img
       alt="head image"
@@ -182,4 +182,51 @@ const profile = {
   details[open] summary::marker {
     content: url(/assets/about/eye-open.png);
   }
+
+  .accordion-title[aria-expanded="false"]::before {
+    content: url(/assets/about/eye-closed.png);
+    position: absolute;
+    left: -3.5rem;
+  }
+  .accordion-title[aria-expanded="true"]::before {
+    content: url(/assets/about/eye-open.png);
+    position: absolute;
+    left: -3.5rem;
+  }
+  .accordion-title[aria-expanded="false"]::after {
+    content: url(/assets/about/eye-closed.png);
+    transform: scaleX(-1);
+    position: absolute;
+    top: 0;
+    right: -3.5rem;
+  }
+  .accordion-title[aria-expanded="true"]::after {
+    content: url(/assets/about/eye-open.png);
+    transform: scaleX(-1);
+    position: absolute;
+    top: 0;
+    right: -3.5rem;
+  }
+  .accordion-content {
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+    height: auto;
+    flex: 1;
+  }
+  .accordion-content[hidden] {
+    flex: 0;
+  }
 </style>
+
+<script>
+  const accordionButtons = document.querySelectorAll(".accordion-title");
+  accordionButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const content = button.nextElementSibling;
+      const expanded = button.getAttribute("aria-expanded") === "true" || false;
+
+      button.setAttribute("aria-expanded", !expanded);
+      content.hidden = expanded;
+    });
+  });
+</script>
