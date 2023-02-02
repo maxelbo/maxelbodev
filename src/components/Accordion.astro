@@ -1,0 +1,55 @@
+---
+const { title } = Astro.props;
+---
+
+<div class="accordion">
+  <button class="accordion-title relative" aria-expanded="false">
+    <h2 class="text-2xl font-bold">{title}</h2>
+  </button>
+  <div class="accordion-content my-4 space-y-4">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .accordion-title[aria-expanded="false"]::before {
+    content: url(/assets/about/eye-closed.png);
+    position: absolute;
+    left: -3.5rem;
+  }
+
+  .accordion-title[aria-expanded="false"]::after {
+    content: url(/assets/about/eye-closed.png);
+    transform: scaleX(-1);
+    position: absolute;
+    top: 0;
+    right: -3.5rem;
+  }
+
+  .accordion-title[aria-expanded="true"]::before {
+    content: url(/assets/about/eye-open.png);
+    position: absolute;
+    left: -3.5rem;
+  }
+
+  .accordion-title[aria-expanded="true"]::after {
+    content: url(/assets/about/eye-open.png);
+    transform: scaleX(-1);
+    position: absolute;
+    top: 0;
+    right: -3.5rem;
+  }
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-out;
+  }
+
+  .accordion-content:not([hidden]) {
+    max-height: fit-content;
+  }
+</style>
+
+<script>
+  import "@/scripts/accordion.js";
+</script>
