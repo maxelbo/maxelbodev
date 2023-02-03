@@ -6,7 +6,7 @@ const { title } = Astro.props;
   <button class="accordion-title relative" aria-expanded="false">
     <h2 class="text-2xl font-bold">{title}</h2>
   </button>
-  <div class="accordion-content my-4 space-y-4" hidden>
+  <div class="accordion-content closed my-4 space-y-4">
     <slot />
   </div>
 </div>
@@ -39,14 +39,21 @@ const { title } = Astro.props;
     top: 0;
     right: -3.5rem;
   }
+
   .accordion-content {
-    max-height: 0;
+    max-height: 0px;
     overflow: hidden;
-    transition: all 0.5s ease-out;
+    transition: max-height 1s ease-out;
   }
 
-  .accordion-content:not([hidden]) {
-    max-height: fit-content;
+  .open {
+    opacity: 1;
+    max-height: 1000px;
+  }
+  .closed {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
   }
 </style>
 

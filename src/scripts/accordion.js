@@ -5,6 +5,7 @@ accordionButtons.forEach((button) => {
     const expanded = button.getAttribute("aria-expanded") === "true" || false;
 
     button.setAttribute("aria-expanded", !expanded);
-    content.hidden = expanded;
+    content.classList.toggle("closed");
+    content.classList.toggle("open");
   });
 });
