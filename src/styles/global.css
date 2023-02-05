@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --tw-text-opacity: 1;
+  --gray-600: rgb(75 85 99 / var(--tw-text-opacity));
+  --gray-800: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
 * {
   box-sizing: border-box;
 }
@@ -22,20 +28,30 @@ summary {
   cursor: pointer;
 }
 
-@layer base {
-  a {
-    @apply text-gray-600 no-underline hover:text-gray-800 hover:underline;
-  }
+a {
+  color: var(--gray-600);
+  text-decoration-line: none;
+}
 
-  article img {
-    @apply mx-auto py-2;
-  }
+a:hover {
+  color: var(--gray-800);
+  text-decoration-line: underline;
+}
 
-  article img:last-of-type {
-    @apply pb-8;
-  }
+article img {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0.5rem /* 8px */;
+  padding-bottom: 0.5rem /* 8px */;
+}
 
-  article hr {
-    @apply mx-auto my-8;
-  }
+article img:last-of-type {
+  padding-bottom: 2rem /* 32px */;
+}
+
+article hr {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem /* 32px */;
+  margin-bottom: 2rem /* 32px */;
 }

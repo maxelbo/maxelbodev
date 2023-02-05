@@ -9,13 +9,13 @@ const pathname = Astro.url.pathname;
   aria-labelledby="hamburger"
 >
   <div
-    class="absolute top-20 right-8 flex flex-col rounded border border-gray-100 bg-white p-4 text-lg shadow-sm sm:static sm:flex-row sm:justify-center sm:space-x-8 sm:border-none sm:text-base sm:shadow-none"
+    class="absolute top-20 right-8 flex flex-col space-y-4 rounded border border-gray-100 bg-white p-4 text-lg shadow-sm sm:static sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-8 sm:border-none sm:text-base sm:shadow-none"
   >
     {
-      pathname === "/about/" ? (
-        <a href="/">Home</a>
-      ) : (
+      pathname !== "/about/" ? (
         <a href="/about/">About</a>
+      ) : (
+        <a href="/">Home</a>
       )
     }
     {
