@@ -13,13 +13,13 @@
 }
 
 h1 {
-  font-size: 1.873rem;
+  font-size: 1.873rem !important;
   line-height: 2.25rem;
   font-weight: 700;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.5rem !important;
   line-height: 2rem;
   font-weight: 700;
 }
