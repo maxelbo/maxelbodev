@@ -19,9 +19,12 @@ const { page } = Astro.props;
     <div class="mx-auto max-w-6xl divide-y divide-gray-200">
       {
         page.data.map((post: any) => (
-          <div class="mx-auto my-4 max-w-6xl py-4">
+          <div class="mx-auto my-4 max-w-6xl space-y-4 py-4">
             {post.frontmatter.img.src && (
               <img src={post.frontmatter.img?.src} />
+            )}
+            {post.frontmatter.img.src2 && (
+              <img src={post.frontmatter.img.src2} />
             )}
             {post.frontmatter.video && (
               <YTiframe video={post.frontmatter.video} />
