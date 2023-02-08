@@ -29,7 +29,7 @@ const { page } = Astro.props;
             {post.frontmatter.video && (
               <YTiframe video={post.frontmatter.video} />
             )}
-            <div class="mx-auto my-4 max-w-3xl">
+            <div class="mx-auto my-4 max-w-3xl space-y-2">
               {post.frontmatter.body && (
                 <p class="text-left">{post.frontmatter.body}</p>
               )}
@@ -50,4 +50,5 @@ const { page } = Astro.props;
       </p>
     </div>
   </section>
+  <h2 class="mt-16">This is My Work</h2>
 </BaseLayout>
