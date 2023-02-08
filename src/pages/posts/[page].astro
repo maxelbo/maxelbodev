@@ -9,6 +9,9 @@ export async function getStaticPaths({ paginate }) {
   return paginate(allPosts, { pageSize: 4 });
 }
 
+// TODO: sort by date and paginate
+// allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
+
 const { page } = Astro.props;
 ---
 
