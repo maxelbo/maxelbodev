@@ -6,11 +6,12 @@ const pageTitle = "Blog";
 
 export async function getStaticPaths({ paginate }) {
   const allPosts = await Astro.glob("./*.mdx");
+  allPosts.sort(
+    (a, b) =>
+      Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate)
+  );
   return paginate(allPosts, { pageSize: 4 });
 }
-
-// TODO: sort by date and paginate
-// allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
 
 const { page } = Astro.props;
 ---
