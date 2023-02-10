@@ -37,7 +37,11 @@ const { page } = Astro.props;
               {post.frontmatter.body && (
                 <p class="text-left">{post.frontmatter.body}</p>
               )}
-              <p class="text-left text-gray-400">{post.frontmatter.pubDate}</p>
+              <p class="text-left text-gray-400">
+                {new Intl.DateTimeFormat("en-US", {
+                  dateStyle: "medium",
+                }).format(new Date(post.frontmatter.pubDate))}
+              </p>
             </div>
           </div>
         ))
