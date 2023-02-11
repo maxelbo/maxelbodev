@@ -24,11 +24,23 @@ const { page } = Astro.props;
       {
         page.data.map((post: any) => (
           <div class="mx-auto my-4 max-w-6xl space-y-4 py-4">
-            {post.frontmatter.img.src && (
-              <img src={post.frontmatter.img?.src} />
+            {post.frontmatter.img.src1 && (
+              <img src={post.frontmatter.img?.src1} />
             )}
             {post.frontmatter.img.src2 && (
               <img src={post.frontmatter.img.src2} />
+            )}
+            {post.frontmatter.img.src3 && (
+              <img src={post.frontmatter.img.src3} />
+            )}
+            {post.frontmatter.img.src4 && (
+              <img src={post.frontmatter.img.src4} />
+            )}
+            {post.frontmatter.img.src5 && (
+              <img src={post.frontmatter.img.src5} />
+            )}
+            {post.frontmatter.img.src6 && (
+              <img src={post.frontmatter.img.src5} />
             )}
             {post.frontmatter.video && (
               <YTiframe video={post.frontmatter.video} />
@@ -48,14 +60,14 @@ const { page } = Astro.props;
       }
     </div>
 
-    <div>
-      <div class="space-x-4">
-        {page.url.prev ? <a href={page.url.prev}>{`< Previous`}</a> : null}
-        {page.url.next ? <a href={page.url.next}>{`Next >`}</a> : null}
-      </div>
+    <div class="space-y-2">
       <p class="-mt-2 text-gray-400">
-        {page.currentPage}/{page.lastPage}
+        Page {page.currentPage} of {page.lastPage}
       </p>
+      <div class="space-x-4 text-lg">
+        {page.url.prev ? <a href={page.url.prev}>&larr; Previous</a> : null}
+        {page.url.next ? <a href={page.url.next}>Next &rarr;</a> : null}
+      </div>
     </div>
   </section>
   <h2 class="mt-16">This is My Work</h2>

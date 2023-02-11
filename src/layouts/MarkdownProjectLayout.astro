@@ -10,7 +10,9 @@ const { frontmatter } = Astro.props;
       <h1>{frontmatter.displayTitle}</h1>
       {
         frontmatter.description && (
-          <p class="italic text-gray-400">—{frontmatter.description}—</p>
+          <p class="italic text-gray-400">
+            &mdash;{frontmatter.description}&mdash;
+          </p>
         )
       }
     </div>

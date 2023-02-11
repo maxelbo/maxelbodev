@@ -6,22 +6,32 @@
   --tw-text-opacity: 1;
   --gray-600: rgb(75 85 99 / var(--tw-text-opacity));
   --gray-800: rgb(31 41 55 / var(--tw-text-opacity));
+  --black: #333;
+}
+
+html {
+  font-family: "Jost", sans-serif;
+  color: var(--black);
 }
 
 * {
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
 h1 {
   font-size: 1.873rem !important;
   line-height: 2.25rem;
-  font-weight: 700;
 }
 
 h2 {
   font-size: 1.5rem !important;
   line-height: 2rem;
-  font-weight: 700;
 }
 
 summary {
