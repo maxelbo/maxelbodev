@@ -17,7 +17,7 @@ const { page } = Astro.props;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <section class="">
+  <section>
     <h1>{pageTitle}</h1>
 
     <div class="mx-auto max-w-6xl divide-y divide-gray-200">
@@ -60,15 +60,15 @@ const { page } = Astro.props;
       }
     </div>
 
-    <div class="space-y-2">
-      <p class="-mt-2 text-gray-400">
-        Page {page.currentPage} of {page.lastPage}
-      </p>
-      <div class="space-x-4 text-lg">
+    <div class="space-y-2 border-t-2 border-t-gray-200 pt-8">
+      <div class="space-x-4 text-2xl">
         {page.url.prev ? <a href={page.url.prev}>&larr; Previous</a> : null}
         {page.url.next ? <a href={page.url.next}>Next &rarr;</a> : null}
       </div>
+      <p class="-mt-2 text-gray-400">
+        Page {page.currentPage} of {page.lastPage}
+      </p>
     </div>
   </section>
-  <h2 class="mt-16">This is My Work</h2>
+  <h2 class="mt-16 capitalize">This is my work</h2>
 </BaseLayout>
