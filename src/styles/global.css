@@ -49,6 +49,7 @@ a:hover {
 }
 
 article img {
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-top: 0.5rem /* 8px */;

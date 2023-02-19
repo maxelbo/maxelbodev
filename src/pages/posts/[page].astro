@@ -23,7 +23,7 @@ const { page } = Astro.props;
     <div class="mx-auto max-w-6xl divide-y divide-gray-200">
       {
         page.data.map((post: any) => (
-          <div class="mx-auto my-4 max-w-6xl space-y-4 py-4">
+          <article class="mx-auto my-4 max-w-6xl space-y-4 py-4">
             {post.frontmatter.img.src1 && (
               <img src={post.frontmatter.img?.src1} />
             )}
@@ -40,7 +40,7 @@ const { page } = Astro.props;
               <img src={post.frontmatter.img.src5} />
             )}
             {post.frontmatter.img.src6 && (
-              <img src={post.frontmatter.img.src5} />
+              <img src={post.frontmatter.img.src6} />
             )}
             {post.frontmatter.video && (
               <YTiframe video={post.frontmatter.video} />
@@ -55,7 +55,7 @@ const { page } = Astro.props;
                 }).format(new Date(post.frontmatter.pubDate))}
               </p>
             </div>
-          </div>
+          </article>
         ))
       }
     </div>
