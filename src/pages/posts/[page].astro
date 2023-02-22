@@ -24,6 +24,9 @@ const { page } = Astro.props;
       {
         page.data.map((post: any) => (
           <article class="mx-auto my-4 max-w-6xl space-y-4 py-4">
+            {post.frontmatter.img.src0 && (
+              <img src={post.frontmatter.img?.src0} />
+            )}
             {post.frontmatter.img.src1 && (
               <img src={post.frontmatter.img?.src1} />
             )}
