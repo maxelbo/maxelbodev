@@ -20,39 +20,24 @@ const { page } = Astro.props;
 <BaseLayout pageTitle={pageTitle}>
   <section>
     <h1>{pageTitle}</h1>
-
     <div class="mx-auto max-w-6xl divide-y divide-gray-200">
       {
         page.data.map((post: any) => (
           <article class="mx-auto my-4 max-w-6xl space-y-4 py-4">
-            {post.frontmatter.img.src0 && (
-              <img src={post.frontmatter.img?.src0} />
-            )}
-            {post.frontmatter.img.src1 && (
-              <img src={post.frontmatter.img?.src1} />
-            )}
-            {post.frontmatter.img.src2 && (
-              <img src={post.frontmatter.img.src2} />
-            )}
-            {post.frontmatter.img.src3 && (
-              <img src={post.frontmatter.img.src3} />
-            )}
-            {post.frontmatter.img.src4 && (
-              <img src={post.frontmatter.img.src4} />
-            )}
-            {post.frontmatter.img.src5 && (
-              <img src={post.frontmatter.img.src5} />
-            )}
-            {post.frontmatter.img.src6 && (
-              <img src={post.frontmatter.img.src6} />
-            )}
+            {post.frontmatter.img.length > 0 &&
+              post.frontmatter.img.map((source: string) => (
+                <img src={source} />
+              ))}
+
             {post.frontmatter.video && (
               <YTiframe video={post.frontmatter.video} />
             )}
+
             <div class="mx-auto my-4 max-w-2xl space-y-2">
               {post.frontmatter.body && (
                 <p class="text-left">{post.frontmatter.body}</p>
               )}
+
               <p class="text-left text-sm text-gray-400">
                 {new Intl.DateTimeFormat("en-US", {
                   dateStyle: "medium",
