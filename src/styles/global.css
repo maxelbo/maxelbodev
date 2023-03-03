@@ -10,7 +10,7 @@
 }
 
 html {
-  font-family: "Jost", sans-serif;
+  font-family: "Jost", sans-serif !important;
   color: var(--black);
 }
 
