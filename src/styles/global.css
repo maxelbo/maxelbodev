@@ -21,7 +21,7 @@ html {
 h1,
 h2,
 h3 {
-  font-weight: 700;
+  font-weight: 700 !important;
 }
 
 h1 {
