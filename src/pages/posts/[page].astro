@@ -31,8 +31,8 @@ const { page } = Astro.props;
           <article class="mx-auto my-4 max-w-6xl py-4">
             <div class="space-y-4">
               {post.frontmatter.img.length > 0 &&
-                post.frontmatter.img.map((source: string) => (
-                  <img src={source} />
+                post.frontmatter.img.map((src: string) => (
+                  <img src={src} alt={post.frontmatter.title} loading="lazy" />
                 ))}
 
               {post.frontmatter.video && (
