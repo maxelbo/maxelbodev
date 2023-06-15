@@ -30,7 +30,7 @@ const { page } = Astro.props;
         page.data.map((post: any) => (
           <article class="mx-auto my-4 max-w-6xl py-4">
             <div class="space-y-4">
-              {post.frontmatter.img &&
+              {post.frontmatter.img.length > 0 &&
                 post.frontmatter.img.map((src: string) => (
                   <img src={src} alt={post.frontmatter.title} loading="lazy" />
                 ))}
