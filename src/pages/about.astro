@@ -95,7 +95,7 @@ const profile = {
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class="mx-auto max-w-full">
+  <main class="mx-auto max-w-full">
     <img
       alt="head image"
       src="/assets/about/head.jpg"
@@ -116,6 +116,7 @@ const profile = {
         }
       </section>
       <section class="space-y-12">
+        <img src="/assets/about/eye-open.png" class="hidden" />
         <Accordion title="Career">
           <p>
             {
@@ -160,6 +161,6 @@ const profile = {
       height="309"
       class="my-8 mx-auto w-4/5 sm:w-6/12"
     />
-  </div>
+  </main>
   <h2 class="mt-16 capitalize">This is my work</h2>
 </BaseLayout>

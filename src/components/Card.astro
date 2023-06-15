@@ -12,6 +12,7 @@ const { title, displayTitle, url, description } = Astro.props;
     src={`/assets/cards/card-${title}.png`}
     width="252"
     height="350"
+    loading="lazy"
   />
   <div class="text-center">
     <h3>{displayTitle}</h3>

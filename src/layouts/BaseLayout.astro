@@ -11,10 +11,10 @@ const { pageTitle } = Astro.props;
   <Head pageTitle={pageTitle} />
   <body class="mx-auto max-w-4xl p-4 text-center leading-relaxed">
     <Header />
-    <main class="py-2 sm:py-4">
+    <main>
       <slot />
+      <ProjectsList />
     </main>
-    <ProjectsList />
     <Footer />
   </body>
 </html>
