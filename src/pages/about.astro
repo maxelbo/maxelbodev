@@ -6,10 +6,12 @@ const currentInfo = true;
 
 const profile = {
   name: "Max Elbo",
+  email: "hello.maxelbo@gmail.com",
+  emailBot: "hello.maxelbo at gmail.com",
   firstCompany: "Ogilvy & Mather",
   firstTitle: "a Junior Art Director",
   secondTitle: "an Art Director",
-  secondCompany: "BBDO",
+  secondCompany: "BBDO Argentina",
   thirdCompany: "J. Walter Thompson Dubai",
   fourthCompany: "Amplifier",
   currentCompany: "Deloitte",
@@ -97,12 +99,28 @@ const profile = {
 <BaseLayout pageTitle={pageTitle}>
   <main class="mx-auto max-w-full">
     <img
-      alt="head image"
-      src="/assets/about/head.jpg"
+      alt="head image now"
+      src="/assets/about/head-now.jpg"
       width={1904}
       height={354}
-      class="mx-auto w-4/5 sm:w-3/5"
+      class="mx-auto mb-2 w-4/5 sm:mb-4 sm:w-3/5"
     />
+    <!-- <div class="relative mx-auto h-[90px] w-4/5 sm:h-[170px] sm:w-3/5">
+      <img
+        alt="head image"
+        src="/assets/about/head.jpg"
+        width={1904}
+        height={354}
+        class="absolute inset-0"
+      />
+      <img
+        alt="head image now"
+        src="/assets/about/head-now.jpg"
+        width={1904}
+        height={354}
+        class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100"
+      />
+    </div> -->
     <div class="mx-auto max-w-3xl space-y-12 px-8 text-center">
       <section>
         <p class="font-bold">Hi,</p>
@@ -110,25 +128,38 @@ const profile = {
         {
           currentInfo && (
             <p>
-              {`I'm currently working at ${profile.currentCompany} in ${profile.currentLocation}.`}
+              I'm currently working at <strong>{profile.currentCompany}</strong>{" "}
+              in
+              {profile.currentLocation}.
             </p>
           )
         }
+        <p>
+          You can contact me <a class="underline" href=`mailto:${profile.email}`
+            >here</a
+          >.
+        </p>
       </section>
       <section class="space-y-12">
         <img src="/assets/about/eye-open.png" class="hidden" />
         <Accordion title="Career">
           <p>
-            {
-              `I was born in Chile and started working at ${profile.firstCompany} in Buenos Aires,
-            Argentina, as ${profile.firstTitle} in 2011. By the end of 2012 I moved to BBDO Argentina, and a year later
-            I started working as a full-time Freelance Illustrator doing editorial
-            and advertising work, part of it while living in a small town in the
-            mountains of Mexico, in the middle of nowhere. In 2016 I started working
-            as ${profile.secondTitle} at ${profile.thirdCompany}, and since January 2018
-            I've been working in ${profile.currentLocation}, first at ${profile.fourthCompany}, doing illustration and animation, and since June 2020, at
-            ${profile.currentCompany}, where I'm currently doing frontend development.`
-            }
+            I was born in Chile and started working at <strong
+              >{profile.firstCompany}</strong
+            > in Buenos Aires, Argentina, as {profile.firstTitle} in 2011. By the
+            end of 2012 I moved to <strong>{profile.secondCompany}</strong>, and
+            a year later I started working as a full-time <strong
+              >Freelance Illustrator</strong
+            > doing editorial and advertising work, part of it while living in a
+            small town in the mountains of Mexico, in the middle of nowhere. In 2016
+            I started working as {profile.secondTitle} at <strong
+              >{profile.thirdCompany}</strong
+            >, and since January 2018 I've been working in {
+              profile.currentLocation
+            }, first at <strong>{profile.fourthCompany}</strong>, doing
+            illustration and animation, and since June 2020, at
+            <strong>{profile.currentCompany}</strong>, where I'm currently doing
+            frontend development.
           </p>
         </Accordion>
         <Accordion title="Awards">
