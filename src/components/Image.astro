@@ -1,6 +1,14 @@
 ---
 const { src } = Astro.props;
 const { alt } = Astro.props;
+const { className } = Astro.props;
 ---
 
-<img src={src} alt={alt} height="auto" width="100%" loading="lazy" />
+<img
+  src={src}
+  alt={alt}
+  class={className}
+  height="auto"
+  width="100%"
+  loading="lazy"
+/>
