@@ -21,9 +21,9 @@ const profile = {
       logo: "/assets/about/logo-deloitte.webp",
       date: "2020 - present",
       place: "Tokyo, Japan",
-      direction: "direction-r",
+      direction: "dir-r",
       description:
-        "I currently work in the marketing department, doing frontend development. I've worked on CRM apps to improve the DX of the Japanese government.",
+        "I currently work in the marketing department, doing frontend development. I've worked on websites for brands, and CRM apps to improve the DX of the Japanese government.",
       // clients: [
       //   "Tokyo",
       //   "Shibuya",
@@ -34,14 +34,14 @@ const profile = {
       //   // "Dunlop",
       //   // "Toyota",
       // ],
-      skills: ["Frontend Development", "Illustration"],
+      skills: ["Frontend Development", "UI Design", "Illustration"],
     },
     {
       title: "Amplifier",
       logo: "/assets/about/logo-amp.webp",
       date: "2018 - 2020",
       place: "Tokyo, Japan",
-      direction: "direction-l",
+      direction: "dir-l",
       description:
         "I moved to Japan and worked at Amplifier, a design studio in Tokyo. We worked for advertising agencies, but also for direct clients.",
       clients: ["Tokyo National Museum", "Dentsu Tec", "MullenLowe Japan"],
@@ -52,7 +52,7 @@ const profile = {
       logo: "/assets/about/logo-jwt.webp",
       date: "2016 - 2017",
       place: "Dubai, UAE",
-      direction: "direction-r",
+      direction: "dir-r",
       description:
         "I moved to Dubai and worked as an Art Director at J. Walter Thompson (not JSON Web Token).",
       clients: [
@@ -69,7 +69,7 @@ const profile = {
       logo: "/assets/about/logo-elborium.webp",
       date: "2013 - 2016",
       place: "Argentina - Mexico - Chile",
-      direction: "direction-l",
+      direction: "dir-l",
       description:
         "I started working as an Illustrator freelancing for publishing companies and advertising agencies, while living in different countries.",
       clients: [
@@ -90,7 +90,7 @@ const profile = {
       logo: "/assets/about/logo-bbdo.webp",
       date: "2012 - 2013",
       place: "Vicente López, Argentina",
-      direction: "direction-r",
+      direction: "dir-r",
       description: "I moved to BBDO as an Art Director.",
       clients: ["Doritos", "7up", "Dr Lemon"],
       skills: ["Art Direction"],
@@ -100,7 +100,7 @@ const profile = {
       logo: "/assets/about/logo-ogilvy.webp",
       date: "2011 - 2012",
       place: "Buenos Aires, Argentina",
-      direction: "direction-l",
+      direction: "dir-l",
       description:
         "I started my career working as a Junior Art Director at Ogilvy & Mather Argentina. I did my first TV commercial here, and I won my first awards.",
       clients: ["Tang", "AMIA"],
@@ -110,7 +110,7 @@ const profile = {
     //   title: "Escuelita",
     //   date: "2009 - 2011",
     //   place: "Buenos Aires, Argentina",
-    //   direction: "direction-r",
+    //   direction: "direction-r group dir-r",
     //   description:
     //     "I graduated as an Art Director from the Escuela superior de creativos publicitarios, a technical school in Buenos Aires, also known as the Escuelita.",
     // },
@@ -118,7 +118,7 @@ const profile = {
     //   title: "UDP",
     //   date: "2007 - 2008",
     //   place: "Santiago, Chile",
-    //   direction: "direction-l",
+    //   direction: "  dir-l",
     //   description:
     //     "I went to college at Universidad Diego Portales in Santiago, Chile, until I moved to Argentina in 2009.",
     // },
@@ -126,7 +126,7 @@ const profile = {
     //   title: "Grange School",
     //   date: "1993 - 2006",
     //   place: "Santiago, Chile",
-    //   direction: "direction-r",
+    //   direction: "direction-r group dir-r",
     //   description:
     //     "I graduated from the Grange School, an international school in Santiago de Chile.",
     // },
@@ -134,7 +134,7 @@ const profile = {
     //   title: "Early Life",
     //   date: "1988",
     //   place: "Santiago, Chile",
-    //   direction: "direction-l",
+    //   direction: "  dir-l",
     //   description: "I was born in Santiago de Chile.",
     // },
   ],

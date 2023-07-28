@@ -7,17 +7,25 @@ const { earlyLife } = Astro.props;
 
 <div>
   <ul
-    class="timeline relative mx-auto mt-5 mb-0 w-full list-none px-0 pt-20 pb-8 md:w-[660px] md:py-16"
+    class="timeline relative m-auto w-full list-none px-0 pt-16 pb-8 md:w-[660px] md:py-16"
   >
     {
       timelineData.map((item: any) => (
-        <li class="px-0 py-2 md:py-1">
-          <div class={item.direction}>
-            <div class="flag-wrapper">
+        <li class="px-0 py-9 md:py-4">
+          <div
+            class={`group ${item.direction} relative w-full text-center md:w-[300px]`}
+          >
+            <div class="flag-wrapper relative inline-block text-center">
               {item.logo && (
-                <Image src={item.logo} alt="logo" className="timeline-logo" />
+                <Image
+                  src={item.logo}
+                  alt="logo"
+                  className="timeline-logo absolute -top-12 left-[51%] z-20 -ml-5 h-8 w-8 rounded-full bg-black md:-top-2 md:h-10 md:w-10"
+                />
               )}
-              <span class="flag">{item.title}</span>
+              <span class="flag relative z-10 inline rounded bg-black py-1 px-2 text-left font-semibold text-white shadow-sm">
+                {item.title}
+              </span>
               <div class="details-wrapper">
                 <span class="date m-auto inline-block w-fit bg-slate-100 px-2 py-1">
                   {item.date}
@@ -27,15 +35,15 @@ const { earlyLife } = Astro.props;
                 </span>
               </div>
             </div>
-            <div class="desc bg-slate-100 shadow-sm">
+            <div class="desc relative z-10 mx-auto mt-2 mb-0 max-w-sm bg-slate-100 p-4 text-left text-sm shadow-sm md:mt-4 md:group-[.dir-l]:mr-3 md:group-[.dir-r]:ml-3">
               <p>{item.description}</p>
-              <div class="info-wrapper">
+              <div class="info-wrapper z-20 mx-0 mt-0 mb-2 flex flex-col flex-wrap gap-4">
                 {item.clients && (
                   <div class="info">
                     <strong>Clients:</strong>
-                    <ul>
+                    <ul class="m-0 flex list-none flex-row flex-wrap gap-1 p-0">
                       {item.clients.map((client: string) => (
-                        <li class="bg-slate-200 !py-0 !px-2 shadow-md">
+                        <li class="bg-slate-200 py-0 px-2 shadow-md">
                           {client}
                         </li>
                       ))}
@@ -45,9 +53,9 @@ const { earlyLife } = Astro.props;
                 {item.skills && (
                   <div class="info block">
                     <strong>Skills:</strong>
-                    <ul class="">
+                    <ul class="m-0 flex list-none flex-row flex-wrap gap-1 p-0">
                       {item.skills.map((skill: string) => (
-                        <li class="bg-slate-200 !py-0 !px-2 shadow-md">
+                        <li class="bg-slate-200 py-0 px-2 shadow-md">
                           {skill}
                         </li>
                       ))}
@@ -65,9 +73,11 @@ const { earlyLife } = Astro.props;
     <h3>Early Life</h3>
     <ul class="space-y-4 text-sm">
       {
-        earlyLife.map((event) => (
+        earlyLife.map((event: any) => (
           <li>
-            <span class="time bg-slate-50 py-0 text-[10px]">{event.date}</span>
+            <span class="time bg-slate-100 py-0 px-2 text-[10px]">
+              {event.date}
+            </span>
             <p>{event.description}</p>
           </li>
         ))
@@ -133,10 +143,6 @@ const { earlyLife } = Astro.props;
     z-index: 5;
   }
 
-  .timeline li {
-    padding: 2em 0;
-  }
-
   .timeline li:after {
     content: "";
     display: block;
@@ -145,22 +151,13 @@ const { earlyLife } = Astro.props;
     visibility: hidden;
   }
 
-  @media (min-width: 768px) {
-    .timeline li {
-      padding: 1em 0;
-    }
-  }
-
-  .direction-l,
-  .direction-r {
-    position: relative;
+  .dir-l,
+  .dir-r {
     float: none;
-    width: 100%;
-    text-align: center;
   }
 
-  .direction-l .flag::before,
-  .direction-r .flag::before {
+  .dir-l .flag::before,
+  .dir-r .flag::before {
     position: absolute;
     top: -30px;
     left: 50%;
@@ -176,73 +173,34 @@ const { earlyLife } = Astro.props;
   }
 
   @media (min-width: 768px) {
-    .direction-l,
-    .direction-r {
-      width: 300px;
-    }
-
-    .direction-l {
+    .dir-l {
       float: left;
       text-align: right;
     }
 
-    .direction-r {
+    .dir-r {
       float: right;
       text-align: left;
     }
 
-    .direction-l .flag::before,
-    .direction-r .flag::before {
+    .dir-l .flag::before,
+    .dir-r .flag::before {
       top: 33%;
     }
 
-    .direction-r .flag::before {
+    .dir-r .flag::before {
       right: auto;
       left: -30px;
     }
 
-    .direction-l .flag::before {
+    .dir-l .flag::before {
       right: -33px;
       left: auto;
     }
   }
 
-  .flag-wrapper {
-    position: relative;
-    display: inline-block;
-    text-align: center;
-  }
-
-  .flag {
-    position: relative;
-    display: inline;
-    padding: 6px 10px;
-    border-radius: 5px;
-    z-index: 15;
-    font-weight: 600;
-    text-align: left;
-    color: white;
-    background: black;
-  }
-
-  .direction-l .flag {
-    -webkit-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15),
-      0 0 1px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15),
-      0 0 1px rgba(0, 0, 0, 0.15);
-    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
-  }
-
-  .direction-r .flag {
-    -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15),
-      0 0 1px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15),
-      0 0 1px rgba(0, 0, 0, 0.15);
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
-  }
-
-  .direction-l .flag:after,
-  .direction-r .flag:after {
+  .dir-l .flag:after,
+  .dir-r .flag:after {
     content: "";
     position: absolute;
     left: 47%;
@@ -256,21 +214,9 @@ const { earlyLife } = Astro.props;
     pointer-events: none;
   }
 
-  .timeline-logo {
-    position: absolute;
-    top: -46px;
-    left: 52%;
-    width: 30px;
-    height: 30px;
-    margin-left: -20px;
-    background: #fff;
-    border-radius: 50%;
-    z-index: 16;
-  }
-
   @media (min-width: 768px) {
-    .direction-l .flag:after,
-    .direction-r .flag:after {
+    .dir-l .flag:after,
+    .dir-r .flag:after {
       left: auto;
       top: 50%;
       margin-left: auto;
@@ -279,40 +225,24 @@ const { earlyLife } = Astro.props;
       border-bottom-color: white;
     }
 
-    .direction-l .flag:after {
+    .dir-l .flag:after {
       left: 100%;
       border-left-color: black;
     }
 
-    .direction-r .flag:after {
+    .dir-r .flag:after {
       right: 100%;
       border-right-color: black;
     }
 
-    .direction-r .timeline-logo {
-      position: absolute;
-      top: -8px;
+    .dir-r .timeline-logo {
       right: auto;
       left: -33px;
-      width: 40px;
-      height: 40px;
-      margin-left: -20px;
-      background: #fff;
-      border-radius: 50%;
-      z-index: 16;
     }
 
-    .direction-l .timeline-logo {
-      position: absolute;
-      top: -8px;
+    .dir-l .timeline-logo {
       right: -47px;
       left: auto;
-      width: 40px;
-      height: 40px;
-      margin-left: -20px;
-      background: #fff;
-      border-radius: 50%;
-      z-index: 16;
     }
   }
 
@@ -330,58 +260,14 @@ const { earlyLife } = Astro.props;
   }
 
   @media (min-width: 768px) {
-    .details-wrapper {
-      display: flex;
-      gap: 5px;
-    }
-
-    .direction-l .details-wrapper {
+    .dir-l .details-wrapper {
       float: left;
       flex-flow: row-reverse;
     }
 
-    .direction-r .details-wrapper {
+    .dir-r .details-wrapper {
       float: right;
       flex-flow: row;
     }
-  }
-
-  .desc {
-    position: relative;
-    margin: 1em auto 0;
-    padding: 1em;
-    font-size: 14px;
-    /* font-style: italic; */
-    line-height: 1.5em;
-    z-index: 15;
-    text-align: left;
-    max-width: 400px;
-  }
-
-  @media (min-width: 768px) {
-    .desc {
-      margin: 1em 0.75em 0 0;
-    }
-
-    .direction-r .desc {
-      margin: 1em 0 0 0.75em;
-    }
-  }
-
-  .info-wrapper {
-    display: flex;
-    flex-flow: column wrap;
-    gap: 1rem;
-    margin: 0 0 0.5em 0;
-    z-index: 15;
-  }
-
-  .info ul {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 5px 5px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
   }
 </style>
