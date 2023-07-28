@@ -12,9 +12,7 @@ const { earlyLife } = Astro.props;
     {
       timelineData.map((item: any) => (
         <li class="px-0 py-9 md:py-4">
-          <div
-            class={`group ${item.direction} relative w-full text-center md:w-[300px]`}
-          >
+          <div class={`group ${item.direction} relative w-full md:w-[300px]`}>
             <div class="flag-wrapper relative inline-block">
               {item.logo && (
                 <Image
