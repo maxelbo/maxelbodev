@@ -34,7 +34,7 @@ const profile = {
       //   // "Dunlop",
       //   // "Toyota",
       // ],
-      skills: ["Frontend Development", "UI Design", "Illustration"],
+      skills: ["Frontend Development", "Design", "Illustration"],
     },
     {
       title: "Amplifier",
@@ -43,7 +43,7 @@ const profile = {
       place: "Tokyo, Japan",
       direction: "dir-l",
       description:
-        "I moved to Japan and worked at Amplifier, a design studio in Tokyo. We worked for advertising agencies, but also for direct clients.",
+        "I moved to Japan and worked at Amplifier, a design studio in Tokyo. We worked for advertising agencies, but also for direct clients. I got to learn new skills, like motion graphics and 3D modeling.",
       clients: ["Tokyo National Museum", "Dentsu Tec", "MullenLowe Japan"],
       skills: ["Illustration", "Animation", "Web Design"],
     },
@@ -54,7 +54,7 @@ const profile = {
       place: "Dubai, UAE",
       direction: "dir-r",
       description:
-        "I moved to Dubai and worked as an Art Director at J. Walter Thompson (not JSON Web Token).",
+        "I moved to Dubai and worked as an Art Director at J. Walter Thompson (not JSON Web Token). I won more awards, including a Grand Prix at the Dubai Lynx.",
       clients: [
         "Coca-Cola",
         "Kraft",
@@ -91,7 +91,8 @@ const profile = {
       date: "2012 - 2013",
       place: "Vicente López, Argentina",
       direction: "dir-r",
-      description: "I moved to BBDO as an Art Director.",
+      description:
+        "I moved to BBDO as an Art Director. While working here, I got married and started freelancing as an Illustrator. I decided to do that full time.",
       clients: ["Doritos", "7up", "Dr Lemon"],
       skills: ["Art Direction"],
     },
@@ -102,7 +103,7 @@ const profile = {
       place: "Buenos Aires, Argentina",
       direction: "dir-l",
       description:
-        "I started my career working as a Junior Art Director at Ogilvy & Mather Argentina. I did my first TV commercial here, and I won my first awards.",
+        "I started my career working as a Junior Art Director at Ogilvy & Mather Argentina. I did my first TV commercial here, and I won my first awards, including a silver lion at Cannes.",
       clients: ["Tang", "AMIA"],
       skills: ["Art Direction"],
     },
