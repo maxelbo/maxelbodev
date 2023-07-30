@@ -1,0 +1,17 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const pageTitle = "404";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <section class="my-4 sm:mt-0 sm:mb-8">
+    <span class="text-5xl font-bold text-gray-400">{pageTitle}</span>
+    <div>
+      <h1>Sorry,</h1>
+      <h3>This page doesn't exist.</h3>
+      <h3>But you know what does?</h3>
+    </div>
+  </section>
+  <h2>My Work</h2>
+</BaseLayout>
