@@ -24,7 +24,7 @@ const { earlyLife } = Astro.props;
                 />
               )}
               <span class="flag relative z-10 inline rounded bg-black py-1 px-2 text-left font-semibold text-white shadow-sm">
-                {item.title}
+                {item.company}
               </span>
               <div class="details-wrapper">
                 <span class="date m-auto inline-block w-fit bg-slate-100 px-2 py-1">
@@ -97,7 +97,6 @@ const { earlyLife } = Astro.props;
     display: block;
     width: 1px;
     height: 100%;
-    /* margin-left: -3px; */
     background: rgb(80, 80, 80);
     background: -moz-linear-gradient(
       top,
@@ -158,22 +157,6 @@ const { earlyLife } = Astro.props;
     float: none;
   }
 
-  .dir-l .flag::before,
-  .dir-r .flag::before {
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    content: " ";
-    display: block;
-    width: 12px;
-    height: 12px;
-    margin-left: -9px;
-    background: #fff;
-    border-radius: 10px;
-    border: 1px solid var(--black);
-    z-index: 10;
-  }
-
   @media (min-width: 768px) {
     .dir-l {
       float: left;
@@ -183,21 +166,6 @@ const { earlyLife } = Astro.props;
     .dir-r {
       float: right;
       text-align: left;
-    }
-
-    .dir-l .flag::before,
-    .dir-r .flag::before {
-      top: 33%;
-    }
-
-    .dir-r .flag::before {
-      right: auto;
-      left: -30px;
-    }
-
-    .dir-l .flag::before {
-      right: -33px;
-      left: auto;
     }
   }
 

@@ -13,17 +13,17 @@ const profile = {
   name: "Max Elbo",
   email: "hello.maxelbo@gmail.com",
   currentCompany: "Deloitte",
-  currentTitle: "a Frontend Developer",
+  currentRole: "a Frontend Developer",
   currentLocation: "Tokyo, Japan",
   timelineData: [
     {
-      title: "Deloitte",
+      company: "Deloitte",
       logo: "/assets/about/logo-deloitte.webp",
       date: "2020 - present",
       place: "Tokyo, Japan",
       direction: "dir-r",
       description:
-        "I currently work in the marketing department, doing frontend development. I've worked on websites for brands, and CRM apps to improve the DX of the Japanese government.",
+        "I currently work in the marketing division at Deloitte Consulting, doing frontend development. I've worked on corporate websites, and CRM apps to help the Japanese Government improve its DX.",
       // clients: [
       //   "Tokyo",
       //   "Shibuya",
@@ -37,18 +37,18 @@ const profile = {
       skills: ["Frontend Development", "Design", "Illustration"],
     },
     {
-      title: "Amplifier",
+      company: "Amplifier",
       logo: "/assets/about/logo-amp.webp",
       date: "2018 - 2020",
       place: "Tokyo, Japan",
       direction: "dir-l",
       description:
-        "I moved to Japan and worked at Amplifier, a design studio in Tokyo. We worked for advertising agencies, but also for direct clients. I got to learn new skills, like motion graphics and 3D modeling.",
+        "I moved to Japan and worked at Amplifier, a design studio in Tokyo. Here, I got to learn new skills, like motion graphics and 3D modeling.",
       clients: ["Tokyo National Museum", "Dentsu Tec", "MullenLowe Japan"],
       skills: ["Illustration", "Animation", "Web Design"],
     },
     {
-      title: "JWT Dubai",
+      company: "JWT Dubai",
       logo: "/assets/about/logo-jwt.webp",
       date: "2016 - 2017",
       place: "Dubai, UAE",
@@ -65,13 +65,13 @@ const profile = {
       skills: ["Art Direction", "Illustration"],
     },
     {
-      title: "Elborium",
+      company: "Elborium",
       logo: "/assets/about/logo-elborium.webp",
       date: "2013 - 2016",
       place: "Argentina - Mexico - Chile",
       direction: "dir-l",
       description:
-        "I started working as an Illustrator freelancing for publishing companies and advertising agencies, while living in different countries.",
+        "I started working as an Illustrator, freelancing for publishing companies and advertising agencies, while living in different countries.",
       clients: [
         "Editorial Confin",
         "Fundación Ciencia Joven",
@@ -86,18 +86,18 @@ const profile = {
       skills: ["Illustration"],
     },
     {
-      title: "BBDO",
+      company: "BBDO",
       logo: "/assets/about/logo-bbdo.webp",
       date: "2012 - 2013",
       place: "Vicente López, Argentina",
       direction: "dir-r",
       description:
-        "I moved to BBDO as an Art Director. While working here, I got married and started freelancing as an Illustrator. I decided to do that full time.",
+        "I moved to BBDO as an Art Director, and had the chance to work with PepsiCo brands.",
       clients: ["Doritos", "7up", "Dr Lemon"],
       skills: ["Art Direction"],
     },
     {
-      title: "Ogilvy",
+      company: "Ogilvy",
       logo: "/assets/about/logo-ogilvy.webp",
       date: "2011 - 2012",
       place: "Buenos Aires, Argentina",
@@ -107,47 +107,12 @@ const profile = {
       clients: ["Tang", "AMIA"],
       skills: ["Art Direction"],
     },
-    // {
-    //   title: "Escuelita",
-    //   date: "2009 - 2011",
-    //   place: "Buenos Aires, Argentina",
-    //   direction: "direction-r group dir-r",
-    //   description:
-    //     "I graduated as an Art Director from the Escuela superior de creativos publicitarios, a technical school in Buenos Aires, also known as the Escuelita.",
-    // },
-    // {
-    //   title: "UDP",
-    //   date: "2007 - 2008",
-    //   place: "Santiago, Chile",
-    //   direction: "  dir-l",
-    //   description:
-    //     "I went to college at Universidad Diego Portales in Santiago, Chile, until I moved to Argentina in 2009.",
-    // },
-    // {
-    //   title: "Grange School",
-    //   date: "1993 - 2006",
-    //   place: "Santiago, Chile",
-    //   direction: "direction-r group dir-r",
-    //   description:
-    //     "I graduated from the Grange School, an international school in Santiago de Chile.",
-    // },
-    // {
-    //   title: "Early Life",
-    //   date: "1988",
-    //   place: "Santiago, Chile",
-    //   direction: "  dir-l",
-    //   description: "I was born in Santiago de Chile.",
-    // },
   ],
   earlyLife: [
     {
       date: "2011",
       description: `I graduated from the Escuela superior de creativos publicitarios, a technical school in Buenos Aires, Argentina.`,
     },
-    // {
-    //   date: "2007 - 2008",
-    //   description: `I went to college at Universidad Diego Portales in Santiago, Chile, until I moved to Argentina in 2009.`,
-    // },
     {
       date: "2006",
       description: `I graduated from the Grange School, an international school in Santiago, Chile.`,
