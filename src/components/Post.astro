@@ -1,0 +1,30 @@
+---
+import YTiframe from "@/components/YTiframe.astro";
+
+const { post } = Astro.props;
+---
+
+<article class="mx-auto my-4 max-w-6xl py-4">
+  <div class="space-y-4">
+    {
+      post.frontmatter.img.length > 0 &&
+        post.frontmatter.img.map((src: string) => (
+          <img src={src} alt={post.frontmatter.title} loading="lazy" />
+        ))
+    }
+
+    {post.frontmatter.video && <YTiframe video={post.frontmatter.video} />}
+  </div>
+
+  <div class="mx-4 mb-4 max-w-3xl space-y-2 lg:mx-8">
+    {post.frontmatter.body && <p class="text-left">{post.frontmatter.body}</p>}
+
+    <p class="text-left text-sm text-gray-400">
+      {
+        new Intl.DateTimeFormat("en-US", {
+          dateStyle: "medium",
+        }).format(new Date(post.frontmatter.pubDate))
+      }
+    </p>
+  </div>
+</article>
