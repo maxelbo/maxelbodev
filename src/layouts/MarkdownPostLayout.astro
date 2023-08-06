@@ -1,0 +1,11 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Post from "@/components/Post.astro";
+
+const { post } = Astro.props;
+---
+
+<BaseLayout pageTitle={post.frontmatter.displayTitle}>
+  <Post post={post} />
+  <h2 class="mt-16">More Work</h2>
+</BaseLayout>
