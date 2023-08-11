@@ -5,7 +5,7 @@ const { title, displayTitle, url, description } = Astro.props;
 <a
   id={title}
   href={url}
-  class="m-4 text-gray-700 transition hover:text-gray-500 hover:no-underline hover:opacity-90 focus:text-gray-500"
+  class="group/card m-4 text-gray-700 transition hover:text-gray-500 hover:no-underline focus:text-gray-500"
 >
   <img
     alt={`${title} card`}
@@ -13,8 +13,9 @@ const { title, displayTitle, url, description } = Astro.props;
     width="252"
     height="350"
     loading="lazy"
+    class="shadow-md group-hover/card:-translate-y-0.5 group-hover/card:scale-[1.01] group-hover/card:shadow-lg group-hover/card:transition group-hover/card:delay-150 group-hover/card:ease-out group-active/card:shadow-lg"
   />
-  <div class="text-center">
+  <div class="mt-1 text-center">
     <h3>{displayTitle}</h3>
     <p class="-mt-1 italic text-gray-400">
       &mdash;{description}&mdash;
