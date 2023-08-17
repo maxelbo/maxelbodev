@@ -5,5 +5,8 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), mdx(), partytown()]
+  integrations: [tailwind(), mdx(), partytown()],
+  experimental: {
+    viewTransitions: true,
+  },
 });
