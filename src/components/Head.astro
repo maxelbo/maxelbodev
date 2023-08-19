@@ -1,4 +1,7 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+import { capitalize } from "@/scripts/tagActions";
+
 const { pageTitle } = Astro.props;
 ---
 
@@ -6,7 +9,7 @@ const { pageTitle } = Astro.props;
   <meta charset="utf-8" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width" />
-  <title>Elborium{pageTitle && ` - ${pageTitle}`}</title>
+  <title>Elborium{pageTitle && ` - ${capitalize(pageTitle)}`}</title>
   <meta
     name="description"
     content="Hi, I'm Max Elbo, and this is my portfolio."
@@ -39,4 +42,5 @@ const { pageTitle } = Astro.props;
 
     gtag("config", "G-GE5E4YE6YL");
   </script>
+  <ViewTransitions />
 </head>
