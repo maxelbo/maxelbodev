@@ -1,0 +1,32 @@
+---
+const currentInfo = true;
+
+const { profile } = Astro.props;
+---
+
+<section>
+  <p class="font-bold">Hi,</p>
+  <p>{`I'm ${profile.name}.`}</p>
+  <p>
+    <!-- I'm a
+    <strong>{profile.currentRole}</strong>
+    <br class="block sm:hidden" />
+    based in
+    {profile.currentLocation}. -->
+    {
+      currentInfo && (
+        <p>
+          I'm currently working at
+          <strong>{profile.currentCompany}</strong>
+          <br class="block sm:hidden" />
+          in
+          {profile.currentLocation}.
+        </p>
+      )
+    }
+    <p>
+      You can contact me
+      <a class="underline" href=`mailto:${profile.email}`>here</a>.
+    </p>
+  </p>
+</section>

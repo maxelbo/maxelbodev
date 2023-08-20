@@ -1,6 +1,7 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 import Post from "@/components/Post.astro";
+import Pagination from "@/components/Pagination.astro";
 
 const pageTitle = "Blog";
 
@@ -20,7 +21,7 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<PortfolioLayout pageTitle={pageTitle}>
   <section>
     <h1>This Is a {pageTitle} of Sorts</h1>
 
@@ -30,16 +31,8 @@ const { page } = Astro.props;
     </div>
 
     <!-- Pagination -->
-    <div class="space-y-2 border-t-2 border-t-gray-200 pt-8">
-      <div class="space-x-4 text-2xl">
-        {page.url.prev ? <a href={page.url.prev}>&larr; Future</a> : null}
-        {page.url.next ? <a href={page.url.next}>Past &rarr;</a> : null}
-      </div>
-      <p class="-mt-2 text-gray-400">
-        Page {page.currentPage} of {page.lastPage}
-      </p>
-    </div>
+    <Pagination page={page} />
   </section>
 
   <h2 class="mt-16 capitalize">This is my work</h2>
-</BaseLayout>
+</PortfolioLayout>

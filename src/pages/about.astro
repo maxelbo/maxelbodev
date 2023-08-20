@@ -1,14 +1,14 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+import Intro from "@/components/Intro.astro";
 import Accordion from "@/components/Accordion.astro";
 import Timeline from "@/components/Timeline.astro";
 const pageTitle = "About";
-const currentInfo = true;
 
 import profile from "@/data/profile";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<PortfolioLayout pageTitle={pageTitle}>
   <section class="mx-auto max-w-full">
     <img
       alt="head image"
@@ -18,25 +18,7 @@ import profile from "@/data/profile";
       class="mx-auto mb-2 w-4/5 sm:mb-4 sm:w-3/5"
     />
     <div class="mx-auto max-w-3xl space-y-12 px-8 text-center">
-      <section>
-        <p class="font-bold">Hi,</p>
-        <p>{`I'm ${profile.name}.`}</p>
-        {
-          currentInfo && (
-            <p>
-              I'm currently working at
-              <strong>{profile.currentCompany}</strong>
-              <br class="block sm:hidden" />
-              in
-              {profile.currentLocation}.
-            </p>
-          )
-        }
-        <p>
-          You can contact me
-          <a class="underline" href=`mailto:${profile.email}`>here</a>.
-        </p>
-      </section>
+      <Intro profile={profile} />
       <section class="space-y-12">
         <img src="/assets/about/eye-open.png" class="hidden" />
         <Accordion title="Career">
@@ -76,6 +58,6 @@ import profile from "@/data/profile";
       height="309"
       class="my-8 mx-auto w-4/5 sm:w-6/12"
     />
+    <h2 class="mt-16">My Work</h2>
   </section>
-  <h2 class="mt-16 capitalize">This is my work</h2>
-</BaseLayout>
+</PortfolioLayout>
