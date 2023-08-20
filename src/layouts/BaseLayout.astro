@@ -1,19 +1,27 @@
 ---
 import Head from "@/components/Head.astro";
 import Header from "@/components/Header.astro";
-import ProjectsList from "@/components/ProjectsList.astro";
 import Footer from "@/components/Footer.astro";
 import "@/styles/global.css";
 const { pageTitle } = Astro.props;
+
+const allProjects = await Astro.glob("../pages/projects/*.mdx");
+const pubProjects = allProjects.filter((project) => {
+  return !project.frontmatter.archived && !project.frontmatter.private;
+});
+pubProjects.sort((a, b) => {
+  return a.frontmatter.order - b.frontmatter.order;
+});
 ---
 
-<html lang="en" class="mx-auto bg-white">
+<html lang="en" class="mx-auto scroll-smooth bg-white">
   <Head pageTitle={pageTitle} />
-  <body class="mx-auto max-w-4xl p-4 text-center leading-relaxed">
+  <body
+    class="mx-auto flex h-screen max-w-4xl flex-col justify-between p-4 text-center leading-normal sm:leading-relaxed"
+  >
     <Header />
-    <main>
+    <main class="mb-auto">
       <slot />
-      <ProjectsList />
     </main>
     <Footer />
   </body>
