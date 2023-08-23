@@ -7,6 +7,7 @@
   --gray-600: rgb(75 85 99 / var(--tw-text-opacity));
   --gray-800: rgb(31 41 55 / var(--tw-text-opacity));
   --black: #333;
+  --accordion-icon-space: 6em;
 }
 
 html {
@@ -38,16 +39,6 @@ summary {
   cursor: pointer;
 }
 
-a {
-  color: var(--gray-600);
-  text-decoration-line: none;
-}
-
-a:hover {
-  color: var(--gray-800);
-  text-decoration-line: underline;
-}
-
 article img {
   width: 100%;
   margin-left: auto;
@@ -65,4 +56,49 @@ article hr {
   margin-right: auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+/* Accordion */
+.accordion-title[aria-expanded="false"]::before {
+  content: url(/assets/about/eye-closed.png);
+  position: absolute;
+  right: var(--accordion-icon-space);
+}
+
+.accordion-title[aria-expanded="false"]::after {
+  content: url(/assets/about/eye-closed.png);
+  transform: scaleX(-1);
+  position: absolute;
+  top: 0;
+  left: var(--accordion-icon-space);
+}
+
+.accordion-title[aria-expanded="true"]::before {
+  content: url(/assets/about/eye-open.png);
+  position: absolute;
+  right: var(--accordion-icon-space);
+}
+
+.accordion-title[aria-expanded="true"]::after {
+  content: url(/assets/about/eye-open.png);
+  transform: scaleX(-1);
+  position: absolute;
+  top: 0;
+  left: var(--accordion-icon-space);
+}
+
+.accordion-content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 1s ease-out;
+}
+
+.open {
+  opacity: 1;
+  max-height: 5000px;
+}
+.closed {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
