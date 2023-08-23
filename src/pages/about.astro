@@ -1,14 +1,15 @@
 ---
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 import Intro from "@/components/Intro.astro";
-import Accordion from "@/components/Accordion.astro";
+import Accordion from "@/components/Accordion.jsx";
 import Timeline from "@/components/Timeline.astro";
 const pageTitle = "About";
+const projectListTitle = "My Work";
 
 import profile from "@/data/profile";
 ---
 
-<PortfolioLayout pageTitle={pageTitle}>
+<PortfolioLayout pageTitle={pageTitle} projectListTitle={projectListTitle}>
   <section class="mx-auto max-w-full">
     <img
       alt="head image"
@@ -19,36 +20,49 @@ import profile from "@/data/profile";
     />
     <div class="mx-auto max-w-3xl space-y-12 px-8 text-center">
       <Intro profile={profile} />
-      <section class="space-y-12">
-        <img src="/assets/about/eye-open.png" class="hidden" />
-        <Accordion title="Career">
-          <p>This is my career:</p>
-          <Timeline
-            timelineData={profile.timelineData}
-            earlyLife={profile.earlyLife}
-          />
-        </Accordion>
-        <Accordion title="Awards">
-          {
-            profile.creativeAwards.map(({ title, awards }) => (
-              <div id={title}>
-                <h3 class="font-bold">{title}</h3>
-                <ul class="list-none">
-                  {awards.map((award) => (
-                    <li id={award}>{award}</li>
-                  ))}
-                </ul>
-              </div>
-            ))
-          }
-        </Accordion>
-        <Accordion title="Exhibitions">
-          {
-            profile.exhibitions.map((exhibition) => (
-              <p id={exhibition}>{exhibition}</p>
-            ))
-          }
-        </Accordion>
+      <!-- Load open eye -->
+      <img src="/assets/about/eye-open.png" class="hidden" />
+      <section class="flex flex-col items-center space-y-12">
+        <div>
+          <Accordion title="Career" client:load>
+            <div class="my-4 space-y-4">
+              <p>This is my career:</p>
+              <Timeline
+                timelineData={profile.timelineData}
+                earlyLife={profile.earlyLife}
+              />
+            </div>
+          </Accordion>
+        </div>
+        <div>
+          <Accordion title="Awards"  client:load>
+            <div class="my-4 space-y-4">
+              {
+                profile.creativeAwards.map(({ title, awards }) => (
+                  <div id={title}>
+                    <h3 class="font-bold">{title}</h3>
+                    <ul class="list-none">
+                      {awards.map((award) => (
+                        <li id={award}>{award}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))
+              }
+            </div>
+          </Accordion>
+        </div>
+        <div>
+          <Accordion title="Exhibitions"  client:load>
+            <div class="my-4 space-y-4">
+              {
+                profile.exhibitions.map((exhibition) => (
+                  <p id={exhibition}>{exhibition}</p>
+                ))
+              }
+            </div>
+          </Accordion>
+        </div>
       </section>
     </div>
     <img
@@ -58,6 +72,5 @@ import profile from "@/data/profile";
       height="309"
       class="my-8 mx-auto w-4/5 sm:w-6/12"
     />
-    <h2 class="mt-16">My Work</h2>
   </section>
 </PortfolioLayout>
