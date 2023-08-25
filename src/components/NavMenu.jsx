@@ -11,9 +11,12 @@ export default function NavMenu({ menuLinks }) {
       <div>
         <Menu.Button className="flex items-center rounded-full text-gray-400 focus:outline-none">
           <span className="sr-only">Open menu</span>
-          <span class="space-y-1.5" aria-hidden="true">
+          <span className="m-4 space-y-1.5" aria-hidden="true">
             {[1, 2, 3].map((i) => (
-              <span class="mr-4 block h-0.5 w-6 rounded bg-gray-900 focus:bg-gray-600" />
+              <span
+                key={i}
+                className="block h-0.5 w-6 rounded bg-gray-900 focus:bg-gray-600"
+              />
             ))}
           </span>
         </Menu.Button>
@@ -30,10 +33,11 @@ export default function NavMenu({ menuLinks }) {
       >
         <Menu.Items className="absolute right-3 z-10 mt-2 w-24 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
-            {menuLinks.map(({ url, title }) => (
+            {menuLinks.map(({ url, title }, i) => (
               <Menu.Item>
                 {({ active }) => (
                   <a
+                    key={i}
                     href={url}
                     className={classNames(
                       active ? "bg-gray-100 text-gray-900" : "text-gray-700",
