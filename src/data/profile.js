@@ -13,11 +13,12 @@ const profile = {
   name: "Max Elbo",
   email: "hello.maxelbo@gmail.com",
   currentCompany: "Deloitte",
-  currentRole: "a Frontend Developer",
+  currentRole: "Designer / Developer",
   currentLocation: "Tokyo, Japan",
   timelineData: [
     {
       company: "Deloitte",
+      title: "Deloitte Tohmatsu Consulting",
       logo: "/assets/about/logo-deloitte.webp",
       date: "2020 - present",
       place: "Tokyo, Japan",
@@ -38,6 +39,7 @@ const profile = {
     },
     {
       company: "Amplifier",
+      title: "AMP",
       logo: "/assets/about/logo-amp.webp",
       date: "2018 - 2020",
       place: "Tokyo, Japan",
@@ -49,6 +51,7 @@ const profile = {
     },
     {
       company: "JWT Dubai",
+      title: "J. Walter Thompson Dubai",
       logo: "/assets/about/logo-jwt.webp",
       date: "2016 - 2017",
       place: "Dubai, UAE",
@@ -66,6 +69,7 @@ const profile = {
     },
     {
       company: "Elborium",
+      title: "Elborium",
       logo: "/assets/about/logo-elborium.webp",
       date: "2013 - 2016",
       place: "Argentina - Mexico - Chile",
@@ -87,6 +91,7 @@ const profile = {
     },
     {
       company: "BBDO",
+      title: "BBDO Argentina",
       logo: "/assets/about/logo-bbdo.webp",
       date: "2012 - 2013",
       place: "Vicente López, Argentina",
@@ -98,13 +103,14 @@ const profile = {
     },
     {
       company: "Ogilvy",
+      title: "Ogilvy & Mather Argentina",
       logo: "/assets/about/logo-ogilvy.webp",
       date: "2011 - 2012",
       place: "Buenos Aires, Argentina",
       direction: "dir-l",
       description:
         "I started my career working as a Junior Art Director at Ogilvy & Mather Argentina. I did my first TV commercial here, and I won my first awards, including a silver lion at Cannes.",
-      clients: ["Tang", "AMIA"],
+      clients: ["Tang", "AMIA", "Mr. Muscle"],
       skills: ["Art Direction"],
     },
   ],
