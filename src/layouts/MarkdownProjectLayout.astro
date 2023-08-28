@@ -1,10 +1,14 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 
+const projectListTitle = "More Work";
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout pageTitle={frontmatter.displayTitle}>
+<PortfolioLayout
+  pageTitle={frontmatter.displayTitle}
+  projectListTitle={projectListTitle}
+>
   <article class="mx-auto mb-8 max-w-3xl text-center">
     <div class="pb-4">
       <h1>{frontmatter.displayTitle}</h1>
@@ -27,5 +31,4 @@ const { frontmatter } = Astro.props;
     />
     <hr />
   </article>
-  <h2 class="mt-16">More Work</h2>
-</BaseLayout>
+</PortfolioLayout>
