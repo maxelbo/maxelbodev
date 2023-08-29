@@ -1,21 +1,28 @@
 ---
 import Card from "@/components/Card.astro";
 
-const posts = await Astro.glob("../pages/projects/*.mdx");
-posts.sort((a, b) => {
-  return a.frontmatter.order - b.frontmatter.order;
-});
+const { projectListTitle } = Astro.props;
+const { projects } = Astro.props;
 ---
 
-<section class="flex flex-wrap justify-center">
-  {
-    posts.map((project) => (
-      <Card
-        title={project.frontmatter.title}
-        displayTitle={project.frontmatter.displayTitle}
-        url={project.url}
-        description={project.frontmatter.description}
-      />
-    ))
-  }
+<section>
+  {projectListTitle && <h2 class="mt-16 capitalize">{projectListTitle}</h2>}
+  <div class="flex flex-wrap justify-center">
+    {
+      projects.length !== 0 ? (
+        projects.map((project) => (
+          <Card
+            title={project.frontmatter.title}
+            displayTitle={project.frontmatter.displayTitle}
+            url={project.url}
+            description={project.frontmatter.description}
+          />
+        ))
+      ) : (
+        <span class="m-4 text-gray-700">
+          Coming soon…
+        </span>
+      )
+    }
+  </div>
 </section>
