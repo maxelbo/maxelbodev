@@ -11,9 +11,10 @@ pubProjects.sort((a, b) => {
 });
 
 const { pageTitle } = Astro.props;
+const { projectListTitle } = Astro.props;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <slot />
-  <ProjectsList projects={pubProjects} />
+  <ProjectsList projectListTitle={projectListTitle} projects={pubProjects} />
 </BaseLayout>
