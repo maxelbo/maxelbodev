@@ -4,6 +4,7 @@ import Post from "@/components/Post.astro";
 import Pagination from "@/components/Pagination.astro";
 
 const pageTitle = "Blog";
+const projectListTitle = "My Work";
 
 export async function getStaticPaths({ paginate }) {
   // Fetch all posts
@@ -21,7 +22,7 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 ---
 
-<PortfolioLayout pageTitle={pageTitle}>
+<PortfolioLayout pageTitle={pageTitle} projectListTitle={projectListTitle}>
   <section>
     <h1>This Is a {pageTitle} of Sorts</h1>
 
@@ -33,6 +34,4 @@ const { page } = Astro.props;
     <!-- Pagination -->
     <Pagination page={page} />
   </section>
-
-  <h2 class="mt-16 capitalize">This is my work</h2>
 </PortfolioLayout>
