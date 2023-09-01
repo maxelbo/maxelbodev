@@ -16,26 +16,31 @@ const menuLinks = [
   //   title: "Work",
   // },
 ];
-// const pathname = Astro.url.pathname;
 ---
 
-<header class="sm:mb-4">
-  <div class="flex flex-row items-center justify-between space-x-14 sm:block">
-    <Logo />
-    <NavMenu menuLinks={menuLinks} client:load />
+<header class="w-full fixed top-0 right-0 left-0 bg-white z-50" >
+  <div class="p-0 sm:px-4 mx-auto sm:flex sm:flex-wrap sm:justify-between max-w-4xl">
+    <div class="flex flex-row flex-1 items-center justify-between space-x-14 gap-0">
+      <Logo />
+      <NavMenu menuLinks={menuLinks} client:load />
+    </div>
+    <nav
+      id="nav"
+      style="width:100%;max-width:100%;"
+      class="top-20 right-8 hidden flex-row justify-center space-y-0 space-x-8 border-none px-1 py-4 text-lg text-gray-600 shadow-none ring-0 ring-black ring-opacity-5 focus:outline-none sm:flex transition-all duration-75 min-w-fit"
+    >
+      {
+        menuLinks.map(({ url, title }) => (
+          <a
+            class="text-gray-600 no-underline hover:text-gray-800 hover:underline"
+            href={url}
+          >
+            {title}
+          </a>
+        ))
+      }
+    </nav>
   </div>
-  <nav
-    class="top-20 right-8 hidden flex-row justify-center space-y-0 space-x-8 border-none p-4 text-lg text-gray-600 shadow-none ring-0 ring-black ring-opacity-5 focus:outline-none sm:flex"
-  >
-    {
-      menuLinks.map(({ url, title }) => (
-        <a
-          class="text-gray-600 no-underline hover:text-gray-800 hover:underline"
-          href={url}
-        >
-          {title}
-        </a>
-      ))
-    }
-  </nav>
 </header>
+
+<script src="@/scripts/header"></script>
