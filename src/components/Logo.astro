@@ -1,8 +1,25 @@
 ---
+// import { Image } from "astro:assets";
+
 import profile from "@/data/profile";
 ---
 
-<a href="/" id="logo" style="width:100%;" class="relative flex mr-auto justify-center transition-all duration-75">
-  <img id="logo-img" alt="logo" src="/logo.png" width="400" height="100" class="p-4 sm:justify-center duration-75" />
-  <span id="logo-subtitle" class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-sm italic text-gray-500 sm:mx-auto opacity-100 transition-all duration-75"></span>
+<a
+  href="/"
+  id="logo"
+  style="width:100%;"
+  class="relative mr-auto flex justify-center transition-all duration-75"
+>
+  <img
+    id="logo-img"
+    alt="logo"
+    src="/logo.webp"
+    width="400"
+    height="100"
+    class="p-4 duration-75 sm:justify-center"
+  />
+  <span
+    id="logo-subtitle"
+    class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-sm italic text-gray-500 opacity-100 transition-all duration-75 sm:mx-auto"
+  ></span>
 </a>
