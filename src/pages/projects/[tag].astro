@@ -1,6 +1,7 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import Card from "@/components/Card.astro";
+import TagsLayout from "@/layouts/TagsLayout.astro";
+import ProjectsList from "@/components/ProjectsList.astro";
+import { dekebabize } from "@/scripts/tagActions";
 
 export async function getStaticPaths() {
   const allPosts = await Astro.glob("./*.mdx");
@@ -10,12 +11,15 @@ export async function getStaticPaths() {
   ];
 
   return uniqueTags.map((tag) => {
-    const filteredPosts = allPosts.filter((post) =>
+    const filteredProjects = allPosts.filter((post) =>
       post.frontmatter.tags.includes(tag)
+    );
+    const pubProjects = filteredProjects.filter(
+      (post) => !post.frontmatter.private
     );
     return {
       params: { tag },
-      props: { posts: filteredPosts },
+      props: { posts: pubProjects },
     };
   });
 }
@@ -24,18 +28,9 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 
-<BaseLayout pageTitle={tag}>
-  <h2 class="mb-8">Projects tagged with {tag}</h2>
-  <div class="flex flex-wrap justify-center">
-    {
-      posts.map((project: any) => (
-        <Card
-          title={project.frontmatter.title}
-          url={project.url}
-          description={project.frontmatter.description}
-        />
-      ))
-    }
-  </div>
-  <h2 class="mt-10">All Projects</h2>
-</BaseLayout>
+<TagsLayout pageTitle={dekebabize(tag)}>
+  <ProjectsList
+    projectListTitle={`${dekebabize(tag)} projects`}
+    projects={posts}
+  />
+</TagsLayout>
