@@ -2,26 +2,27 @@
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 
 const pageTitle = "404";
-const projectListTitle = "My Work";
+// const projectListTitle = "My Work";
 ---
 
-<PortfolioLayout pageTitle={pageTitle} >
+<PortfolioLayout {pageTitle}>
   <section class="my-4 sm:mt-0 sm:mb-8">
     <h1>Sorry,</h1>
     <p class="text-lg font-bold">
-      <span>You hit a</span>
-    <span
-      id="counter"
-      data-from="0"
-      data-to={pageTitle}
-      data-speed="1"
-      class="text-gray-400">0</span
-    ><span>.</span>
-      </p>
-    <h6 class="text-gray-500 text-sm">This page doesn't exist,<br/>
-    but you know what does?</h6>
+      <span class="mr-2">You hit a</span>
+      <span
+        id="counter"
+        data-from="0"
+        data-to={pageTitle}
+        data-speed="1"
+        class="text-gray-400">0</span
+      ><span>.</span>
+    </p>
+    <h6 class="text-sm text-gray-500">
+      This page doesn't exist,<br />
+      but you know what does?
+    </h6>
     <h1>My Work</h1>
-
   </section>
 </PortfolioLayout>
 
