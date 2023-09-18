@@ -34,10 +34,9 @@ export default function NavMenu({ menuLinks }) {
         <Menu.Items className="absolute right-3 z-10 mt-2 w-24 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
             {menuLinks.map(({ url, title }, i) => (
-              <Menu.Item>
+              <Menu.Item key={i}>
                 {({ active }) => (
                   <a
-                    key={i}
                     href={url}
                     className={classNames(
                       active ? "bg-gray-100 text-gray-900" : "text-gray-700",
