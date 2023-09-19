@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 const { title, displayTitle, url, description } = Astro.props;
 ---
 
@@ -7,7 +9,7 @@ const { title, displayTitle, url, description } = Astro.props;
   href={url}
   class="group/card m-4 text-gray-700 transition hover:text-gray-500 hover:no-underline focus:text-gray-500"
 >
-  <img
+  <Image
     alt={`${title} card`}
     src={`/assets/cards/card-${title}.png`}
     width="252"
@@ -15,7 +17,7 @@ const { title, displayTitle, url, description } = Astro.props;
     loading="lazy"
     class="shadow-md group-hover/card:-translate-y-0.5 group-hover/card:scale-[1.01] group-hover/card:shadow-lg group-hover/card:transition group-hover/card:delay-150 group-hover/card:ease-out group-active/card:shadow-lg"
   />
-  <div class="mt-1 text-center">
+  <div class="mt-1 text-center" transition:name={displayTitle}>
     <h3>{displayTitle}</h3>
     <p class="-mt-1 italic text-gray-400">
       &mdash;{description}&mdash;
