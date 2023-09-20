@@ -1,17 +1,21 @@
 ---
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+
+import { Image } from "astro:assets";
+
 import Intro from "@/components/Intro.astro";
 import Accordion from "@/components/Accordion.jsx";
 import Timeline from "@/components/Timeline.astro";
+
 const pageTitle = "About";
 const projectListTitle = "My Work";
 
 import profile from "@/data/profile";
 ---
 
-<PortfolioLayout pageTitle={pageTitle} projectListTitle={projectListTitle}>
+<PortfolioLayout {pageTitle} {projectListTitle}>
   <section class="mx-auto max-w-full">
-    <img
+    <Image
       alt="head image"
       src="/assets/about/head-now.jpg"
       width={1904}
@@ -35,7 +39,7 @@ import profile from "@/data/profile";
           </Accordion>
         </div>
         <div>
-          <Accordion title="Awards"  client:load>
+          <Accordion title="Awards" client:load>
             <div class="my-4 space-y-4">
               {
                 profile.creativeAwards.map(({ title, awards }) => (
@@ -53,7 +57,7 @@ import profile from "@/data/profile";
           </Accordion>
         </div>
         <div>
-          <Accordion title="Exhibitions"  client:load>
+          <Accordion title="Exhibitions" client:load>
             <div class="my-4 space-y-4">
               {
                 profile.exhibitions.map((exhibition) => (
@@ -65,11 +69,11 @@ import profile from "@/data/profile";
         </div>
       </section>
     </div>
-    <img
+    <Image
       alt="shoes image"
       src="/assets/about/shoes.jpg"
-      width="1340"
-      height="309"
+      width={1340}
+      height={309}
       class="my-8 mx-auto w-4/5 sm:w-6/12"
     />
   </section>
