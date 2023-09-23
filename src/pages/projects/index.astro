@@ -1,18 +1,15 @@
 ---
 import TagsLayout from "@/layouts/TagsLayout.astro";
-import ProjectsList from "@/components/ProjectsList.astro";
+import ProjectList from "@/components/ProjectList.astro";
 
 const pageTitle = "More Work";
 const allProjects = await Astro.glob("./*.mdx");
-const pubProjects = allProjects.filter((project) => {
+const projects = allProjects.filter((project) => {
   return !project.frontmatter.private;
 });
-// pubProjects.sort((a, b) => {
-//   return a.frontmatter.order - b.frontmatter.order;
-// });
 ---
 
 <TagsLayout pageTitle={pageTitle}>
   <h2 class="mb-8 capitalize">all projects</h2>
-  <ProjectsList projects={pubProjects} />
+  <ProjectList {projects} />
 </TagsLayout>

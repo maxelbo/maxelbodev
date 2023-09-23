@@ -1,11 +1,10 @@
 ---
 import Card from "@/components/Card.astro";
 
-const { projectListTitle } = Astro.props;
-const { projects } = Astro.props;
+const { projectListTitle, projects } = Astro.props;
 ---
 
-<section>
+<section transition:name="ProjectList">
   {projectListTitle && <h2 class="mt-16 capitalize">{projectListTitle}</h2>}
   <div class="flex flex-wrap justify-center">
     {
@@ -19,9 +18,7 @@ const { projects } = Astro.props;
           />
         ))
       ) : (
-        <span class="m-4 text-gray-700">
-          Coming soon…
-        </span>
+        <span class="m-4 text-gray-700">Coming soon…</span>
       )
     }
   </div>

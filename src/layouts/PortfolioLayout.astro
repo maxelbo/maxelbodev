@@ -1,20 +1,19 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import ProjectsList from "@/components/ProjectsList.astro";
+import ProjectList from "@/components/ProjectList.astro";
 
 const allProjects = await Astro.glob("../pages/projects/*.mdx");
-const pubProjects = allProjects.filter((project) => {
+const projects = allProjects.filter((project) => {
   return !project.frontmatter.archived && !project.frontmatter.private;
 });
-pubProjects.sort((a, b) => {
+projects.sort((a, b) => {
   return a.frontmatter.order - b.frontmatter.order;
 });
 
-const { pageTitle } = Astro.props;
-const { projectListTitle } = Astro.props;
+const { pageTitle, frontmatter, projectListTitle } = Astro.props;
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout {pageTitle} {frontmatter}>
   <slot />
-  <ProjectsList projectListTitle={projectListTitle} projects={pubProjects} />
+  <ProjectList {projectListTitle} {projects} />
 </BaseLayout>
