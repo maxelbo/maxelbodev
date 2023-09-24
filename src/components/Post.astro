@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import YTiframe from "@/components/YTiframe.astro";
 
 const { post } = Astro.props;
@@ -8,8 +9,13 @@ const { post } = Astro.props;
   <div class="space-y-4">
     {
       post.frontmatter.img.length > 0 &&
-        post.frontmatter.img.map((src: string) => (
-          <img src={src} alt={post.frontmatter.title} loading="lazy" />
+        post.frontmatter.img.map((src: any) => (
+          <Image
+            src={src}
+            alt={post.frontmatter.title}
+            width={600}
+            height={300}
+          />
         ))
     }
 
