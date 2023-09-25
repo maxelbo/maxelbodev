@@ -46,7 +46,12 @@ const profile = {
       direction: "dir-l",
       description:
         "I moved to Japan and worked at Amplifier, a design studio in Tokyo. Here, I got to learn new skills, like motion graphics and 3D modeling.",
-      clients: ["Tokyo National Museum", "Dentsu Tec", "MullenLowe Japan"],
+      clients: [
+        "Tokyo National Museum",
+        "KDDI Museum",
+        "Dentsu Tec",
+        "MullenLowe Japan",
+      ],
       skills: ["Illustration", "Animation", "Web Design"],
     },
     {
@@ -91,10 +96,10 @@ const profile = {
     },
     {
       company: "BBDO",
-      title: "BBDO Argentina",
+      title: "BBDO Buenos Aires",
       logo: "/assets/about/logo-bbdo.webp",
       date: "2012 - 2013",
-      place: "Vicente López, Argentina",
+      place: "Buenos Aires, Argentina",
       direction: "dir-r",
       description:
         "I moved to BBDO as an Art Director, and had the chance to work with PepsiCo brands.",
