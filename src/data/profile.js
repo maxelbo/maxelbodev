@@ -203,7 +203,7 @@ const profile = {
   exhibitions: [
     "2016 - Art Stgo, GAM, Santiago, Chile",
     "2016 - Solo Exhibition, Biblioteca Viva Sur, Santiago, Chile",
-    "2016 - Dē Rādīcibus —a show with my siblings—, Biblioteca Viva Tobalaba, Santiago, Chile",
+    "2016 - De Radícibus—a show with my siblings, Biblioteca Viva Tobalaba, Santiago, Chile",
     "2015 - Solo Exhibition, Biblioteca Viva Norte, Santiago, Chile",
     "2015 - Café con Cuento, Galería Escaparate, Valparaíso, Chile",
     "2010 - Solo Exhibition, Centro Cultural Belleasco, Buenos Aires, Argentina",
