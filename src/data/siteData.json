@@ -1,8 +1,11 @@
 {
   "title": "Elborium",
+  "logo": "logo.webp",
   "description": "I'm Max Elbo, a designer / developer, and this is my portfolio.",
   "image": {
     "src": "logo.webp",
     "alt": "Elborium"
-  }
+  },
+  "city": "Tokyo",
+  "country": "Japan"
 }
