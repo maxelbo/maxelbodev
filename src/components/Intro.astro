@@ -1,32 +1,46 @@
 ---
-const currentInfo = true;
+const currentInfo = false;
+const socialMedia = false;
 
 const { profile } = Astro.props;
+const { siteData } = profile;
 ---
 
 <section>
   <p class="font-bold">Hi,</p>
-  <p>{`I'm ${profile.name}.`}</p>
+  <p>{`I'm ${siteData.author}.`}</p>
   <p>
-    <!-- I'm a
-    <strong>{profile.currentRole}</strong>
+    I'm a
+    <strong>{siteData.role}</strong>
     <br class="block sm:hidden" />
     based in
-    {profile.currentLocation}. -->
+    {siteData.city}, {siteData.country}.
     {
       currentInfo && (
         <p>
           I'm currently working at
-          <strong>{profile.currentCompany}</strong>
+          <strong>{siteData.company}</strong>
           <br class="block sm:hidden" />
           in
-          {profile.currentLocation}.
+          {siteData.city}, {siteData.country}.
         </p>
       )
     }
     <p>
       You can contact me
-      <a class="underline" href=`mailto:${profile.email}`>here</a>.
+      <a class="underline" href=`mailto:${siteData.email}`>here</a>.
     </p>
+    {
+      socialMedia && (
+        <div class="flex justify-center gap-4">
+          <a href={siteData.social.linkedin}>
+            <i class="fab fa-linkedin-in text-gray-400" />
+          </a>
+          <a href={siteData.social.github}>
+            <i class="fa-brands fa-github text-gray-400" />
+          </a>
+        </div>
+      )
+    }
   </p>
 </section>
