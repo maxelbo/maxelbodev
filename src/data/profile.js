@@ -1,20 +1,33 @@
-function getAge(dateString = "1988/07/25") {
-  let today = new Date();
-  const birthDate = new Date(dateString);
-  let age = today.getFullYear() - birthDate.getFullYear();
-  const m = today.getMonth() - birthDate.getMonth();
-  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-    age--;
-  }
-  return age;
-}
+import { getAge } from "@/scripts/profileActions";
 
 const profile = {
-  name: "Max Elbo",
-  email: "hello.maxelbo@gmail.com",
-  currentCompany: "Deloitte",
-  currentRole: "Designer / Developer",
-  currentLocation: "Tokyo, Japan",
+  siteData: {
+    siteName: "Elborium",
+    title: "Max Elbo | Developer & Designer",
+    description:
+      "I am Max Elbo, a digital craftsman, forging apps with the mighty hammers of CSS and JavaScript. Embark on a journey through my portfolio, where every pixel is meticulously chiseled into digital artifacts.",
+    keywords: [
+      "max elbo",
+      "front end developer, ui ux designer",
+      "javascript, js node, react",
+    ],
+    author: "Max Elbo",
+    role: "Designer / Developer",
+    company: "Deloitte",
+    city: "Tokyo",
+    country: "Japan",
+    email: "hello.maxelbo@gmail.com",
+    logo: "logo.webp",
+    url: "https://elborium.com",
+    social: {
+      github: "https://www.github.com/maxelbo/",
+      linkedin: "https://www.linkedin.com/in/maxelbo/",
+    },
+    image: {
+      src: "logo.webp",
+      alt: "Elborium",
+    },
+  },
   timelineData: [
     {
       company: "Deloitte",
@@ -24,7 +37,7 @@ const profile = {
       place: "Tokyo, Japan",
       direction: "dir-r",
       description:
-        "I currently work in the marketing division at Deloitte Consulting, doing frontend development. I've worked on corporate websites, and CRM apps to help the Japanese Government improve its DX.",
+        "I currently work at Deloitte Consulting, doing frontend development. I've worked on corporate websites, and CRM apps to help the Japanese Government improve its DX.",
       // clients: [
       //   "Tokyo",
       //   "Shibuya",
@@ -62,7 +75,7 @@ const profile = {
       place: "Dubai, UAE",
       direction: "dir-r",
       description:
-        "I moved to Dubai and worked as an Art Director at J. Walter Thompson (not JSON Web Token). I won more awards, including a Grand Prix at the Dubai Lynx.",
+        "I moved to Dubai and worked as an Art Director at JWT (J. Walter Thompson, not JSON Web Token). I won more awards, including a Grand Prix at the Dubai Lynx.",
       clients: [
         "Coca-Cola",
         "Kraft",
