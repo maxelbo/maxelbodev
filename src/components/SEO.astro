@@ -3,7 +3,7 @@ import profile from "@/data/profile.js";
 import jsonLDGenerator from "@/scripts/jsonLD.js";
 
 const {
-  title,
+  pageTitle,
   description,
   url = Astro.url,
   image,
@@ -24,7 +24,7 @@ const jsonLD = jsonLDGenerator({
 
 <!-- Open Graph -->
 <meta property="og:site_name" content={siteData.siteName} />
-<meta property="og:title" content={title} />
+<meta property="og:title" content={pageTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={url} />
 <meta property="og:image" content={image?.src || siteData.image.src} />
@@ -39,11 +39,11 @@ const jsonLD = jsonLDGenerator({
 <meta property="og:image:alt" content={image?.alt || siteData.image.alt} />
 
 <!-- X -->
-<meta name="twitter:title" content={title} />
+<meta name="twitter:title" content={pageTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content={image?.src || siteData.image.src} />
-<meta name="twitter:image:alt" content={title} />
+<meta name="twitter:image:alt" content={pageTitle} />
 <meta name="twitter:domain" content={import.meta.env.SITE} />
 
 {robots && <meta name="robots" content="noindex, nofollow" />}
