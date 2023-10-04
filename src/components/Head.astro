@@ -1,8 +1,12 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import { capitalize } from "@/scripts/tagActions";
+import SEO from "@/components/SEO.astro";
 
-const { pageTitle } = Astro.props;
+import profile from "@/data/profile.js";
+const { siteData } = profile;
+
+const { pageTitle, image, frontmatter, robots } = Astro.props;
 ---
 
 <head>
@@ -10,24 +14,35 @@ const { pageTitle } = Astro.props;
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width" />
   <title>Elborium{pageTitle && ` - ${capitalize(pageTitle)}`}</title>
-  <meta
-    name="description"
-    content="Hi, I'm Max Elbo, and this is my portfolio."
+  <meta name="description" content={siteData.description} />
+
+  <!-- SEO -->
+  <SEO
+    {pageTitle}
+    description={siteData.description}
+    url={Astro.url}
+    {image}
+    {frontmatter}
+    {robots}
   />
-  <meta name="author" content="Max Elbo" />
+  <meta name="author" content={siteData.author} />
   <meta name="generator" content={Astro.generator} />
-  <meta
-    name="keywords"
-    content="illustration, frontend development, web design"
-  />
-  <!-- Font -->
+  <meta name="keywords" content={siteData.keywords.join(", ")} />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="preload"
+    as="style"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet"
   />
-  <!-- Google tag (gtag.js) -->
+
+  <!-- Google Tag (gtag.js) -->
   <script
     async
     type="text/partytown"
@@ -42,5 +57,6 @@ const { pageTitle } = Astro.props;
 
     gtag("config", "G-GE5E4YE6YL");
   </script>
+
   <ViewTransitions />
 </head>
