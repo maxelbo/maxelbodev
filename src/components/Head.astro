@@ -18,7 +18,7 @@ const { pageTitle, image, frontmatter, robots } = Astro.props;
 
   <!-- SEO -->
   <SEO
-    {pageTitle}
+    pageTitle={siteData.title}
     description={siteData.description}
     url={Astro.url}
     {image}
