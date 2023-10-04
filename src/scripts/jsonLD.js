@@ -1,4 +1,6 @@
-import siteData from "@/data/siteData.json";
+import profile from "@/data/profile";
+
+const { siteData } = profile;
 
 export default function jsonLDGenerator(type, project, url) {
   if (type === "project") {
@@ -19,7 +21,7 @@ export default function jsonLDGenerator(type, project, url) {
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "${siteData.city}",
-            "addressCountry": "${siteData.countrty}"
+            "addressCountry": "${siteData.country}"
           }
         },
       }
@@ -36,7 +38,7 @@ export default function jsonLDGenerator(type, project, url) {
        "address": {
           "@type": "PostalAddress",
           "addressLocality": "${siteData.city}",
-          "addressCountry": "${siteData.countrty}"
+          "addressCountry": "${siteData.country}"
         }
       }
     </script>`;
