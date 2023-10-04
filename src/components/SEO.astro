@@ -1,5 +1,5 @@
 ---
-import siteData from "@/data/siteData.json";
+import profile from "@/data/profile.js";
 import jsonLDGenerator from "@/scripts/jsonLD.js";
 
 const {
@@ -10,6 +10,7 @@ const {
   frontmatter,
   robots,
 } = Astro.props;
+const { siteData } = profile;
 
 const jsonLD = jsonLDGenerator({
   type: frontmatter ? "project" : "portfolio",
