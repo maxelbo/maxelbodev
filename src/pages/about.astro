@@ -1,31 +1,31 @@
 ---
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
-
-import { Image } from "astro:assets";
-
 import Intro from "@/components/Intro.astro";
 import Accordion from "@/components/Accordion.jsx";
 import Timeline from "@/components/Timeline.astro";
 
+import { Image } from "astro:assets";
+import headImage from "~/public/assets/about/head.webp";
+import shoesImage from "~/public/assets/about/shoes.webp";
+
+import profile from "@/data/profile.js";
+
 const pageTitle = "About";
 const projectListTitle = "My Work";
-
-import profile from "@/data/profile";
 ---
 
 <PortfolioLayout {pageTitle} {projectListTitle}>
   <section class="mx-auto max-w-full">
     <Image
       alt="head image"
-      src="/assets/about/head-now.jpg"
-      width={1904}
-      height={354}
+      src={headImage}
+      loading="eager"
       class="mx-auto mb-2 w-4/5 sm:mb-4 sm:w-3/5"
     />
     <div class="mx-auto max-w-3xl space-y-12 px-8 text-center">
-      <Intro profile={profile} />
+      <Intro {profile} />
       <!-- Load open eye -->
-      <img src="/assets/about/eye-open.png" class="hidden" />
+      <img src="/assets/about/eye-open.webp" class="hidden" />
       <section class="flex flex-col items-center space-y-12">
         <div>
           <Accordion title="Career" client:load>
@@ -71,10 +71,8 @@ import profile from "@/data/profile";
     </div>
     <Image
       alt="shoes image"
-      src="/assets/about/shoes.jpg"
-      width={1340}
-      height={309}
-      class="my-8 mx-auto w-4/5 sm:w-6/12"
+      src={shoesImage}
+      class="mx-auto my-8 w-4/5 sm:w-7/12"
     />
   </section>
 </PortfolioLayout>
