@@ -60,13 +60,13 @@ article hr {
 
 /* Accordion */
 .accordion-title[aria-expanded="false"]::before {
-  content: url(/assets/about/eye-closed.png);
+  content: url(/assets/about/eye-closed.webp);
   position: absolute;
   right: var(--accordion-icon-space);
 }
 
 .accordion-title[aria-expanded="false"]::after {
-  content: url(/assets/about/eye-closed.png);
+  content: url(/assets/about/eye-closed.webp);
   transform: scaleX(-1);
   position: absolute;
   top: 0;
@@ -74,13 +74,13 @@ article hr {
 }
 
 .accordion-title[aria-expanded="true"]::before {
-  content: url(/assets/about/eye-open.png);
+  content: url(/assets/about/eye-open.webp);
   position: absolute;
   right: var(--accordion-icon-space);
 }
 
 .accordion-title[aria-expanded="true"]::after {
-  content: url(/assets/about/eye-open.png);
+  content: url(/assets/about/eye-open.webp);
   transform: scaleX(-1);
   position: absolute;
   top: 0;
