@@ -18,14 +18,17 @@ const { earlyLife } = Astro.props;
             <div class="flag-wrapper relative inline-block">
               {item.logo && (
                 <Image
-                  src={item.logo}
+                  src={`/assets/about/career/logo-${item.logo}.webp`}
                   alt="logo"
                   width={32}
                   height={32}
                   class="timeline-logo absolute -top-12 left-[50%] z-20 -ml-4 rounded-full bg-black md:-top-2 md:-ml-5 md:h-10 md:w-10"
                 />
               )}
-              <span class="flag relative z-10 inline rounded bg-black py-1 px-2 text-left font-semibold text-white shadow-sm" title={item.title}>
+              <span
+                class="flag relative z-10 inline rounded bg-black py-1 px-2 text-left font-semibold text-white shadow-sm"
+                title={item.title}
+              >
                 {item.company}
               </span>
               <div class="details-wrapper">
