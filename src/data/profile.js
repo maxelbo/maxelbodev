@@ -5,7 +5,7 @@ const profile = {
     siteName: "Elborium",
     title: "Max Elbo | Developer & Designer",
     description:
-      "I am Max Elbo, a digital craftsman, forging apps with the mighty hammers of CSS and JavaScript. Embark on a journey through my portfolio, where every pixel is meticulously chiseled into digital artifacts.",
+      "Hi, I am Max Elbo, a digital craftsman, forging apps with the mighty hammers of CSS and JavaScript. Embark on a journey through my portfolio, where every pixel is meticulously chiseled into digital artifacts.",
     keywords: [
       "max elbo",
       "front end developer, ui ux designer",
@@ -32,12 +32,12 @@ const profile = {
     {
       company: "Deloitte",
       title: "Deloitte Tohmatsu Consulting",
-      logo: "/assets/about/logo-deloitte.webp",
+      logo: "deloitte",
       date: "2020 - present",
       place: "Tokyo, Japan",
       direction: "dir-r",
       description:
-        "I currently work at Deloitte Consulting, doing frontend development. I've worked on corporate websites, and CRM apps to help the Japanese Government improve its DX.",
+        "I am currently working at Deloitte Consulting, doing frontend development. I've worked on corporate websites, and CRM apps to help the Japanese Government improve its DX.",
       // clients: [
       //   "Tokyo",
       //   "Shibuya",
@@ -51,44 +51,46 @@ const profile = {
       skills: ["Frontend Development", "Design", "Illustration"],
     },
     {
-      company: "Amplifier",
+      company: "AMP",
       title: "AMP",
-      logo: "/assets/about/logo-amp.webp",
+      logo: "amp",
       date: "2018 - 2020",
       place: "Tokyo, Japan",
       direction: "dir-l",
       description:
-        "I moved to Japan and worked at Amplifier, a design studio in Tokyo. Here, I got to learn new skills, like motion graphics and 3D modeling.",
+        "I moved to Japan and worked at AMPlifier, a design studio in Tokyo. Here, I got to learn new skills, like motion graphics and 3D modeling.",
       clients: [
         "Tokyo National Museum",
         "KDDI Museum",
         "Dentsu Tec",
+        "MullenLowe Dubai",
         "MullenLowe Japan",
+        "VMLY&R France",
       ],
       skills: ["Illustration", "Animation", "Web Design"],
     },
     {
       company: "JWT Dubai",
       title: "J. Walter Thompson Dubai",
-      logo: "/assets/about/logo-jwt.webp",
+      logo: "jwt",
       date: "2016 - 2017",
       place: "Dubai, UAE",
       direction: "dir-r",
       description:
-        "I moved to Dubai and worked as an Art Director at JWT (J. Walter Thompson, not JSON Web Token). I won more awards, including a Grand Prix at the Dubai Lynx.",
+        "I moved to Dubai and worked as an Art Director at JWT (J. Walter Thompson, not JSON Web Token). I won some awards, including a Grand Prix at the Dubai Lynx.",
       clients: [
         "Coca-Cola",
-        "Kraft",
         "Kenwood",
         "Kinokuniya",
         "Philadelphia Cream Cheese",
+        "Kraft",
       ],
       skills: ["Art Direction", "Illustration"],
     },
     {
       company: "Elborium",
       title: "Elborium",
-      logo: "/assets/about/logo-elborium.webp",
+      logo: "elborium",
       date: "2013 - 2016",
       place: "Argentina - Mexico - Chile",
       direction: "dir-l",
@@ -110,7 +112,7 @@ const profile = {
     {
       company: "BBDO",
       title: "BBDO Buenos Aires",
-      logo: "/assets/about/logo-bbdo.webp",
+      logo: "bbdo",
       date: "2012 - 2013",
       place: "Buenos Aires, Argentina",
       direction: "dir-r",
@@ -122,7 +124,7 @@ const profile = {
     {
       company: "Ogilvy",
       title: "Ogilvy & Mather Argentina",
-      logo: "/assets/about/logo-ogilvy.webp",
+      logo: "ogilvy",
       date: "2011 - 2012",
       place: "Buenos Aires, Argentina",
       direction: "dir-l",
