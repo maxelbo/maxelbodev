@@ -1,0 +1,31 @@
+---
+layout: "../../layouts/MarkdownProjectLayout.astro"
+title: "nara"
+displayTitle: "Nara Prefecture"
+description: "CRM App"
+order: 0.1
+tags: ["all", "development"]
+archived: false
+private: false
+---
+
+I worked on a CRM app for **Nara Prefecture**. I did the frontend development and design.
+
+We started using Node.js, WebPack, Pug, SCSS, and JavaScript. Then we migrated to Salesforce LWC.
+
+I also did the illustrations for the hero image and the onboarding screens.
+
+---
+
+import { Image } from "astro:assets";
+import nara0 from "~/public/assets/projects/nara/nara-0.webp";
+
+<section>
+  <Image src={nara0} alt="nara0" />
+  <p>
+    You can visit the website here:
+    <a href="https://nsa.pref.nara.jp/ctz/landing" class="underline">
+      nsa.pref.nara.jp/ctz/
+    </a>
+  </p>
+</section>
