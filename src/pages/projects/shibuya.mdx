@@ -1,0 +1,32 @@
+---
+layout: "../../layouts/MarkdownProjectLayout.astro"
+title: "shibuya"
+displayTitle: "Shibuya"
+description: "CRM App"
+order: 0.3
+tags: ["all", "development"]
+archived: false
+private: false
+---
+
+I worked on a CRM app for people and businesses in Shibuya Ward in Tokyo.
+
+I did the frontend development, design, and illustration.
+
+---
+
+import { Image } from "astro:assets";
+import shibuya0 from "~/public/assets/projects/shibuya/shibuya-0.webp";
+
+<section>
+  <Image src={shibuya0} alt="shibuya0" />
+  <p>
+    You can visit the website here:
+    <a
+      href="https://dcp.city.shibuya.tokyo.jp/ctz/s/shibuya-myportal-introduction"
+      class="underline"
+    >
+      dcp.city.shibuya.tokyo.jp/ctz/
+    </a>
+  </p>
+</section>
