@@ -1,11 +1,44 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-// import Post from "@/components/Post.astro";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+import { Image } from "astro:assets";
+import YTiframe from "@/components/YTiframe.astro";
 
+const projectListTitle = "More Work";
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout pageTitle={frontmatter.displayTitle}>
+<PortfolioLayout pageTitle={frontmatter.title} {projectListTitle}>
+  <div class="space-y-4">
+    {
+      frontmatter.img.length > 0 &&
+        frontmatter.img.map((src: any) => (
+          <Image
+            src={src}
+            alt={frontmatter.title}
+            width={600}
+            height={300}
+            class="w-full"
+          />
+        ))
+    }
+    {
+      frontmatter.video && (
+        <YTiframe title={frontmatter.title} video={frontmatter.video} />
+      )
+    }
+  </div>
+
+  <div class="mx-4 my-4 max-w-3xl space-y-2 lg:mx-8">
+    {frontmatter.body && <p class="text-left">{frontmatter.body}</p>}
+
+    <p class="text-left text-sm text-gray-400">
+      {
+        new Intl.DateTimeFormat("en-US", {
+          dateStyle: "medium",
+        }).format(new Date(frontmatter.pubDate))
+      }
+    </p>
+  </div>
   <slot />
-  <h2 class="mt-16">More Work</h2>
-</BaseLayout>
+  <a href="javascript:history.back()" class="hover:underline">Back to Blog</a>
+</PortfolioLayout>
