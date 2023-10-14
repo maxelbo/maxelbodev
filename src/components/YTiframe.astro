@@ -1,12 +1,13 @@
 ---
-const { video } = Astro.props;
+const { title = "video", video, loading = "lazy" } = Astro.props;
 ---
 
 <div class="relative my-4 w-full overflow-hidden pt-[56.25%]">
   <iframe
-    class="absolute inset-0 h-full w-full last-of-type:pb-8"
+    title={title}
     src={`https://www.youtube.com/embed/${video}`}
+    class="absolute inset-0 h-full w-full last-of-type:pb-8"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen
-    loading="lazy"></iframe>
+    loading={loading}></iframe>
 </div>
