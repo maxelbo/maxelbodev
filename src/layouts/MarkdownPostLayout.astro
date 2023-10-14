@@ -3,6 +3,15 @@ import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 import { Image } from "astro:assets";
 import YTiframe from "@/components/YTiframe.astro";
 
+const backLing = () => {
+  window.history.length > 1 &&
+  document.referrer.indexOf(window.location.host) !== -1
+    ? history.back()
+    : (window.location.href = "/posts/1");
+};
+
+// href=`javascript:window.history.length > 1 && document.referrer.indexOf(window.location.host) !== -1 ? history.back() : window.location.href = "/posts/1";`
+
 const projectListTitle = "More Work";
 const { frontmatter } = Astro.props;
 ---
@@ -40,5 +49,27 @@ const { frontmatter } = Astro.props;
     </p>
   </div>
   <slot />
-  <a href="javascript:history.back()" class="hover:underline">Back to Blog</a>
+  <div
+    class="flex items-center justify-center border-t border-gray-200 px-4 text-xl sm:px-0 sm:text-lg"
+  >
+    <a
+      href="javascript:history.back()"
+      class="inline-flex cursor-pointer items-center border-t-2 border-transparent pr-1 pt-4 font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="h-6 w-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 19.5L8.25 12l7.5-7.5"></path>
+      </svg>
+      Back to Blog
+    </a>
+  </div>
 </PortfolioLayout>
