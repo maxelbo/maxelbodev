@@ -1,3 +1,3 @@
 # Elborium
 
-This is my portfolio on astro.build.
+This is my portfolio built with Astro, MDX, and React.
