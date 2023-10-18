@@ -1,51 +1,42 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { dekebabize } from "@/scripts/tagActions";
+import Tagbox from "@/components/Tagbox.jsx";
 
 const allPosts = await Astro.glob("../pages/projects/*.mdx");
-const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+const tagList = [
+  ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
+];
 
-const { pageTitle } = Astro.props;
+const { pageTitle, tag } = Astro.props;
 const pathname = Astro.url.pathname;
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout {pageTitle}>
   <h1 class="mb-8">More Work</h1>
   <section>
-    <div class="sm:hidden px-16">
-      <label for="tabs" class="sr-only">Select a tab</label>
-      <select 
-        id="tabs" name="tabs" class="block w-full rounded-md border border-gray-500 py-2 pl-3 pr-10 text-base focus:border-gray-500 focus:outline-none focus:ring-gray-500 sm:text-sm capitalize"
-        onchange="
-        this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);
-        ">
-          {
-            tags.map((tag) => (
-              <option
-                class="capitalize"
-                value={`/projects/${tag}`}
-                selected={pathname === `/projects/${tag}`}
-              >
-                {dekebabize(tag)}
-              </option>
-            ))
-          }
-      </select>
+    <div id="tagbox" class="px-14 sm:hidden">
+      <label for="tagbox" class="sr-only"> Select a tag</label>
+      <Tagbox {tag} {tagList} client:only="react" />
     </div>
     <div class="hidden sm:block">
-      <div class="isolate flex divide-x divide-gray-200 rounded-lg shadow" aria-label="Tabs">
+      <div
+        class="isolate flex divide-x divide-gray-200 rounded-lg shadow"
+        aria-label="Tabs"
+      >
         {
-          tags.map((tag) => (
+          tagList.map((tag) => (
             <a
-              class="text-gray-900 rounded-l-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10" 
+              class="group relative min-w-0 flex-1 overflow-hidden rounded-l-lg bg-white py-4 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-50 focus:z-10"
               aria-current={pathname === `/projects/${tag} ? "page" : "false"`}
               id={tag}
               href={`/projects/${tag}`}
             >
-              <span class="capitalize">
-                {dekebabize(tag)}
-              </span>
-              <span aria-hidden="true" class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"></span>
+              <span class="capitalize">{dekebabize(tag)}</span>
+              <span
+                aria-hidden="true"
+                class="absolute inset-x-0 bottom-0 h-0.5 bg-transparent"
+              />
             </a>
           ))
         }
