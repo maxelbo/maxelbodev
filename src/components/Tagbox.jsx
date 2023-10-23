@@ -4,12 +4,16 @@ import { Listbox, Transition } from "@headlessui/react";
 export default function Tagbox({ tag, tagList }) {
   const [selected, setSelected] = useState(tag);
 
+  function dekebabize(prop) {
+    return prop.split("-").join(" ");
+  }
+
   return (
     <div className="w-full">
       <Listbox value={selected} onChange={setSelected}>
         <div className="relative mt-1">
           <Listbox.Button className="relative h-12 w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
-            <span className="capitalize">{tag.split("-").join(" ")}</span>
+            <span className="capitalize">{dekebabize(tag)}</span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +53,7 @@ export default function Tagbox({ tag, tagList }) {
                     href={`/projects/${tagOption}`}
                     className="block truncate capitalize"
                   >
-                    {tagOption.split("-").join(" ")}
+                    {dekebabize(tagOption)}
                   </a>
                 </Listbox.Option>
               ))}
