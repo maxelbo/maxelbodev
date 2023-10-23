@@ -17,7 +17,7 @@ const pathname = Astro.url.pathname;
   <section>
     <div id="tagbox" class="px-14 sm:hidden">
       <label for="tagbox" class="sr-only"> Select a tag</label>
-      <Tagbox tag={dekebabize(tag)} {tagList} client:only="react" />
+      <Tagbox {tag} {tagList} client:only="react" />
     </div>
     <div class="hidden sm:block">
       <div
