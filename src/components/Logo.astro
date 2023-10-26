@@ -1,7 +1,8 @@
 ---
-// import { Image } from "astro:assets";
+import { Image } from "astro:assets";
 
 import profile from "@/data/profile";
+const { role } = profile.siteData;
 ---
 
 <a
@@ -10,7 +11,7 @@ import profile from "@/data/profile";
   style="width:100%;"
   class="relative mr-auto flex justify-center transition-all duration-75"
 >
-  <img
+  <Image
     id="logo-img"
     alt="logo"
     src="/logo.webp"
@@ -21,5 +22,7 @@ import profile from "@/data/profile";
   <span
     id="logo-subtitle"
     class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-sm italic text-gray-500 opacity-100 transition-all duration-75 sm:mx-auto"
-  ></span>
+  >
+    {role}
+  </span>
 </a>
