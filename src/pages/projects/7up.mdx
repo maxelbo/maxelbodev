@@ -1,11 +1,13 @@
 ---
-layout: ../../layouts/MarkdownProjectLayout.astro
+layout: "../../layouts/MarkdownProjectLayout.astro"
 title: "7up"
 displayTitle: "7up"
 description: "Activation Campaign"
 order: 4
-tags: ["advertising"]
+tags: ["all", "art-direction"]
 video: D06YttMZvWA
+archived: true
+private: false
 ---
 
 An activation for 7up with me as Art Director at **BBDO Argentina**
@@ -13,6 +15,12 @@ and **Nunchaku** as production house.
 
 ---
 
-import YTiframe from "../../components/YTiframe.astro";
+import YTiframe from "@/components/YTiframe.astro";
 
-<YTiframe video={frontmatter.video} />
+<section>
+  <YTiframe
+    title={frontmatter.title}
+    video={frontmatter.video}
+    loading="eager"
+  />
+</section>
