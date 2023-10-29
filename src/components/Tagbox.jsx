@@ -6,7 +6,7 @@ function dekebabize(prop) {
 }
 
 export default function Tagbox({ tag, tagList }) {
-  const [selected, setSelected] = useState(tag);
+  const [selected, setSelected] = useState("");
 
   return (
     <div className="w-full">
