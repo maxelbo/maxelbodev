@@ -1,0 +1,48 @@
+---
+layout: "../../layouts/MarkdownProjectLayout.astro"
+title: "boecker"
+displayTitle: "Boecker"
+description: "Print Ad Campaign"
+order: 1
+tags: ["all", "art-direction"]
+archived: false
+private: false
+---
+
+A campaign for Boecker with me as Art Director at **J. Walter Thompson Dubai**
+with **Tall + Short** as production house.
+The illustrations were painted on wood by **Carmine Bellucci**,
+a traditional painter based in Milan,
+and then placed on CGI sculptures.
+It won a silver and two bronzes at **Dubai Lynx** 2017,
+a bronze at the **New York Festivals**,
+and one of them got to be print ad of the week in **Lürzer's Archive**.
+It was also chosen as the front cover in 2021 for an illustration special.
+
+---
+
+import { Image } from "astro:assets";
+import boecker0 from "~/public/assets/projects/boecker/boecker-0.webp";
+import boecker1 from "~/public/assets/projects/boecker/boecker-1.webp";
+import boecker2 from "~/public/assets/projects/boecker/boecker-2.webp";
+import boecker3 from "~/public/assets/projects/boecker/boecker-3.webp";
+import boecker4 from "~/public/assets/projects/boecker/boecker-4.webp";
+import boecker5 from "~/public/assets/projects/boecker/boecker-5.webp";
+
+<section>
+  <Image src={boecker0} alt="boecker0" className="lg:w-3/4" />
+  <Image src={boecker1} alt="boecker1" className="lg:w-3/4" />
+  <Image src={boecker2} alt="boecker2" className="lg:w-3/4" />
+</section>
+<section>
+  <p>One of my sketches for the client, before production begun:</p>
+  <Image src={boecker3} alt="boecker3" />
+</section>
+<section>
+  <p>This is how we made them:</p>
+  <Image src={boecker4} alt="boecker4" />
+</section>
+<section>
+  <p>As the cover for Lürzer's Archive in 2021:</p>
+  <Image src={boecker5} alt="boecker5" />
+</section>
