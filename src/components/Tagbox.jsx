@@ -1,9 +1,13 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { dekebabize } from "@/scripts/tagActions";
 
-export default function Tagbox({ tag = "all", tagList }) {
+export default function Tagbox({ tag, tagList }) {
   const [selected, setSelected] = useState(tag);
+
+  useEffect(() => {
+    setSelected(tag);
+  }, [tag]);
 
   return (
     <div className="w-full">
