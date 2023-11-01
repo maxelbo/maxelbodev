@@ -1,7 +1,7 @@
 // These functions turn the slags into titles.
 
 export function dekebabize(prop) {
-  return prop.split("-").join(" ");
+  return prop?.split("-").join(" ");
 }
 
 // Capitalizes every word
