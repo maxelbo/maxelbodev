@@ -14,35 +14,31 @@ const pathname = Astro.url.pathname;
 
 <BaseLayout {pageTitle}>
   <h1 class="mb-8">More Work</h1>
-  <section>
-    <div id="tagbox" class="px-14 sm:hidden">
-      <label for="tagbox" class="sr-only"> Select a tag</label>
-      <Tagbox {tag} {tagList} client:only="react" />
+  <div class="px-12 sm:hidden">
+    <Tagbox {tag} {tagList} client:only="react" />
+  </div>
+  <div class="hidden sm:block">
+    <div
+      class="isolate flex divide-x divide-gray-200 rounded-lg shadow"
+      aria-label="Tabs"
+    >
+      {
+        tagList.map((tag) => (
+          <a
+            class="group relative min-w-0 flex-1 overflow-hidden rounded-l-lg bg-white py-4 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-50 focus:z-10"
+            aria-current={pathname === `/projects/${tag} ? "page" : "false"`}
+            id={tag}
+            href={`/projects/${tag}`}
+          >
+            <span class="capitalize">{dekebabize(tag)}</span>
+            <span
+              aria-hidden="true"
+              class="absolute inset-x-0 bottom-0 h-0.5 bg-transparent"
+            />
+          </a>
+        ))
+      }
     </div>
-    <div class="hidden sm:block">
-      <div
-        class="isolate flex divide-x divide-gray-200 rounded-lg shadow"
-        aria-label="Tabs"
-      >
-        {
-          tagList.map((tag) => (
-            <a
-              class="group relative min-w-0 flex-1 overflow-hidden rounded-l-lg bg-white py-4 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-50 focus:z-10"
-              aria-current={pathname === `/projects/${tag} ? "page" : "false"`}
-              id={tag}
-              href={`/projects/${tag}`}
-            >
-              <span class="capitalize">{dekebabize(tag)}</span>
-              <span
-                aria-hidden="true"
-                class="absolute inset-x-0 bottom-0 h-0.5 bg-transparent"
-              />
-            </a>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
+  </div>
   <slot />
 </BaseLayout>

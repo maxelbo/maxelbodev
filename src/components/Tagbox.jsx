@@ -6,17 +6,11 @@ function dekebabize(prop) {
 }
 
 export default function Tagbox({ tag, tagList }) {
-  // const [selected, setSelected] = useState(tag);
-
-  // useEffect(() => {
-  //   setSelected(tag);
-  // }, [tag]);
-
   return (
     <Listbox value={tag}>
       <div className="relative mt-1">
         <Listbox.Button className="relative h-12 w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
-          <span className="capitalize">{tag}</span>
+          <span className="capitalize">{dekebabize(tag)}</span>
           <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
