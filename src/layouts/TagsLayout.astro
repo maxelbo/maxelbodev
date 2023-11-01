@@ -14,7 +14,11 @@ const pathname = Astro.url.pathname;
 
 <BaseLayout {pageTitle}>
   <h1 class="mb-8">More Work</h1>
-  <div class="px-12 sm:hidden">
+  <div class="relative px-12 sm:hidden">
+    <span
+      class="absolute top-1/2 left-3 z-10 -translate-y-1/2 transform pl-12 capitalize"
+      >{dekebabize(tag)}</span
+    >
     <Tagbox {tag} {tagList} client:only="react" />
   </div>
   <div class="hidden sm:block">

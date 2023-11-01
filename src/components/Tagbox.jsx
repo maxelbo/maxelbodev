@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { dekebabize } from "@/scripts/tagActions";
 
-export default function Tagbox({ tag }, { tagList }) {
+export default function Tagbox({ tag, tagList }) {
   return (
     <Listbox value={tag}>
       <div className="relative mt-1">
