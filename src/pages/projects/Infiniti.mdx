@@ -1,10 +1,12 @@
 ---
-layout: ../../layouts/MarkdownProjectLayout.astro
-title: "Infiniti"
+layout: "../../layouts/MarkdownProjectLayout.astro"
+title: "infiniti"
 displayTitle: "Infiniti"
 description: "Ad Illustration"
 order: 9
-tags: ["illustration"]
+tags: ["all", "illustration"]
+archived: true
+private: false
 ---
 
 A print for the new INFINITI QX50 I worked on with MullenLowe Dubai as an Illustrator at **Amplifier** in Tokyo. It got Silver at the **Loeries** and got shortlisted at **Dubai Lynx** 2019.
@@ -12,6 +14,7 @@ It was also featured in **Lürzer’s Archive** 3/2019.
 
 ---
 
-import Image from "../../components/Image.astro";
+import { Image } from "astro:assets";
+import infiniti0 from "~/public/assets/projects/infiniti/infiniti-0.jpg";
 
-<Image src="/assets/projects/Infiniti/Infiniti-0.jpg" alt="Infiniti-0" />
+<Image src={infiniti0} alt="Infiniti0" />
