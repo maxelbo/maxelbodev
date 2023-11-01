@@ -17,7 +17,7 @@ const pathname = Astro.url.pathname;
   <div class="relative px-12 sm:hidden">
     <span
       class="absolute top-1/2 left-3 z-10 -translate-y-1/2 transform pl-12 capitalize"
-      >{dekebabize(tag)}</span
+      >{pageTitle}</span
     >
     <Tagbox {tag} {tagList} client:only="react" />
   </div>
