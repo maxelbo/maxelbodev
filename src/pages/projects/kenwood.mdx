@@ -1,0 +1,34 @@
+---
+layout: "../../layouts/MarkdownProjectLayout.astro"
+title: "kenwood"
+displayTitle: "Kenwood"
+description: "Print Ad Campaign"
+order: 3
+tags: ["all", "art-direction"]
+archived: true
+private: false
+---
+
+A print campaign for Kenwood with me as an Art Director at **J. Walter Thompson Dubai** with **Studio Nuts** in Rio de Janeiro as production house.
+
+---
+
+import { Image } from "astro:assets";
+import kenwood0 from "~/public/assets/projects/kenwood/kenwood-0.jpg";
+import kenwood1 from "~/public/assets/projects/kenwood/kenwood-1.jpg";
+import kenwood2 from "~/public/assets/projects/kenwood/kenwood-2.jpg";
+import kenwood3 from "~/public/assets/projects/kenwood/kenwood-3.jpg";
+import kenwood4 from "~/public/assets/projects/kenwood/kenwood-4.jpg";
+import kenwood5 from "~/public/assets/projects/kenwood/kenwood-5.jpg";
+
+<section>
+  <Image src={kenwood0} alt="kenwood0" className="lg:w-3/4" />
+  <Image src={kenwood1} alt="kenwood1" className="lg:w-3/4" />
+  <Image src={kenwood2} alt="kenwood2" className="lg:w-3/4" />
+</section>
+<section>
+  <p>These were my original sketches:</p>
+  <Image src={kenwood3} alt="kenwood3" className="lg:w-3/4" />
+  <Image src={kenwood4} alt="kenwood4" className="lg:w-3/4" />
+  <Image src={kenwood5} alt="kenwood5" className="lg:w-3/4" />
+</section>
