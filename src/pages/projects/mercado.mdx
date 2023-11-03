@@ -1,0 +1,38 @@
+---
+layout: "../../layouts/MarkdownProjectLayout.astro"
+title: "mercado"
+displayTitle: "Mercado Magazine"
+description: "Ad Illustration"
+order: 7
+tags: ["all", "illustration"]
+archived: true
+private: false
+---
+
+A print campaign I illustrated with JWT Argentina for Mercado Magazine.
+At the time, I was working as a freelance illustrator,
+living in a small rural town in Mexico,
+in the mountains, in the middle of nowhere.
+It got Bronze at **Diente** (Argentine Creative Circle)
+
+---
+
+import { Image } from "astro:assets";
+import mercado0 from "~/public/assets/projects/mercado/mercado-0.webp";
+import mercado1 from "~/public/assets/projects/mercado/mercado-1.webp";
+import mercado2 from "~/public/assets/projects/mercado/mercado-2.webp";
+import mercado3 from "~/public/assets/projects/mercado/mercado-3.webp";
+import mercado4 from "~/public/assets/projects/mercado/mercado-4.webp";
+import mercado5 from "~/public/assets/projects/mercado/mercado-5.webp";
+
+<section>
+  <Image src={mercado0} alt="mercado0" />
+  <Image src={mercado1} alt="mercado1" />
+  <Image src={mercado2} alt="mercado2" />
+</section>
+<section>
+  <p>Some close-ups:</p>
+  <Image src={mercado3} alt="mercado3" />
+  <Image src={mercado4} alt="mercado4" />
+  <Image src={mercado5} alt="mercado5" />
+</section>
