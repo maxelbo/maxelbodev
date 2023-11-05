@@ -1,0 +1,40 @@
+---
+layout: "../../layouts/MarkdownProjectLayout.astro"
+title: "wagri"
+displayTitle: "WAGRI"
+description: "Animation"
+order: 6
+tags: ["all", "illustration"]
+video: 9G-b9wBl13U
+archived: true
+private: false
+---
+
+An animation with me as an Art Director/Illustrator at **Amplifier** in Tokyo
+made for Dentsu Tec, for their client Wagri.
+
+---
+
+import { Image } from "astro:assets";
+import wagri0 from "~/public/assets/projects/wagri/wagri-0.webp";
+import wagri1 from "~/public/assets/projects/wagri/wagri-1.webp";
+import wagri2 from "~/public/assets/projects/wagri/wagri-2.webp";
+import wagri3 from "~/public/assets/projects/wagri/wagri-3.webp";
+import wagri4 from "~/public/assets/projects/wagri/wagri-4.webp";
+import YTiframe from "@/components/YTiframe.astro";
+
+<section>
+  <Image src={wagri0} alt="wagri0" />
+  <Image src={wagri1} alt="wagri1" />
+  <Image src={wagri2} alt="wagri2" />
+  <Image src={wagri3} alt="wagri3" />
+  <Image src={wagri4} alt="wagri4" />
+</section>
+<section>
+  <p>The animation:</p>
+  <YTiframe
+    title={frontmatter.title}
+    video={frontmatter.video}
+    loading="lazy"
+  />
+</section>
