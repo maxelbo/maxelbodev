@@ -1,14 +1,12 @@
 "use client";
 
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { dekebabize } from "@/scripts/tagActions";
 
 export default function Tagbox({ pageTitle, tagList }) {
-  const { selected, setSelected } = useState(pageTitle);
-
   return (
-    <Listbox value={selected} onClick={setSelected}>
+    <Listbox value={pageTitle} className="relative mt-1">
       <div className="relative mt-1">
         <Listbox.Button className="relative h-12 w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
           <span className="capitalize">{dekebabize(pageTitle)}</span>
@@ -40,12 +38,12 @@ export default function Tagbox({ pageTitle, tagList }) {
             {tagList.map((tagOption, i) => (
               <Listbox.Option
                 key={i}
-                className={({ active }) =>
+                className={({ selected }) =>
                   `relative cursor-default select-none py-2 pl-3 text-left
-                    ${active ? "bg-slate-100 text-gray-900" : "text-gray-700"}
+                    ${selected ? "bg-slate-100 text-gray-900" : "text-gray-700"}
                   `
                 }
-                value={tagOption}
+                value={dekebabize(tagOption)}
               >
                 <a
                   href={`/projects/${tagOption}`}
