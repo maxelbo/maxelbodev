@@ -10,6 +10,10 @@ export async function getStaticPaths() {
     ...new Set(allProjects.map((project) => project.frontmatter.tags).flat()),
   ];
 
+  uniqueTags.sort((a, b) => {
+    return a.localeCompare(b);
+  });
+
   return uniqueTags.map((tag) => {
     const filteredProjects = allProjects.filter((project) =>
       project.frontmatter.tags.includes(tag)
@@ -17,6 +21,9 @@ export async function getStaticPaths() {
     const pubProjects = filteredProjects.filter(
       (project) => !project.frontmatter.private
     );
+    pubProjects.sort((a, b) => {
+      return a.frontmatter.order - b.frontmatter.order;
+    });
     return {
       params: { tag },
       props: { projects: pubProjects },
@@ -26,8 +33,11 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { projects } = Astro.props;
+
+const pageTitle = dekebabize(tag);
+const projectListTitle = `${pageTitle} projects`;
 ---
 
-<TagsLayout pageTitle={dekebabize(tag)}>
-  <ProjectList projectListTitle={`${dekebabize(tag)} projects`} {projects} />
+<TagsLayout {pageTitle} {tag}>
+  <ProjectList {projectListTitle} {projects} />
 </TagsLayout>
