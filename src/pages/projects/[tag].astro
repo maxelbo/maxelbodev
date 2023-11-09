@@ -10,18 +10,15 @@ export async function getStaticPaths() {
     ...new Set(allProjects.map((project) => project.frontmatter.tags).flat()),
   ];
 
-  uniqueTags.sort();
-
   return uniqueTags.map((tag) => {
     const filteredProjects = allProjects.filter((project) =>
       project.frontmatter.tags.includes(tag)
     );
-    const pubProjects = filteredProjects.filter(
-      (project) => !project.frontmatter.private
-    );
-    pubProjects.sort((a, b) => {
-      return a.frontmatter.order - b.frontmatter.order;
-    });
+    const pubProjects = filteredProjects
+      .filter((project) => !project.frontmatter.private)
+      .sort((a, b) => {
+        return a.frontmatter.order - b.frontmatter.order;
+      });
     return {
       params: { tag },
       props: { projects: pubProjects },
@@ -36,6 +33,6 @@ const pageTitle = dekebabize(tag);
 const projectListTitle = `${pageTitle} projects`;
 ---
 
-<TagsLayout {pageTitle} {tag}>
+<TagsLayout {pageTitle}>
   <ProjectList {projectListTitle} {projects} />
 </TagsLayout>
