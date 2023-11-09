@@ -11,23 +11,27 @@ const menuLinks = [
     url: "/posts/1",
     title: "Blog",
   },
-  // {
-  //   url: "/projects/all",
-  //   title: "Work",
-  // },
+  {
+    url: "/projects/all",
+    title: "Work",
+  },
 ];
 ---
 
-<header class="w-full fixed top-0 right-0 left-0 bg-white z-50" >
-  <div class="p-0 sm:px-4 mx-auto sm:flex sm:flex-wrap sm:justify-between max-w-4xl">
-    <div class="flex flex-row flex-1 items-center justify-between space-x-14 gap-0">
+<header class="fixed top-0 right-0 left-0 z-50 w-full bg-white">
+  <div
+    class="mx-auto max-w-4xl p-0 sm:flex sm:flex-wrap sm:justify-between sm:px-4"
+  >
+    <div
+      class="flex flex-1 flex-row items-center justify-between gap-0 space-x-14"
+    >
       <Logo />
-      <NavMenu menuLinks={menuLinks} client:load />
+      <NavMenu {menuLinks} client:only="react" />
     </div>
     <nav
       id="nav"
       style="width:100%;max-width:100%;"
-      class="top-20 right-8 hidden flex-row justify-center space-y-0 space-x-8 border-none px-1 py-4 text-lg text-gray-600 shadow-none ring-0 ring-black ring-opacity-5 focus:outline-none sm:flex transition-all duration-75 min-w-fit"
+      class="top-20 right-8 hidden min-w-fit flex-row justify-center space-y-0 space-x-8 border-none px-1 py-4 text-lg text-gray-600 shadow-none ring-0 ring-black ring-opacity-5 transition-all duration-75 focus:outline-none sm:flex"
     >
       {
         menuLinks.map(({ url, title }) => (
