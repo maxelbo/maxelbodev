@@ -1,34 +1,26 @@
 ---
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+import { Image } from "astro:assets";
+import signature from "~/public/signature.webp";
 
 const projectListTitle = "More Work";
 const { frontmatter } = Astro.props;
+const { displayTitle, description } = frontmatter;
+const pageTitle = displayTitle;
 ---
 
-<PortfolioLayout
-  pageTitle={frontmatter.displayTitle}
-  projectListTitle={projectListTitle}
->
+<PortfolioLayout {pageTitle} {projectListTitle}>
   <article class="mx-auto mb-8 max-w-3xl text-center">
     <div class="pb-4">
-      <h1>{frontmatter.displayTitle}</h1>
+      <h1>{pageTitle}</h1>
       {
-        frontmatter.description && (
-          <p class="italic text-gray-400">
-            &mdash;{frontmatter.description}&mdash;
-          </p>
+        description && (
+          <p class="italic text-gray-500">&mdash;{description}&mdash;</p>
         )
       }
     </div>
     <slot />
-    <img
-      alt="max elbo"
-      src="/signature.png"
-      width={202}
-      height={204}
-      class="w-[30px] lg:w-[35px]"
-      loading="lazy"
-    />
+    <Image alt="max elbo" src={signature} class="w-[30px] mt-8 lg:w-[35px]" />
     <hr />
   </article>
 </PortfolioLayout>
