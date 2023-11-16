@@ -1,4 +1,4 @@
-(() => {
+function setCounterAnimation() {
   let counter = document.getElementById("counter");
   let from = parseInt(counter.getAttribute("data-from"));
   let to = parseInt(counter.getAttribute("data-to"));
@@ -11,4 +11,6 @@
       clearInterval(animation);
     }
   }, speed);
-})();
+}
+
+document.addEventListener("astro:after-swap", setCounterAnimation);
