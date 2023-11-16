@@ -34,11 +34,6 @@ const { pageTitle, image, frontmatter, robots } = Astro.props;
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="preload"
-    as="font"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet"
   />
 
@@ -49,13 +44,13 @@ const { pageTitle, image, frontmatter, robots } = Astro.props;
     src="https://www.googletagmanager.com/gtag/js?id=G-GE5E4YE6YL"
   ></script>
   <script type="text/partytown">
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  gtag("config", "G-GE5E4YE6YL");
+    gtag("config", "G-GE5E4YE6YL");
   </script>
 
   <ViewTransitions />
