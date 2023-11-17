@@ -1,9 +1,8 @@
-(function setCounterAnimation() {
+function setCounterAnimation() {
   let counter = document.getElementById("counter");
   let from = parseInt(counter.getAttribute("data-from"));
   let to = parseInt(counter.getAttribute("data-to"));
   let speed = parseInt(counter.getAttribute("data-speed"));
-
   let animation = setInterval(function () {
     if (from <= to) {
       counter.textContent = (from++).toString();
@@ -11,6 +10,10 @@
       clearInterval(animation);
     }
   }, speed);
-})();
+}
 
+document.addEventListener("DOMContentLoaded", setCounterAnimation);
 document.addEventListener("astro:after-swap", setCounterAnimation);
+document.addEventListener("astro:page-load", () => {
+  setCounterAnimation();
+});
