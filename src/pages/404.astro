@@ -1,6 +1,5 @@
 ---
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
-import ErrorCounter from "@/components/ErrorCounter.astro";
 
 const pageTitle = "404";
 ---
@@ -10,7 +9,13 @@ const pageTitle = "404";
     <h1>Sorry,</h1>
     <p class="text-lg font-bold">
       <span>{`You hit a `}</span>
-      <ErrorCounter {pageTitle} client:load />
+      <span
+        id="error-counter"
+        data-from="0"
+        data-to={pageTitle}
+        data-speed="1"
+        class="text-gray-500">0</span
+      >
       <span>.</span>
     </p>
     <h6 class="text-sm text-gray-500">
@@ -20,3 +25,5 @@ const pageTitle = "404";
     <h1>My Work</h1>
   </section>
 </PortfolioLayout>
+
+<script src="@/scripts/counter.js"></script>
