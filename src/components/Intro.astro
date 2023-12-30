@@ -1,13 +1,13 @@
 ---
 const currentInfo = false;
-const socialMedia = false;
+const socialMedia = true;
 
 const { profile } = Astro.props;
 const { siteData } = profile;
 ---
 
 <section>
-  <p class="font-bold">Hi,</p>
+  <p class="font-bold">Hello,</p>
   <p>{`I'm ${siteData.author},`}</p>
   <p>
     a
@@ -33,10 +33,10 @@ const { siteData } = profile;
     {
       socialMedia && (
         <div class="flex justify-center gap-4">
-          <a href={siteData.social.linkedin}>
+          <a href={siteData.social.linkedin} aria-label="LinkedIn">
             <i class="fab fa-linkedin-in text-gray-400" />
           </a>
-          <a href={siteData.social.github}>
+          <a href={siteData.social.github} aria-label="GitHub">
             <i class="fa-brands fa-github text-gray-400" />
           </a>
         </div>
