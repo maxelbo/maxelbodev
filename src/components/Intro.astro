@@ -1,4 +1,9 @@
 ---
+import { Image } from "astro:assets";
+
+import socialLinkedIn from "~/public/assets/about/social-icons/linkedin-icon.svg";
+import socialGitHub from "~/public/assets/about/social-icons/github-icon.svg";
+
 const currentInfo = false;
 const socialMedia = true;
 
@@ -10,7 +15,6 @@ const { siteData } = profile;
   <p class="font-bold">Hello,</p>
   <p>{`I'm ${siteData.author},`}</p>
   <p>
-    a
     <strong>{siteData.role}</strong>
     <br class="block sm:hidden" />
     based in
@@ -32,12 +36,12 @@ const { siteData } = profile;
     </p>
     {
       socialMedia && (
-        <div class="flex justify-center gap-4">
+        <div class="flex justify-center gap-4 pt-2">
           <a href={siteData.social.linkedin} aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in text-gray-400" />
+            <Image src={socialLinkedIn} alt="LinkedIn icon" class="w-5" />
           </a>
           <a href={siteData.social.github} aria-label="GitHub">
-            <i class="fa-brands fa-github text-gray-400" />
+            <Image src={socialGitHub} alt="LinkedIn icon" class="w-5" />
           </a>
         </div>
       )
