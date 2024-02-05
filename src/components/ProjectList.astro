@@ -1,5 +1,6 @@
 ---
 import Card from "@/components/Card.astro";
+import type { ProjectType } from "@/types";
 
 const { projectListTitle, projects } = Astro.props;
 ---
@@ -9,12 +10,12 @@ const { projectListTitle, projects } = Astro.props;
   <div class="flex flex-wrap justify-center">
     {
       projects.length !== 0 ? (
-        projects.map((project) => (
+        projects.map((project: ProjectType) => (
           <Card
-            title={project.frontmatter.title}
             displayTitle={project.frontmatter.displayTitle}
             url={project.url}
             description={project.frontmatter.description}
+            title={project.frontmatter.title}
           />
         ))
       ) : (
