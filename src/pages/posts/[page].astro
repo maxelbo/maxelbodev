@@ -2,6 +2,7 @@
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 import Post from "@/components/Post.astro";
 import Pagination from "@/components/Pagination.astro";
+import type { PostType } from "@/types";
 
 const pageTitle = "Blog";
 const projectListTitle = "My Work";
@@ -10,10 +11,10 @@ export async function getStaticPaths({ paginate }) {
   // Fetch all posts
   const allPosts = await Astro.glob("./*.mdx");
   // Filter out drafts
-  const pubPosts = allPosts.filter((post) => !post.frontmatter.draft);
+  const pubPosts = allPosts.filter((post: PostType) => !post.frontmatter.draft);
   // Sort by date
   pubPosts.sort(
-    (a, b) =>
+    (a: PostType, b: PostType) =>
       Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate)
   );
   return paginate(pubPosts, { pageSize: 8 });
@@ -22,16 +23,16 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 ---
 
-<PortfolioLayout pageTitle={pageTitle} projectListTitle={projectListTitle}>
+<PortfolioLayout {pageTitle} {projectListTitle}>
   <section>
     <h1>This Is a {pageTitle} of Sorts</h1>
 
     <!-- Posts -->
     <div class="mx-auto max-w-6xl divide-y divide-gray-200">
-      {page.data.map((post: any) => <Post post={post} />)}
+      {page.data.map((post: PostType) => <Post {post} />)}
     </div>
 
     <!-- Pagination -->
-    <Pagination page={page} />
+    <Pagination {page} />
   </section>
 </PortfolioLayout>
