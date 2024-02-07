@@ -2,21 +2,24 @@
 import TagsLayout from "@/layouts/TagsLayout.astro";
 import ProjectList from "@/components/ProjectList.astro";
 import { dekebabize } from "@/scripts/tagActions";
+import type { ProjectType } from "@/types";
 
 export async function getStaticPaths() {
   const allProjects = await Astro.glob("./*.mdx");
 
   const uniqueTags = [
-    ...new Set(allProjects.map((project) => project.frontmatter.tags).flat()),
+    ...new Set(
+      allProjects.map((project: ProjectType) => project.frontmatter.tags).flat()
+    ),
   ];
 
-  return uniqueTags.map((tag) => {
+  return uniqueTags.map((tag: string) => {
     const filteredProjects = allProjects.filter((project) =>
       project.frontmatter.tags.includes(tag)
     );
     const pubProjects = filteredProjects
-      .filter((project) => !project.frontmatter.private)
-      .sort((a, b) => {
+      .filter((project: ProjectType) => !project.frontmatter.private)
+      .sort((a: ProjectType, b: ProjectType) => {
         return a.frontmatter.order - b.frontmatter.order;
       });
     return {
