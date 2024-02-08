@@ -7,12 +7,10 @@ export interface ProjectType {
     video?: string;
     order: number;
     tags: string[];
-    archiver: boolean;
+    archived: boolean;
     private: boolean;
   };
 }
-
-export type ProjectOrderType = { frontmatter: { order: number } };
 
 export interface PostType {
   url: string;
@@ -27,9 +25,7 @@ export interface PostType {
   };
 }
 
-export type PostPubDateType = { frontmatter: { pubDate: string } };
-
-type TimelineProjectType = { title: string; actions: string[] };
+export type TimelineProjectType = { title: string; actions: string[] };
 
 export interface TimelineType {
   company: string;
