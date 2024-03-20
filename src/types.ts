@@ -52,3 +52,14 @@ export interface EducationType {
   degree: string;
   date: string;
 }
+
+export interface AwardsType {
+  title: string;
+  awards: string[];
+}
+
+export interface ExhibitionType {
+  date: string;
+  title: string;
+  location: string;
+}
