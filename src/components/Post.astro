@@ -10,7 +10,7 @@ const { post } = Astro.props;
     <div class="space-y-4">
       {
         post.frontmatter.img.length > 0 &&
-          post.frontmatter.img.map((src: any) => (
+          post.frontmatter.img.map((src: string) => (
             <Image
               src={src}
               alt={post.frontmatter.title}
