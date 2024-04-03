@@ -3,51 +3,43 @@ import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
 import { Image } from "astro:assets";
 import YTiframe from "@/components/YTiframe.astro";
 
-const backLing = () => {
-  window.history.length > 1 &&
-  document.referrer.indexOf(window.location.host) !== -1
-    ? history.back()
-    : (window.location.href = "/posts/1");
-};
-
-// href=`javascript:window.history.length > 1 && document.referrer.indexOf(window.location.host) !== -1 ? history.back() : window.location.href = "/posts/1";`
-
 const projectListTitle = "More Work";
 const { frontmatter } = Astro.props;
 ---
 
 <PortfolioLayout pageTitle={frontmatter.title} {projectListTitle}>
-  <div class="space-y-4">
-    {
-      frontmatter.img.length > 0 &&
-        frontmatter.img.map((src: any) => (
-          <Image
-            src={src}
-            alt={frontmatter.title}
-            width={600}
-            height={300}
-            class="w-full"
-          />
-        ))
-    }
-    {
-      frontmatter.video && (
-        <YTiframe title={frontmatter.title} video={frontmatter.video} />
-      )
-    }
-  </div>
-
-  <div class="mx-4 my-4 max-w-3xl space-y-2 lg:mx-8">
-    {frontmatter.body && <p class="text-left">{frontmatter.body}</p>}
-
-    <p class="text-left text-sm text-gray-400">
+  <article>
+    <div class="space-y-4">
       {
-        new Intl.DateTimeFormat("en-US", {
-          dateStyle: "medium",
-        }).format(new Date(frontmatter.pubDate))
+        frontmatter.img.length > 0 &&
+          frontmatter.img.map((src: string) => (
+            <Image
+              src={src}
+              alt={frontmatter.title}
+              width={600}
+              height={300}
+              class="w-full"
+            />
+          ))
       }
-    </p>
-  </div>
+      {
+        frontmatter.video && (
+          <YTiframe title={frontmatter.title} video={frontmatter.video} />
+        )
+      }
+    </div>
+    <div class="mx-4 my-4 max-w-3xl space-y-2 lg:mx-8">
+      {frontmatter.body && <p class="text-left">{frontmatter.body}</p>}
+
+      <p class="text-left text-sm text-gray-400">
+        {
+          new Intl.DateTimeFormat("en-US", {
+            dateStyle: "medium",
+          }).format(new Date(frontmatter.pubDate))
+        }
+      </p>
+    </div>
+  </article>
   <slot />
   <div
     class="flex items-center justify-center border-t border-gray-200 px-4 text-xl sm:px-0 sm:text-lg"
@@ -69,7 +61,7 @@ const { frontmatter } = Astro.props;
           stroke-linejoin="round"
           d="M15.75 19.5L8.25 12l7.5-7.5"></path>
       </svg>
-      Back to Blog
+      Back
     </a>
   </div>
 </PortfolioLayout>
