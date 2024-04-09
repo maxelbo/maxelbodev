@@ -1,0 +1,31 @@
+---
+layout: "../../layouts/MarkdownProjectLayout.astro"
+title: "nsa"
+displayTitle: "Nara Super-App"
+description: "Super-App"
+order: 0.4
+tags: ["all", "development"]
+archived: false
+private: false
+---
+
+I worked on the design and frontend development for a super-app for **Nara Prefecture**.
+
+I developed a fully functional prototype, which was then reused for production.
+
+I also created illustrations of the prefectural icons to randomly display on the app's splash screen when launched.
+
+---
+
+import { Image } from "astro:assets";
+import nsa0 from "~/public/assets/projects/nsa/nsa-0.webp";
+
+<section>
+  <Image src={nsa0} alt="nsa0" />
+  <p>
+    You can visit it here:
+    <a href="https://nsa.pref.nara.jp/ctztop/" class="underline">
+      nsa.pref.nara.jp/ctztop/
+    </a>
+  </p>
+</section>
