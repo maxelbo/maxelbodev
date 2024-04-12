@@ -10,6 +10,10 @@ import shoesImage from "~/public/assets/about/shoes.webp";
 
 import profile from "@/data/profile.js";
 
+const educationActive = true;
+const awardsActive = true;
+const exhibitionsActive = true;
+
 const pageTitle = "About";
 const projectListTitle = "My Work";
 ---
@@ -21,9 +25,10 @@ const projectListTitle = "My Work";
       src={headImage}
       loading="eager"
       class="mx-auto mb-2 w-4/5 sm:mb-4 sm:w-3/5"
+      transition:name="face"
     />
     <div class="mx-auto max-w-3xl space-y-12 px-8 text-center">
-      <Intro {profile} />
+      <Intro {profile} transition:name="intro" />
       <!-- Load open eye -->
       <img src="/assets/about/eye-open.webp" class="hidden" />
       <section class="flex flex-col items-center space-y-12">
@@ -31,42 +36,72 @@ const projectListTitle = "My Work";
           <Accordion title="Career" client:load>
             <div class="my-4 space-y-4">
               <p>This is my career:</p>
-              <Timeline
-                timelineData={profile.timelineData}
-                earlyLife={profile.earlyLife}
-              />
+              <Timeline timelineData={profile.timelineData} />
             </div>
           </Accordion>
         </div>
-        <div>
-          <Accordion title="Awards" client:load>
-            <div class="my-4 space-y-4">
-              {
-                profile.creativeAwards.map(({ title, awards }) => (
-                  <div id={title}>
-                    <h3 class="font-bold">{title}</h3>
-                    <ul class="list-none">
-                      {awards.map((award) => (
-                        <li id={award}>{award}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))
-              }
+        {
+          educationActive && (
+            <div>
+              <Accordion title="Education" client:load>
+                <div class="my-4 space-y-4">
+                  {profile.educationData.map(
+                    ({ date, institution, degree, logo }) => (
+                      <div>
+                        <Image 
+                          src={`/assets/about/education/logo-${logo}.webp`} 
+                          alt="logo"} 
+                          width={32}
+                          height={32}
+                          class="mx-auto rounded-full md:h-10 md:w-10"
+                        />
+                        <p class="font-bold">{institution}</p>
+                        <p>{degree}</p>
+                        <p class="text-gray-500">{date}</p>
+                      </div>
+                    ))}
+                </div>
+              </Accordion>
             </div>
-          </Accordion>
-        </div>
-        <div>
-          <Accordion title="Exhibitions" client:load>
-            <div class="my-4 space-y-4">
-              {
-                profile.exhibitions.map((exhibition) => (
-                  <p id={exhibition}>{exhibition}</p>
-                ))
-              }
+          )
+        }
+        {
+          awardsActive && (
+            <div>
+              <Accordion title="Awards" client:load>
+                <div class="my-4 space-y-4">
+                  {profile.creativeAwards.map(({ title, awards }) => (
+                    <div>
+                      <h3 class="font-bold">{title}</h3>
+                      <ul class="list-none">
+                        {awards.map((award) => (
+                          <li id={award}>{award}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </Accordion>
             </div>
-          </Accordion>
-        </div>
+          )
+        }
+        {
+          exhibitionsActive && (
+            <div>
+              <Accordion title="Exhibitions" client:load>
+                <div class="my-4 space-y-4">
+                  {profile.exhibitions.map(({date, title, location}) => (
+                    <div>
+                      <p class="font-bold">{title}</p>
+                      <p>{location}</p>
+                      <p class="text-gray-500">{date}</p>
+                    </div>
+                  ))}
+                </div>
+              </Accordion>
+            </div>
+          )
+        }
       </section>
     </div>
     <Image
