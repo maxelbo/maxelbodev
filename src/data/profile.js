@@ -39,7 +39,7 @@ const profile = {
       direction: "dir-r",
       role: "UX Engineer",
       description:
-        "I am currently working at Deloitte Consulting, doing frontend development. I've worked on corporate websites, and CRM apps to help the Japanese Government improve its DX.",
+        "I am currently working at Deloitte Consulting as a frontend developer and a designer, bridging the gap between both worlds. I've worked on corporate websites, and CRM apps to help the Japanese Government improve its DX.",
       actions: [
         "Designed, implemented, and refined the frontend of super-apps, CRM apps, and landing pages.",
         "Bridged the gap between designers and engineers, ensuring the technical feasibility of designs prior to handoff, and implementing them in production according to the intended design vision.",
