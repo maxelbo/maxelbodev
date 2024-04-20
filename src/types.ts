@@ -25,25 +25,24 @@ export interface PostType {
   };
 }
 
-export type TimelineProjectType = {
-  title: string;
+type TimelinePositionType = {
   role: string;
+  subrole: string;
+  date: string;
+  description?: string;
   actions: string[];
+  clients: string[];
+  skills: string[];
 };
 
 export interface TimelineType {
   company: string;
+  logo: string;
   title: string;
   date: string;
   place: string;
-  role: string;
-  description?: string;
-  actions: string[];
-  projects?: TimelineProjectType[];
   direction: string;
-  logo: string;
-  clients: string[];
-  skills: string[];
+  positions: TimelinePositionType[];
 }
 
 export interface EducationType {
