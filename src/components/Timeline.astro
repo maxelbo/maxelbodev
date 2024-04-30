@@ -6,6 +6,7 @@ const roleActive = true;
 const descriptionActive = false;
 const actionsActive = true;
 const clientsActive = true;
+const skillsActive = true;
 
 const { timelineData } = Astro.props;
 ---
@@ -43,43 +44,53 @@ const { timelineData } = Astro.props;
                 </span>
               </div>
             </div>
-            <div class="desc relative z-10 mx-auto mt-2 mb-0 max-w-sm bg-slate-100 p-4 text-left text-sm shadow-sm md:mt-4 md:group-[.dir-l]:mr-3 md:group-[.dir-r]:ml-3">
-              {roleActive && <p class="text-base font-bold">{item.role}</p>}
-              {descriptionActive && <p>{item.description}</p>}
-              {actionsActive && (
-                <ul class="ml-4 list-disc">
-                  {item.actions.map((action) => (
-                    <li>{action}</li>
-                  ))}
-                </ul>
-              )}
-              <div class="info-wrapper z-20 mx-0 my-2 flex flex-col flex-wrap gap-4">
-                {clientsActive && item.clients && (
-                  <div class="info">
-                    <strong>Clients:</strong>
-                    <ul class="m-0 flex list-none flex-row flex-wrap gap-1 p-0">
-                      {item.clients.map((client: string) => (
-                        <li class="bg-slate-200 py-0 px-2 shadow-md">
-                          {client}
-                        </li>
-                      ))}
-                    </ul>
+            {item.positions.map((position) => (
+              <div class="desc relative z-10 mx-auto mt-2 mb-0 max-w-sm bg-slate-100 p-4 text-left text-sm shadow-sm md:mt-4 md:group-[.dir-l]:mr-3 md:group-[.dir-r]:ml-3">
+                {roleActive && <p class="text-sm font-bold">{position.role}</p>}
+                {position.date && (
+                  <div class="flex gap-2 text-[10px]">
+                    {roleActive && position.subrole && (
+                      <span>{position.subrole}</span>
+                    )}
+                    {position.date && <span>{position.date}</span>}
                   </div>
                 )}
-                {item.skills && (
-                  <div class="info block">
-                    <strong>Skills:</strong>
-                    <ul class="m-0 flex list-none flex-row flex-wrap gap-1 p-0">
-                      {item.skills.map((skill: string) => (
-                        <li class="bg-slate-200 py-0 px-2 shadow-md">
-                          {skill}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                {descriptionActive && <p>{position.description}</p>}
+                {actionsActive && (
+                  <ul class="ml-4 list-disc">
+                    {position.actions.map((action) => (
+                      <li>{action}</li>
+                    ))}
+                  </ul>
                 )}
+                <div class="info-wrapper z-20 mx-0 my-2 flex flex-col flex-wrap gap-4">
+                  {clientsActive && position.clients && (
+                    <div class="info">
+                      <strong>Clients:</strong>
+                      <ul class="m-0 flex list-none flex-row flex-wrap gap-1 p-0">
+                        {position.clients.map((client) => (
+                          <li class="bg-slate-200 py-0 px-2 shadow-md">
+                            {client}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {skillsActive && position.skills && (
+                    <div class="info block">
+                      <strong>Skills:</strong>
+                      <ul class="m-0 flex list-none flex-row flex-wrap gap-1 p-0">
+                        {position.skills.map((skill) => (
+                          <li class="bg-slate-200 py-0 px-2 shadow-md">
+                            {skill}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </li>
       ))
