@@ -58,7 +58,7 @@ const profile = {
           // ],
         },
         {
-          role: "Frontend Developer / Art Director",
+          role: "Frontend Developer/Art Director",
           subrole: "Specialist",
           date: "2020 - 2024",
           description:

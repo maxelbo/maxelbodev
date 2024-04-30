@@ -46,7 +46,9 @@ const { timelineData } = Astro.props;
             </div>
             {item.positions.map((position) => (
               <div class="desc relative z-10 mx-auto mt-2 mb-0 max-w-sm bg-slate-100 p-4 text-left text-sm shadow-sm md:mt-4 md:group-[.dir-l]:mr-3 md:group-[.dir-r]:ml-3">
-                {roleActive && <p class="text-sm font-bold">{position.role}</p>}
+                {roleActive && (
+                  <p class="text-base font-bold">{position.role}</p>
+                )}
                 {position.date && (
                   <div class="flex gap-2 text-[10px]">
                     {roleActive && position.subrole && (
