@@ -35,13 +35,15 @@ const { timelineData } = Astro.props;
               >
                 {item.company}
               </span>
-              <div class="details-wrapper">
+              <div class="details-wrapper relative z-10 mt-1 flex flex-col gap-1 text-xs leading-3">
                 <span class="date m-auto inline-block w-fit bg-slate-100 px-2 py-1">
                   {item.date}
                 </span>
-                <span class="place m-auto inline-block w-fit bg-slate-100 px-2 py-1">
-                  {item.place}
-                </span>
+                {item.place && (
+                  <span class="place m-auto inline-block w-fit bg-slate-100 px-2 py-1">
+                    {item.place}
+                  </span>
+                )}
               </div>
             </div>
             {item.positions.map((position) => (
@@ -50,15 +52,15 @@ const { timelineData } = Astro.props;
                   <p class="text-base font-bold">{position.role}</p>
                 )}
                 {position.date && (
-                  <div class="flex gap-2 text-[10px]">
+                  <div class="flex gap-2 text-xs">
                     {roleActive && position.subrole && (
-                      <span>{position.subrole}</span>
+                      <span class="font-bold">{position.subrole}</span>
                     )}
                     {position.date && <span>{position.date}</span>}
                   </div>
                 )}
                 {descriptionActive && <p>{position.description}</p>}
-                {actionsActive && (
+                {actionsActive && position.actions && (
                   <ul class="ml-4 list-disc">
                     {position.actions.map((action) => (
                       <li>{action}</li>
@@ -226,19 +228,6 @@ const { timelineData } = Astro.props;
       right: -50px;
       left: auto;
     }
-  }
-
-  .details-wrapper {
-    display: flex;
-    gap: 5px;
-    flex-flow: column;
-    line-height: 1em;
-    color: var(--black);
-    font-size: 10px;
-    position: relative;
-    margin: 4px 0 0 0;
-    vertical-align: middle;
-    z-index: 14;
   }
 
   @media (min-width: 768px) {

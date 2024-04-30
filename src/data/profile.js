@@ -45,7 +45,7 @@ const profile = {
           description:
             "I am currently working at Deloitte Consulting as a UX Engineer, bridging the gap between both worlds. I've worked on corporate websites, and CRM apps to help the Japanese Government improve its DX.",
           actions: [],
-          clients: ["Yokohama City", "Fujisawa City"],
+          // clients: ["Yokohama City", "Fujisawa City"],
           // skills: [
           //   "Frontend Development",
           //   "JavaScript",
@@ -152,7 +152,7 @@ const profile = {
       title: "Elborium",
       logo: "elborium",
       date: "2013 - 2016",
-      place: "Argentina - Mexico - Chile",
+      place: "Multiple Locations",
       direction: "dir-l",
       positions: [
         {
