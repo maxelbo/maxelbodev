@@ -25,7 +25,7 @@ const profile = {
       linkedin: "https://www.linkedin.com/in/maxelbo/",
     },
     image: {
-      src: "logo.webp",
+      src: "og-image.jpg",
       alt: "Elborium",
     },
   },
@@ -37,28 +37,54 @@ const profile = {
       date: "2020 - present",
       place: "Tokyo, Japan",
       direction: "dir-r",
-      role: "UX Engineer",
-      description:
-        "I am currently working at Deloitte Consulting as a frontend developer and a designer, bridging the gap between both worlds. I've worked on corporate websites, and CRM apps to help the Japanese Government improve its DX.",
-      actions: [
-        "Designed, implemented, and refined the frontend of super-apps, CRM apps, and landing pages.",
-        "Bridged the gap between designers and engineers, ensuring the technical feasibility of designs prior to handoff, and implementing them in production according to the intended design vision.",
-        "Coded fully-functional prototypes directly in the framework used in production, developing reusable components and logic for production, significantly reducing the time from design to implementation.",
-      ],
-      clients: [
-        "Tokyo Bureau of Social Welfare",
-        "Shibuya Ward",
-        "Chiyoda Ward",
-        "Yokohama City",
-        "Nara Prefecture",
-      ],
-      skills: [
-        "Frontend Development",
-        "JavaScript",
-        "LWC",
-        "SASS",
-        "UI Design",
-        "Illustration",
+      positions: [
+        {
+          role: "UX Engineer",
+          subrole: "Specialist Senior",
+          date: "2024 - present",
+          description:
+            "I am currently working at Deloitte Consulting as a UX Engineer, bridging the gap between both worlds. I've worked on corporate websites, and CRM apps to help the Japanese Government improve its DX.",
+          actions: [],
+          clients: ["Yokohama City", "Fujisawa City"],
+          skills: [
+            "Frontend Development",
+            "JavaScript",
+            "Salesforce LWC",
+            "CSS",
+            "SASS",
+            "Node.js",
+            "UI/UX Design",
+            "Illustration",
+          ],
+        },
+        {
+          role: "Frontend Developer / Art Director",
+          subrole: "Specialist",
+          date: "2020 - 2024",
+          description:
+            "I worked at Deloitte Consulting as a frontend developer and a designer, bridging the gap between both worlds. I've worked on corporate websites, and CRM apps to help the Japanese Government improve its DX.",
+          actions: [
+            "Designed, implemented, and refined the frontend of super-apps, CRM apps, and landing pages.",
+            "Bridged the gap between designers and engineers, ensuring the technical feasibility of designs prior to handoff, and implementing them in production according to the intended design vision.",
+            "Coded fully-functional prototypes directly in the framework used in production, developing reusable components and logic for production, significantly reducing the time from design to implementation.",
+          ],
+          clients: [
+            "Tokyo Bureau of Social Welfare",
+            "Shibuya Ward",
+            "Chiyoda Ward",
+            "Nara Prefecture",
+            "Daito Trust Construction",
+            "Dai-ichi Life",
+          ],
+          skills: [
+            "Frontend Development",
+            "JavaScript",
+            "LWC",
+            "SASS",
+            "UI Design",
+            "Illustration",
+          ],
+        },
       ],
     },
     {
@@ -68,26 +94,30 @@ const profile = {
       date: "2018 - 2020",
       place: "Tokyo, Japan",
       direction: "dir-l",
-      role: "Art Director/Illustrator",
-      description:
-        "I moved to Japan and worked at AMPlifier, a design studio in Tokyo. Here, I got to learn new skills, like motion graphics and 3D modeling.",
-      actions: [
-        "Designed websites for Japanese brands.",
-        "Created animations for museum exhibitions.",
-        "Crafted illustrations for advertising campaigns.",
+      positions: [
+        {
+          role: "Art Director/Illustrator",
+          description:
+            "I moved to Japan and worked at AMPlifier, a design studio in Tokyo. Here, I got to learn new skills, like motion graphics and 3D modeling.",
+          actions: [
+            "Designed websites for Japanese brands.",
+            "Created animations for museum exhibitions.",
+            "Crafted illustrations for advertising campaigns.",
+          ],
+          clients: [
+            "Tokyo National Museum",
+            "KDDI Museum",
+            "Glico",
+            "Zojirushi",
+            "Mineo",
+            "Dentsu Tec",
+            "MullenLowe Dubai",
+            "MullenLowe Japan",
+            "VMLY&R France",
+          ],
+          skills: ["Web Design", "Animation", "Illustration"],
+        },
       ],
-      clients: [
-        "Tokyo National Museum",
-        "KDDI Museum",
-        "Glico",
-        "Zojirushi",
-        "Mineo",
-        "Dentsu Tec",
-        "MullenLowe Dubai",
-        "MullenLowe Japan",
-        "VMLY&R France",
-      ],
-      skills: ["Web Design", "Animation", "Illustration"],
     },
     {
       company: "JWT Dubai",
@@ -96,22 +126,26 @@ const profile = {
       date: "2016 - 2017",
       place: "Dubai, UAE",
       direction: "dir-r",
-      role: "Art Director",
-      description:
-        "I moved to Dubai and worked as an Art Director at JWT (J. Walter Thompson, not JSON Web Token). I won some awards, including a Grand Prix at the Dubai Lynx.",
-      actions: [
-        "Conceptualized advertising campaigns.",
-        "Art directed television commercials and print ads.",
-        "Won local and international creative awards.",
+      positions: [
+        {
+          role: "Art Director",
+          description:
+            "I moved to Dubai and worked as an Art Director at JWT (J. Walter Thompson, not JSON Web Token). I won some awards, including a Grand Prix at the Dubai Lynx.",
+          actions: [
+            "Conceptualized advertising campaigns.",
+            "Art directed television commercials and print ads.",
+            "Won local and international creative awards.",
+          ],
+          clients: [
+            "Coca-Cola",
+            "Kenwood",
+            "Kinokuniya",
+            "Philadelphia Cream Cheese",
+            "Kraft",
+          ],
+          skills: ["Art Direction", "Illustration"],
+        },
       ],
-      clients: [
-        "Coca-Cola",
-        "Kenwood",
-        "Kinokuniya",
-        "Philadelphia Cream Cheese",
-        "Kraft",
-      ],
-      skills: ["Art Direction", "Illustration"],
     },
     {
       company: "Elborium",
@@ -120,27 +154,31 @@ const profile = {
       date: "2013 - 2016",
       place: "Argentina - Mexico - Chile",
       direction: "dir-l",
-      role: "Illustrator",
-      description:
-        "I started working as an Illustrator, freelancing for publishing companies and advertising agencies, while living in different countries.",
-      actions: [
-        "Illustrated content for books and magazines.",
-        "Created illustrations for advertising campaigns and theater posters.",
-        "Storyboarded commercials for ad agencies.",
+      positions: [
+        {
+          role: "Illustrator",
+          description:
+            "I started working as an Illustrator, freelancing for publishing companies and advertising agencies, while living in different countries.",
+          actions: [
+            "Illustrated content for books and magazines.",
+            "Created illustrations for advertising campaigns and theater posters.",
+            "Storyboarded commercials for ad agencies.",
+          ],
+          clients: [
+            "Mirador Interactive Museum",
+            "Confin Ediciones",
+            "Ciencia Joven Foundation",
+            "MullenLowe Dubai",
+            "DDB Dubai",
+            "JWT Dubai",
+            "JWT Argentina",
+            "BBDO Argentina",
+            "Del Campo Saatchi & Saatchi",
+            "Madre Buenos Aires",
+          ],
+          skills: ["Illustration"],
+        },
       ],
-      clients: [
-        "Mirador Interactive Museum",
-        "Confin Ediciones",
-        "Ciencia Joven Foundation",
-        "MullenLowe Dubai",
-        "DDB Dubai",
-        "JWT Dubai",
-        "JWT Argentina",
-        "BBDO Argentina",
-        "Del Campo Saatchi & Saatchi",
-        "Madre Buenos Aires",
-      ],
-      skills: ["Illustration"],
     },
     {
       company: "BBDO",
@@ -149,16 +187,20 @@ const profile = {
       date: "2012 - 2013",
       place: "Buenos Aires, Argentina",
       direction: "dir-r",
-      role: "Art Director",
-      description:
-        "I moved to BBDO as an Art Director, and had the chance to work with PepsiCo brands.",
-      actions: [
-        "Conceptualized advertising campaigns.",
-        "Art directed television commercials and print ads.",
-        "Won local creative awards.",
+      positions: [
+        {
+          role: "Art Director",
+          description:
+            "I moved to BBDO as an Art Director, and had the chance to work with PepsiCo brands.",
+          actions: [
+            "Conceptualized advertising campaigns.",
+            "Art directed television commercials and print ads.",
+            "Won local creative awards.",
+          ],
+          clients: ["Doritos", "7up", "Dr Lemon"],
+          skills: ["Art Direction"],
+        },
       ],
-      clients: ["Doritos", "7up", "Dr Lemon"],
-      skills: ["Art Direction"],
     },
     {
       company: "Ogilvy",
@@ -167,16 +209,20 @@ const profile = {
       date: "2011 - 2012",
       place: "Buenos Aires, Argentina",
       direction: "dir-l",
-      role: "Junior Art Director",
-      description:
-        "I started my career working as a Junior Art Director at Ogilvy & Mather Argentina. I did my first TV commercial here, and I won my first awards, including a silver lion at Cannes.",
-      actions: [
-        "Conceptualized advertising campaigns.",
-        "Art directed television commercials and print ads.",
-        "Won international creative awards.",
+      positions: [
+        {
+          role: "Junior Art Director",
+          description:
+            "I started my career working as a Junior Art Director at Ogilvy & Mather Argentina. I did my first TV commercial here, and I won my first awards, including a silver lion at Cannes.",
+          actions: [
+            "Conceptualized advertising campaigns.",
+            "Art directed television commercials and print ads.",
+            "Won international creative awards.",
+          ],
+          clients: ["Tang", "AMIA", "Mr. Muscle"],
+          skills: ["Art Direction"],
+        },
       ],
-      clients: ["Tang", "AMIA", "Mr. Muscle"],
-      skills: ["Art Direction"],
     },
   ],
   educationData: [
