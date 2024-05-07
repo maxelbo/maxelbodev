@@ -4,7 +4,8 @@ import { Image } from "astro:assets";
 import socialLinkedIn from "~/public/assets/about/social-icons/linkedin-icon.svg";
 import socialGitHub from "~/public/assets/about/social-icons/github-icon.svg";
 
-const currentInfo = false;
+const currentInfo = true;
+const contactInfo = true;
 const socialMedia = true;
 
 const { profile } = Astro.props;
@@ -12,39 +13,42 @@ const { siteData } = profile;
 ---
 
 <section>
-  <p class="font-bold">Hello,</p>
-  <p>{`I'm ${siteData.author},`}</p>
-  <p>
-    <strong>{siteData.role}</strong>
-    <br class="block sm:hidden" />
-    based in
-    {siteData.city}, {siteData.country}.
-    {
-      currentInfo && (
-        <p>
-          I'm currently working at
-          <strong>{siteData.company}</strong>
-          <br class="block sm:hidden" />
-          in
-          {siteData.city}, {siteData.country}.
-        </p>
-      )
-    }
-    <p>
-      You can contact me
-      <a class="underline" href=`mailto:${siteData.email}`>here</a>.
-    </p>
-    {
-      socialMedia && (
-        <div class="flex justify-center gap-4 pt-2">
-          <a href={siteData.social.linkedin} aria-label="LinkedIn">
-            <Image src={socialLinkedIn} alt="LinkedIn icon" class="w-5" />
-          </a>
-          <a href={siteData.social.github} aria-label="GitHub">
-            <Image src={socialGitHub} alt="LinkedIn icon" class="w-5" />
-          </a>
-        </div>
-      )
-    }
-  </p>
+  <strong id="hello-world">Hello, World!</strong>
+  <p>I&apos;m {siteData.author}.</p>
+  {
+    currentInfo && (
+      <p>
+        I bridge the gap between
+        <br class="sm:hidden" />
+        <strong>design &amp; development</strong>
+        <br />
+        at <strong>{siteData.company}</strong>
+        in {siteData.city}, {siteData.country}.
+      </p>
+    )
+  }
+  {
+    contactInfo && (
+      <p>
+        You can contact me
+        <a class="underline" href={`mailto:${siteData.email}`}>
+          here.
+        </a>
+      </p>
+    )
+  }
+  {
+    socialMedia && (
+      <div class="flex justify-center gap-4 pt-2">
+        <a href={siteData.social.linkedin} aria-label="LinkedIn">
+          <Image src={socialLinkedIn} alt="LinkedIn icon" class="w-5" />
+        </a>
+        <a href={siteData.social.github} aria-label="GitHub">
+          <Image src={socialGitHub} alt="GitHub icon" class="w-5" />
+        </a>
+      </div>
+    )
+  }
 </section>
+
+<script src="@/scripts/helloWorld.js"></script>
