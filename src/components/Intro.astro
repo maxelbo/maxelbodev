@@ -13,7 +13,7 @@ const { siteData } = profile;
 ---
 
 <section>
-  <strong id="hello-world">Hello, World!</strong>
+  <strong>Hello, World!</strong>
   <p>I&apos;m {siteData.author}.</p>
   {
     currentInfo && (
@@ -23,7 +23,7 @@ const { siteData } = profile;
         <strong>design &amp; development</strong>
         <br />
         at <strong>{siteData.company}</strong>
-        in {siteData.city}, {siteData.country}.
+        in {siteData.city}, {siteData.country} <span id="japan-emoji">🇯🇵</span>.
       </p>
     )
   }
@@ -51,4 +51,50 @@ const { siteData } = profile;
   }
 </section>
 
-<script src="@/scripts/helloWorld.js"></script>
+<script>
+  function japanEmojiSwap() {
+    const japanEmoji = document.getElementById("japan-emoji");
+    const emojiList = [
+      "🇯🇵",
+      "🗼",
+      "🗻",
+      "🍣",
+      "🍜",
+      "🍡",
+      "🍥",
+      "🍵",
+      "🍶",
+      "🍮",
+      "🍧",
+      "🍦",
+      "🍱",
+      "🎍",
+      "🎎",
+      "🎏",
+      "🎋",
+      "🎌",
+      "⛩️",
+      "👺",
+      "👹",
+      "👘",
+      "🏣",
+      "🏯",
+      "🌸",
+      "🚅",
+      "🥷",
+    ];
+    let index = 0;
+
+    setInterval(() => {
+      if (japanEmoji) {
+        japanEmoji.textContent = emojiList[index];
+      }
+      index = (index + 1) % emojiList.length;
+    }, 1000);
+  }
+
+  document.addEventListener("astro:after-swap", japanEmojiSwap);
+  document.addEventListener("astro:page-load", () => {
+    japanEmojiSwap();
+  });
+</script>
