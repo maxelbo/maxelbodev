@@ -21,7 +21,7 @@ const projectListTitle = "My Work";
 <PortfolioLayout {pageTitle} {projectListTitle}>
   <section class="mx-auto max-w-full">
     <Image
-      alt="head image"
+      alt="head"
       src={headImage}
       loading="eager"
       class="mx-auto mb-2 w-4/5 sm:mb-4 sm:w-3/5"
@@ -30,7 +30,11 @@ const projectListTitle = "My Work";
     <div class="mx-auto max-w-3xl space-y-12 px-8 text-center">
       <Intro {profile} transition:name="intro" />
       <!-- Load open eye -->
-      <img src="/assets/about/eye-open.webp" class="hidden" />
+      <img
+        src="/assets/about/eye-open.webp"
+        alt="loading image of eye open"
+        class="hidden"
+      />
       <section class="flex flex-col items-center space-y-12">
         <div>
           <Accordion title="Career" client:load>
@@ -48,9 +52,9 @@ const projectListTitle = "My Work";
                   {profile.educationData.map(
                     ({ date, institution, degree, logo }) => (
                       <div>
-                        <Image 
-                          src={`/assets/about/education/logo-${logo}.webp`} 
-                          alt="logo"} 
+                        <Image
+                          src={`/assets/about/education/logo-${logo}.webp`}
+                          alt={`logo of ${institution}`}
                           width={32}
                           height={32}
                           class="mx-auto rounded-full md:h-10 md:w-10"
@@ -59,7 +63,8 @@ const projectListTitle = "My Work";
                         <p>{degree}</p>
                         <p class="text-gray-500">{date}</p>
                       </div>
-                    ))}
+                    )
+                  )}
                 </div>
               </Accordion>
             </div>
@@ -72,7 +77,7 @@ const projectListTitle = "My Work";
                 <div class="my-4 space-y-4">
                   {profile.creativeAwards.map(({ title, awards }) => (
                     <div>
-                      <h3 class="font-bold">{title}</h3>
+                      <span class="font-bold">{title}</span>
                       <ul class="list-none">
                         {awards.map((award) => (
                           <li id={award}>{award}</li>
@@ -90,7 +95,7 @@ const projectListTitle = "My Work";
             <div>
               <Accordion title="Exhibitions" client:load>
                 <div class="my-4 space-y-4">
-                  {profile.exhibitions.map(({date, title, location}) => (
+                  {profile.exhibitions.map(({ date, title, location }) => (
                     <div>
                       <p class="font-bold">{title}</p>
                       <p>{location}</p>
@@ -104,10 +109,6 @@ const projectListTitle = "My Work";
         }
       </section>
     </div>
-    <Image
-      alt="shoes image"
-      src={shoesImage}
-      class="mx-auto my-8 w-4/5 sm:w-7/12"
-    />
+    <Image alt="shoes" src={shoesImage} class="mx-auto my-8 w-4/5 sm:w-7/12" />
   </section>
 </PortfolioLayout>
