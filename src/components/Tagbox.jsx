@@ -17,7 +17,7 @@ export default function Tagbox({ pageTitle, tagList }) {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="h-5 w-5 text-gray-400"
+              className="h-5 w-5 text-gray-500"
               aria-hidden="true"
             >
               <path
