@@ -10,10 +10,10 @@ const { post } = Astro.props;
     <div class="space-y-4">
       {
         post.frontmatter.img.length > 0 &&
-          post.frontmatter.img.map((src: string) => (
+          post.frontmatter.img.map((src: string, i: number) => (
             <Image
               src={src}
-              alt={post.frontmatter.title}
+              alt={`${post.frontmatter.title} - ${i + 1}`}
               width={600}
               height={300}
             />
@@ -39,7 +39,7 @@ const { post } = Astro.props;
         )
       }
 
-      <p class="text-left text-sm text-gray-400">
+      <p class="text-left text-xs text-gray-500">
         {
           new Intl.DateTimeFormat("en-US", {
             dateStyle: "medium",

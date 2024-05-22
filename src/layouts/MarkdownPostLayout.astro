@@ -31,7 +31,7 @@ const { frontmatter } = Astro.props;
     <div class="mx-4 my-4 max-w-3xl space-y-2 lg:mx-8">
       {frontmatter.body && <p class="text-left">{frontmatter.body}</p>}
 
-      <p class="text-left text-sm text-gray-400">
+      <p class="text-left text-xs text-gray-500">
         {
           new Intl.DateTimeFormat("en-US", {
             dateStyle: "medium",
