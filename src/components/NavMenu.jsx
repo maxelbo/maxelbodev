@@ -9,7 +9,7 @@ export default function NavMenu({ menuLinks }) {
   return (
     <Menu as="div" className="relative inline-block text-left sm:hidden">
       <div>
-        <Menu.Button className="flex items-center rounded-full text-gray-400 focus:outline-none">
+        <Menu.Button className="flex items-center rounded-full text-gray-500 focus:outline-none">
           <span className="sr-only">Open menu</span>
           <span className="m-4 space-y-1.5" aria-hidden="true">
             {[1, 2, 3].map((i) => (
@@ -39,7 +39,7 @@ export default function NavMenu({ menuLinks }) {
                   <a
                     href={url}
                     className={classNames(
-                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                      active ? "bg-slate-100 text-gray-900" : "text-gray-700",
                       "block px-4 py-2 text-lg"
                     )}
                   >
