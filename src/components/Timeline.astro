@@ -17,13 +17,13 @@ const { timelineData } = Astro.props;
   >
     {
       timelineData.map((item: TimelineType) => (
-        <li class="px-0 py-9 md:py-4">
+        <li class="px-0 py-9 after:clear-both after:block md:py-4">
           <div class={`group ${item.direction} relative w-full md:w-[300px]`}>
             <div class="flag-wrapper relative inline-block">
               {item.logo && (
                 <Image
                   src={`/assets/about/career/logo-${item.logo}.webp`}
-                  alt="logo"
+                  alt={`logo of ${item.company}`}
                   width={32}
                   height={32}
                   class="timeline-logo absolute -top-12 left-[50%] z-20 -ml-4 rounded-full bg-black md:-top-2 md:-ml-5 md:h-10 md:w-10"
@@ -69,7 +69,7 @@ const { timelineData } = Astro.props;
                 )}
                 <div class="info-wrapper z-20 mx-0 my-2 flex flex-col flex-wrap gap-4">
                   {clientsActive && position.clients && (
-                    <div class="info">
+                    <div>
                       <strong>Clients:</strong>
                       <ul class="m-0 flex list-none flex-row flex-wrap gap-1 p-0">
                         {position.clients.map((client) => (
@@ -81,7 +81,7 @@ const { timelineData } = Astro.props;
                     </div>
                   )}
                   {skillsActive && position.skills && (
-                    <div class="info block">
+                    <div>
                       <strong>Skills:</strong>
                       <ul class="m-0 flex list-none flex-row flex-wrap gap-1 p-0">
                         {position.skills.map((skill) => (
@@ -103,7 +103,7 @@ const { timelineData } = Astro.props;
 </div>
 
 <style is:global>
-  .timeline:before {
+  .timeline::before {
     position: absolute;
     left: 50%;
     top: 0;
@@ -158,14 +158,6 @@ const { timelineData } = Astro.props;
     z-index: 5;
   }
 
-  .timeline li:after {
-    content: "";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-  }
-
   .dir-l,
   .dir-r {
     float: none;
@@ -183,8 +175,8 @@ const { timelineData } = Astro.props;
     }
   }
 
-  .dir-l .flag:after,
-  .dir-r .flag:after {
+  .dir-l .flag::after,
+  .dir-r .flag::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -193,14 +185,14 @@ const { timelineData } = Astro.props;
     width: 0;
     margin-left: -8px;
     border: solid transparent;
-    border-bottom-color: black;
+    border-bottom-color: var(--black);
     border-width: 8px;
     pointer-events: none;
   }
 
   @media (min-width: 768px) {
-    .dir-l .flag:after,
-    .dir-r .flag:after {
+    .dir-l .flag::after,
+    .dir-r .flag::after {
       left: auto;
       top: 50%;
       margin-left: auto;
@@ -209,14 +201,14 @@ const { timelineData } = Astro.props;
       border-bottom-color: white;
     }
 
-    .dir-l .flag:after {
+    .dir-l .flag::after {
       left: 100%;
-      border-left-color: black;
+      border-left-color: var(--black);
     }
 
-    .dir-r .flag:after {
+    .dir-r .flag::after {
       right: 100%;
-      border-right-color: black;
+      border-right-color: var(--black);
     }
 
     .dir-r .timeline-logo {
