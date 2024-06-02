@@ -1,18 +1,25 @@
 function setCounterAnimation() {
-  let counter = document.getElementById("counter");
-  let from = parseInt(counter.getAttribute("data-from"));
-  let to = parseInt(counter.getAttribute("data-to"));
-  let speed = parseInt(counter.getAttribute("data-speed"));
-  let animation = setInterval(function () {
-    if (from <= to) {
-      counter.textContent = (from++).toString();
-    } else {
-      clearInterval(animation);
+  let counter = document.getElementById("error-counter");
+  if (counter) {
+    let fromAttr = counter.dataset.from;
+    let toAttr = counter.dataset.to;
+    let speedAttr = counter.dataset.speed;
+
+    if (fromAttr && toAttr && speedAttr) {
+      let from = parseInt(fromAttr);
+      let to = parseInt(toAttr);
+      let speed = parseInt(speedAttr);
+      let animation = setInterval(() => {
+        if (from <= to) {
+          counter.textContent = (from++).toString();
+        } else {
+          clearInterval(animation);
+        }
+      }, speed);
     }
-  }, speed);
+  }
 }
 
-document.addEventListener("DOMContentLoaded", setCounterAnimation);
 document.addEventListener("astro:after-swap", setCounterAnimation);
 document.addEventListener("astro:page-load", () => {
   setCounterAnimation();
