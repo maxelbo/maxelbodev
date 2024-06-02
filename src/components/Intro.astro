@@ -1,15 +1,16 @@
 ---
 import { Image } from "astro:assets";
 
+import socialGmail from "~/public/assets/about/social-icons/gmail-icon.svg";
 import socialLinkedIn from "~/public/assets/about/social-icons/linkedin-icon.svg";
 import socialGitHub from "~/public/assets/about/social-icons/github-icon.svg";
 
-const currentInfo = true;
-const contactInfo = true;
-const socialMedia = true;
+let currentInfo = true;
+let callToAction = false;
+let socialMedia = true;
 
-const { profile } = Astro.props;
-const { siteData } = profile;
+let { profile } = Astro.props;
+let { siteData } = profile;
 ---
 
 <section>
@@ -28,23 +29,44 @@ const { siteData } = profile;
     )
   }
   {
-    contactInfo && (
-      <p>
-        You can contact me
-        <a class="underline" href={`mailto:${siteData.email}`}>
-          here.
-        </a>
-      </p>
+    callToAction && (
+      <form
+        action={`mailto:${siteData.email}`}
+        target="_blank"
+        class="pb-2 pt-4"
+      >
+        <button
+          type="submit"
+          class="h-12 min-w-0 rounded-lg bg-yellow-500 px-6 text-gray-900 shadow transition-colors duration-300 ease-in-out hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-opacity-50 "
+        >
+          Drop a line
+        </button>
+      </form>
     )
   }
   {
     socialMedia && (
-      <div class="flex justify-center gap-4 pt-2">
-        <a href={siteData.social.linkedin} aria-label="LinkedIn">
-          <Image src={socialLinkedIn} alt="LinkedIn icon" class="w-5" />
+      <div class="flex items-center justify-center gap-4 pt-2">
+        <a
+          href={`mailto:${siteData.email}`}
+          target="_blank"
+          aria-label="Send an email"
+        >
+          <Image src={socialGmail} alt="Gmail" class="w-5" />
         </a>
-        <a href={siteData.social.github} aria-label="GitHub">
-          <Image src={socialGitHub} alt="GitHub icon" class="w-5" />
+        <a
+          href={siteData.social.linkedin}
+          target="_blank"
+          aria-label="Go to LinkedIn"
+        >
+          <Image src={socialLinkedIn} alt="LinkedIn" class="w-5" />
+        </a>
+        <a
+          href={siteData.social.github}
+          target="_blank"
+          aria-label="Go to GitHub"
+        >
+          <Image src={socialGitHub} alt="GitHub" class="w-5" />
         </a>
       </div>
     )
