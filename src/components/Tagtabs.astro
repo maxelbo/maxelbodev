@@ -14,7 +14,7 @@ const { pageTitle, tagList } = Astro.props;
         class="group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium text-gray-900 first:rounded-l-lg last:rounded-r-lg hover:bg-gray-50 focus:z-10"
         aria-current={pageTitle === dekebabize(tag) ? "page" : "false"}
         id={tag}
-        href={`/projects/${tag}`}
+        href={`/projects/${tag}/`}
       >
         <span class="capitalize">{dekebabize(tag)}</span>
         {pageTitle === dekebabize(tag) && (

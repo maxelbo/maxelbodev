@@ -46,7 +46,7 @@ export default function Tagbox({ pageTitle, tagList }) {
                 value={dekebabize(tagOption)}
               >
                 <a
-                  href={`/projects/${tagOption}`}
+                  href={`/projects/${tagOption}/`}
                   className="block truncate capitalize"
                 >
                   {dekebabize(tagOption)}

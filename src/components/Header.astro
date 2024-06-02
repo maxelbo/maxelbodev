@@ -1,21 +1,10 @@
 ---
 import Logo from "@/components/Logo.astro";
 import NavMenu from "@/components/NavMenu";
+import profile from "@/data/profile.js";
 
-const menuLinks = [
-  {
-    url: "/about",
-    title: "About",
-  },
-  {
-    url: "/posts/1",
-    title: "Blog",
-  },
-  {
-    url: "/projects/all",
-    title: "Work",
-  },
-];
+let menuLinks = profile.siteData.menuLinks;
+let pathname = Astro.url.pathname;
 ---
 
 <header class="fixed top-0 right-0 left-0 z-50 w-full bg-white">
@@ -34,9 +23,13 @@ const menuLinks = [
       class="top-20 right-8 hidden min-w-fit flex-row justify-center space-y-0 space-x-8 border-none px-1 py-4 text-lg text-gray-600 shadow-none ring-0 ring-black ring-opacity-5 transition-all duration-75 focus:outline-none sm:flex"
     >
       {
-        menuLinks.map(({ url, title }) => (
+        menuLinks.map(({ url, title, path }) => (
           <a
-            class="text-gray-600 no-underline hover:text-gray-800 hover:underline"
+            class={`decoration-slate-400 underline-offset-2 hover:text-gray-800 hover:underline ${
+              pathname.indexOf(path)
+                ? "text-gray-600 no-underline"
+                : "text-gray-800 underline"
+            }`}
             href={url}
           >
             {title}

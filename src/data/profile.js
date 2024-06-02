@@ -5,11 +5,11 @@ const profile = {
     siteName: "Elborium",
     title: "Max Elbo | Developer & Designer",
     description:
-      "Hello, I am Max Elbo, a digital craftsman, forging apps with the mighty hammers of CSS and JavaScript. Embark on a journey through my portfolio, where every pixel is meticulously chiseled into digital artifacts.",
+      "Hello, I am Max Elbo, a digital craftsman, forging apps with the mighty hammers of CSS and JavaScript. Embark on a journey through my portfolio, where every pixel is meticulously chiseled into digital artifacts, showcasing my expertise in frontend development, UI/UX design, and visual storytelling",
     keywords: [
-      "max elbo",
-      "front end developer, ui ux designer",
-      "javascript, js node, react",
+      "Max Elbo portfolio",
+      "Frontend developer, UI/UX designer, Art Director, Illustrator",
+      "React developer, Salesforce developer, creative design specialist",
     ],
     author: "Max Elbo",
     age: getAge(),
@@ -28,6 +28,23 @@ const profile = {
       src: "/og-image.jpg",
       alt: "Elborium",
     },
+    menuLinks: [
+      {
+        url: "/about/",
+        path: "/about/",
+        title: "About",
+      },
+      {
+        url: "/posts/1/",
+        path: "/posts/",
+        title: "Blog",
+      },
+      {
+        url: "/projects/all/",
+        path: "/projects/",
+        title: "Work",
+      },
+    ],
   },
   timelineData: [
     {
@@ -240,7 +257,7 @@ const profile = {
     },
     {
       logo: "ztm",
-      institution: "Zero to Mastery Academy",
+      institution: "ZTM Academy",
       degree: "Fullstack Web Developer Bootcamp",
       date: "2022",
     },
