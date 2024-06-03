@@ -1,14 +1,15 @@
 function setCounterAnimation() {
   let counter = document.getElementById("error-counter");
-  if (counter) {
-    let fromAttr = counter.dataset.from;
-    let toAttr = counter.dataset.to;
-    let speedAttr = counter.dataset.speed;
 
-    if (fromAttr && toAttr && speedAttr) {
-      let from = parseInt(fromAttr);
-      let to = parseInt(toAttr);
-      let speed = parseInt(speedAttr);
+  if (counter) {
+    let dataFrom = counter.dataset.from;
+    let dataTo = counter.dataset.to;
+    let dataSpeed = counter.dataset.speed;
+
+    if (dataFrom && dataTo && dataSpeed) {
+      let from = parseInt(dataFrom);
+      let to = parseInt(dataTo);
+      let speed = parseInt(dataSpeed);
       let animation = setInterval(() => {
         if (from <= to) {
           counter.textContent = (from++).toString();
