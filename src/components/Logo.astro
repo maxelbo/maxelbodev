@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 
 import profile from "@/data/profile";
-const { role } = profile.siteData;
+let { role } = profile.siteData;
 ---
 
 <a
@@ -20,7 +20,6 @@ const { role } = profile.siteData;
     height="100"
     class="p-4 duration-75 sm:justify-center"
   />
-  <h1 class="sr-only">Max Elbo</h1>
   <span
     id="logo-subtitle"
     class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-sm italic text-gray-500 opacity-100 transition-all duration-75 sm:mx-auto"
