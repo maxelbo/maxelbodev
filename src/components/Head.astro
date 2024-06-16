@@ -13,7 +13,9 @@ const { pageTitle, image, frontmatter, robots } = Astro.props;
   <meta charset="utf-8" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width" />
-  <title>Elborium{pageTitle && ` - ${capitalize(pageTitle)}`}</title>
+  <title>
+    {siteData.author}{pageTitle && ` - ${capitalize(pageTitle)}`}
+  </title>
   <meta name="description" content={siteData.description} />
 
   <!-- SEO -->
@@ -27,7 +29,11 @@ const { pageTitle, image, frontmatter, robots } = Astro.props;
   />
   <meta name="author" content={siteData.author} />
   <meta name="generator" content={Astro.generator} />
-  <meta name="keywords" content={siteData.keywords.join(", ")} />
+  {
+    siteData.keywords && (
+      <meta name="keywords" content={siteData.keywords.join(", ")} />
+    )
+  }
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
