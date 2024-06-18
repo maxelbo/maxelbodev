@@ -2,15 +2,15 @@ import { getAge } from "@/scripts/profileActions";
 
 const profile = {
   siteData: {
-    siteName: "Elborium",
+    siteName: "Max Elbo's Portfolio",
     title: "Max Elbo | Developer & Designer",
     description:
-      "Hello, I am Max Elbo, a digital craftsman, forging apps with the mighty hammers of CSS and JavaScript. Embark on a journey through my portfolio, where every pixel is meticulously chiseled into digital artifacts, showcasing my expertise in frontend development, UI/UX design, and visual storytelling",
-    keywords: [
-      "Max Elbo portfolio",
-      "Frontend developer, UI/UX designer, Art Director, Illustrator",
-      "React developer, Salesforce developer, creative design specialist",
-    ],
+      "Hello, I am Max Elbo, a digital artisan. Welcome to my portfolio.",
+    // keywords: [
+    //   "Max Elbo portfolio",
+    //   "Frontend developer, UI/UX designer, Art Director, Illustrator",
+    //   "React developer, Salesforce developer, creative design specialist",
+    // ],
     author: "Max Elbo",
     age: getAge(),
     role: "Designer / Developer",
@@ -19,14 +19,14 @@ const profile = {
     country: "Japan",
     email: "hello.maxelbo@gmail.com",
     logo: "logo.webp",
-    url: "https://elborium.com",
+    url: "https://maxelbo.dev",
     social: {
       github: "https://www.github.com/maxelbo/",
       linkedin: "https://www.linkedin.com/in/maxelbo/",
     },
     image: {
       src: "/og-image.jpg",
-      alt: "Elborium",
+      alt: "Max Elbo's Portfolio",
     },
     menuLinks: [
       {
