@@ -11,7 +11,7 @@ const profile = {
     //   "Frontend developer, UI/UX designer, Art Director, Illustrator",
     //   "React developer, Salesforce developer, creative design specialist",
     // ],
-    author: "Max Elbo",
+    author: "Max",
     age: getAge(),
     role: "Designer / Developer",
     company: "Deloitte",
