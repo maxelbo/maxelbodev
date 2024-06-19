@@ -6,10 +6,9 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.elborium.com",
+  site: "https://maxelbo.dev",
   trailingSlash: "always",
   integrations: [tailwind(), mdx(), react(), partytown()],
-  // adapter: netlify(),
   // prefetch: { prefetchAll: true },
   // experimental: {
   //   viewTransitions: true,
