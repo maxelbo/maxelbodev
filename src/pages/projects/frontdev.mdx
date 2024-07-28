@@ -1,0 +1,81 @@
+---
+layout: "../../layouts/MarkdownProjectLayout.astro"
+title: "frontdev"
+displayTitle: "Frontend"
+description: "Frontend Collection"
+order: 0.4
+tags: ["all", "development"]
+archived: true
+private: false
+---
+
+This is a collection of frontend development projects. These are projects in which I was the developer, and the design was done by other designers.
+
+---
+
+import { Image } from "astro:assets";
+import frontdev0 from "~/public/assets/projects/frontdev/frontdev-0.webp";
+import frontdev1 from "~/public/assets/projects/frontdev/frontdev-1.webp";
+import frontdev2 from "~/public/assets/projects/frontdev/frontdev-2.webp";
+
+<section>
+  ## Daito Trust Construction
+  <p>I made five landing pages for Daito Trust Construction.</p>
+  <Image src={frontdev0} alt="Frontdev0" />
+  <p>You can see them here:</p>
+  <ul>
+    <li>
+      <a href="https://assetra.kentaku.co.jp/lp/1" class="underline">
+        Landing Page 1
+      </a>
+    </li>
+    <li>
+      <a href="https://assetra.kentaku.co.jp/lp/2" class="underline">
+        Landing Page 2
+      </a>
+    </li>
+    <li>
+      <a href="https://assetra.kentaku.co.jp/lp/3" class="underline">
+        Landing Page 3
+      </a>
+    </li>
+  </ul>
+</section>
+<section>
+  ## Tokyo Bureau of Social Welfare
+  <p>
+    I developed a website to look up information about facilities in Tokyo for
+    the Tokyo Metropolitan Government's Bureau of Social Welfare. I built the
+    frontend with LWC and SASS. The data is stored in Salesforce. The data
+    structure was not decided when I started working on the project, so I got to
+    design the data structure when writing the filtering and pagination logic.
+  </p>
+  <Image src={frontdev1} alt="Frontdev1" />
+  <p>You can visit the site here:</p>
+  <ul>
+    <li>
+      <a
+        href="https://www.info.fukushikensa.metro.tokyo.lg.jp/s/home"
+        class="underline"
+      >
+        Site
+      </a>
+    </li>
+  </ul>
+</section>
+<section>
+  ## Dai-ichi Life
+  <p>I made a page for Dai-ichi Life.</p>
+  <Image src={frontdev2} alt="Frontdev2" />
+  <p>You can see it here:</p>
+  <ul>
+    <li>
+      <a
+        href="https://www.dai-ichi-life-hd.com/about/aims/purpose.html"
+        class="underline"
+      >
+        Dai-ichi Life - Purpose
+      </a>
+    </li>
+  </ul>
+</section>
