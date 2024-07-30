@@ -58,6 +58,10 @@ article hr {
   margin-bottom: 2rem;
 }
 
+article h2 {
+  padding: 40px 0 10px;
+}
+
 /* Accordion */
 .accordion-title[aria-expanded="false"]::before {
   content: url(/assets/about/eye-closed.webp);
