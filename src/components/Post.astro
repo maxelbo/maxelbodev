@@ -6,11 +6,12 @@ const { post } = Astro.props;
 ---
 
 <article class="mx-auto my-4 max-w-6xl py-4">
-  <a href={post.url}>
+  <a href={post.url} aria-label="Go to post.">
     <div class="space-y-4">
       {
-        post.frontmatter.img.length > 0 &&
-          post.frontmatter.img.map((src: string, i: number) => (
+        post.frontmatter.img &&
+          post.frontmatter.img?.length > 0 &&
+          post.frontmatter.img?.map((src: string, i: number) => (
             <Image
               src={src}
               alt={`${post.frontmatter.title} - ${i + 1}`}
