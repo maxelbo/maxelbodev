@@ -1,27 +1,32 @@
 ---
 layout: "../../layouts/MarkdownProjectLayout.astro"
-title: "frontdev"
-displayTitle: "Frontend"
-description: "Frontend Collection"
+title: "dev"
+displayTitle: "Development"
+description: "Development Collection"
 order: 11
 tags: ["all", "development"]
 archived: true
 private: false
 ---
 
-This is a collection of frontend development projects. These are projects in which I was the developer, and the design was done by other designers.
+This is a collection of development projects.
 
 ---
 
 import { Image } from "astro:assets";
-import frontdev0 from "~/public/assets/projects/frontdev/frontdev-0.webp";
-import frontdev1 from "~/public/assets/projects/frontdev/frontdev-1.webp";
-import frontdev2 from "~/public/assets/projects/frontdev/frontdev-2.webp";
+import dev0 from "~/public/assets/projects/dev/dev-0.webp";
+import dev1 from "~/public/assets/projects/dev/dev-1.webp";
+import dev2 from "~/public/assets/projects/dev/dev-2.webp";
+import dev3 from "~/public/assets/projects/dev/dev-3.webp";
 
 <section>
   ## Daito Trust Construction
-  <p>I made five landing pages for Daito Trust Construction.</p>
-  <Image src={frontdev0} alt="Frontdev0" />
+  <p>
+    I made five landing pages for Daito Trust Construction. I was given only the
+    mobile version of the design, and developed it based on that, designing the
+    desktop version while coding.
+  </p>
+  <Image src={dev0} alt="dev0" />
   <p>You can see them here:</p>
   <ul>
     <li>
@@ -50,7 +55,7 @@ import frontdev2 from "~/public/assets/projects/frontdev/frontdev-2.webp";
     structure was not decided when I started working on the project, so I got to
     design the data structure when writing the filtering and pagination logic.
   </p>
-  <Image src={frontdev1} alt="Frontdev1" />
+  <Image src={dev1} alt="dev1" />
   <p>You can visit the site here:</p>
   <ul>
     <li>
@@ -65,8 +70,10 @@ import frontdev2 from "~/public/assets/projects/frontdev/frontdev-2.webp";
 </section>
 <section>
   ## Dai-ichi Life
-  <p>I made a page for Dai-ichi Life.</p>
-  <Image src={frontdev2} alt="Frontdev2" />
+  <p>
+    I made a page for Dai-ichi Life. The design was done by another designer.
+  </p>
+  <Image src={dev2} alt="dev2" />
   <p>You can see it here:</p>
   <ul>
     <li>
@@ -75,6 +82,27 @@ import frontdev2 from "~/public/assets/projects/frontdev/frontdev-2.webp";
         class="underline"
       >
         Dai-ichi Life - Purpose
+      </a>
+    </li>
+  </ul>
+</section>
+<section>
+  ## Vödabuk
+  <p>
+    I made a Volapük dictionary app. I'm using Next.js for the backend and the
+    frontend.
+  </p>
+  <Image src={dev3} alt="dev3" />
+  <p>You can see it here:</p>
+  <ul>
+    <li>
+      <a href="https://vodabuk.com/" class="underline">
+        vodabuk.com
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/maxelbo/vodabuk" class="underline">
+        GitHub repository
       </a>
     </li>
   </ul>
