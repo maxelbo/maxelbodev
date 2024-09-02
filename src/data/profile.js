@@ -56,13 +56,13 @@ const profile = {
       direction: "dir-r",
       positions: [
         {
-          role: "UX Engineer",
+          role: "Design Engineer",
           subrole: "Specialist Senior",
           date: "2024 - present",
           description:
-            "I am currently working at Deloitte Consulting as a UX Engineer, bridging the gap between both worlds. I've worked on corporate websites, and CRM apps to help the Japanese Government improve its DX.",
+            "I am currently working at Deloitte Consulting as a Design Engineer, bridging the gap between both worlds. I've worked on corporate websites, and CRM apps to help the Japanese Government improve its DX.",
           actions: [],
-          // clients: ["Yokohama City", "Fujisawa City"],
+          // clients: ["Yokohama City", "Fujisawa City", "Chiyoda Ward", "Tokyo Metropolitan Government"],
           // skills: [
           //   "Frontend Development",
           //   "JavaScript",
