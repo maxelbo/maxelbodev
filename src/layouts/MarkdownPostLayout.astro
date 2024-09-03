@@ -11,8 +11,8 @@ const { frontmatter } = Astro.props;
   <article>
     <div class="space-y-4">
       {
-        frontmatter.img.length > 0 &&
-          frontmatter.img.map((src: string) => (
+        frontmatter?.img.length > 0 &&
+          frontmatter?.img.map((src: string) => (
             <Image
               src={src}
               alt={frontmatter.title}
@@ -29,8 +29,10 @@ const { frontmatter } = Astro.props;
       }
     </div>
     <div class="mx-4 my-4 max-w-3xl space-y-2 lg:mx-8">
-      {frontmatter.body && <p class="text-left">{frontmatter.body}</p>}
-
+      <div class="text-left">
+        {frontmatter?.body && <p>{frontmatter?.body}</p>}
+        <slot />
+      </div>
       <p class="text-left text-xs text-gray-500">
         {
           new Intl.DateTimeFormat("en-US", {
@@ -40,7 +42,6 @@ const { frontmatter } = Astro.props;
       </p>
     </div>
   </article>
-  <slot />
   <div
     class="flex items-center justify-center border-t border-gray-200 px-4 text-xl sm:px-0 sm:text-lg"
   >
