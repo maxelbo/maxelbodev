@@ -15,12 +15,15 @@ let pathname = Astro.url.pathname;
       class="flex flex-1 flex-row items-center justify-between gap-0 space-x-14"
     >
       <Logo />
-      <NavMenu {menuLinks} client:only="react" />
+      <nav aria-label="Header menu for SP.">
+        <NavMenu {menuLinks} client:only="react" />
+      </nav>
     </div>
     <nav
       id="nav"
+      aria-label="Header menu for PC."
       style="width:100%;max-width:100%;"
-      class="top-20 right-8 hidden min-w-fit flex-row justify-center space-y-0 space-x-8 border-none px-1 py-4 text-lg text-gray-600 shadow-none ring-0 ring-black ring-opacity-5 transition-all duration-75 focus:outline-none sm:flex"
+      class="top-20 right-8 hidden min-w-fit justify-center gap-7 border-none px-1 py-4 text-lg text-gray-600 shadow-none ring-0 ring-black ring-opacity-5 transition-all duration-75 focus:outline-none sm:flex"
     >
       {
         menuLinks.map(({ url, title, path }) => (
