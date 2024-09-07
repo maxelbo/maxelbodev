@@ -11,9 +11,7 @@ let pathname = Astro.url.pathname;
   <div
     class="mx-auto max-w-4xl p-0 sm:flex sm:flex-wrap sm:justify-between sm:px-4"
   >
-    <div
-      class="flex flex-1 flex-row items-center justify-between gap-0 space-x-14"
-    >
+    <div class="flex flex-1 flex-row items-center justify-between gap-0">
       <Logo />
       <nav aria-label="Header menu for SP.">
         <NavMenu {menuLinks} client:only="react" />
