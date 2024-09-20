@@ -61,16 +61,18 @@ const profile = {
           date: "2024 - present",
           description:
             "I am currently working at Deloitte Consulting as a Design Engineer, bridging the gap between both worlds. I've worked on corporate websites, and CRM apps to help the Japanese Government improve its DX.",
-          actions: [],
-          // clients: ["Yokohama City", "Fujisawa City", "Chiyoda Ward", "Tokyo Metropolitan Government"],
+          // actions: [
+          //   "Lead the design and frontend development of CRM apps",
+          // ],
+          // clients: ["Yokohama City", "Fujisawa City", "Chiyoda Ward", "Tokyo Metropolitan Government, Epson"],
           // skills: [
           //   "Frontend Development",
           //   "JavaScript",
-          //   "Salesforce LWC",
+          //   "LWC",
           //   "CSS",
           //   "SASS",
           //   "Node.js",
-          //   "UI/UX Design",
+          //   "UI Design",
           //   "Illustration",
           // ],
         },
@@ -247,7 +249,7 @@ const profile = {
       logo: "snhu",
       institution: "Southern New Hampshire University",
       degree: "Bachelor of Science in Computer Science",
-      date: "2027 (expected)",
+      date: "2026 (expected)",
     },
     {
       logo: "google",
