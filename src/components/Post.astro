@@ -29,17 +29,10 @@ const { post } = Astro.props;
         )
       }
     </div>
-
     <div class="mx-4 mb-4 max-w-3xl space-y-2 lg:mx-8">
-      {
-        post.frontmatter.body && (
-          <>
-            <p class="text-left">{post.frontmatter.body}</p>
-            <slot />
-          </>
-        )
-      }
-
+      <div class="text-left">
+        {post.frontmatter?.body && <p set:html={post.frontmatter?.body} />}
+      </div>
       <p class="text-left text-xs text-gray-500">
         {
           new Intl.DateTimeFormat("en-US", {
