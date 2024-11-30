@@ -4,7 +4,7 @@ import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import partytown from "@astrojs/partytown";
 
-import netlify from "@astrojs/netlify";
+// import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,6 +17,6 @@ export default defineConfig({
   // },
   integrations: [tailwind(), mdx(), react(), partytown()],
 
-  output: "server",
-  adapter: netlify(),
+  // output: "server",
+  // adapter: netlify(),
 });
