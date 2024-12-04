@@ -1,0 +1,29 @@
+---
+layout: "../../layouts/MarkdownProjectLayout.astro"
+title: "yokohama"
+displayTitle: "Yokohama"
+description: "CRM App"
+order: 0.2
+tags: ["all", "development"]
+archived: false
+private: false
+---
+
+I worked on the frontend development and design for Pamatoco, a CRM app for parents in Yokohama. The app includes an event calendar, a map with custom icons, and a digital version of the maternal and child health handbook (母子健康手帳) provided by the Japanese government to new mothers. By digitizing this handbook, parents can conveniently book vaccinations, schedule dentist visits, and monitor their children's growth all in one place.
+
+A key challenge for this project was developing not only the web app but also native apps for iOS and Android. The native apps were built using Flutter and integrated with the web app through WebView.
+
+---
+
+import { Image } from "astro:assets";
+import yokohama0 from "~/public/assets/projects/yokohama/yokohama-0.webp";
+
+<section>
+  <Image src={yokohama0} alt="yokohama0" />
+  <p>
+    You can visit it here:
+    <a href="https://pamatoco.city.yokohama.lg.jp/ctz/" class="underline">
+      pamatoco.city.yokohama.lg.jp
+    </a>
+  </p>
+</section>
