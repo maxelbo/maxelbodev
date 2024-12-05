@@ -15,11 +15,11 @@ const { title, displayTitle, url, description } = Astro.props;
     width={252}
     height={350}
     loading="lazy"
-    class="shadow-md group-hover/card:-translate-y-0.5 group-hover/card:scale-[1.01] group-hover/card:shadow-lg group-hover/card:transition group-hover/card:delay-150 group-hover/card:ease-out group-active/card:shadow-lg"
+    class="shadow-md dark:shadow-lg rounded-2xl group-hover/card:-translate-y-0.5 group-hover/card:scale-[1.01] group-hover/card:shadow-lg dark:group-hover/card:shadow-xl group-hover/card:transition group-hover/card:delay-150 group-hover/card:ease-out group-active/card:shadow-lg"
   />
   <div class="mt-1 text-center">
-    <p class="font-bold">{displayTitle}</p>
-    <p class="-mt-1 text-sm italic text-gray-500">
+    <p class="font-bold dark:text-gray-100">{displayTitle}</p>
+    <p class="-mt-1 text-sm italic text-gray-500 dark:text-gray-300">
       &mdash;{description}&mdash;
     </p>
   </div>
