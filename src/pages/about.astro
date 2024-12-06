@@ -59,9 +59,12 @@ const projectListTitle = "My Work";
                           height={32}
                           class="mx-auto rounded-full md:h-10 md:w-10"
                         />
-                        <p class="font-bold">{institution}</p>
+                        <p class="text-lg font-bold">{institution}</p>
                         <p>{degree}</p>
-                        <p class="text-gray-500">{date}</p>
+                        <p 
+                          class="text-sm text-gray-500 dark:text-gray-400"
+                          set:html={date}
+                        />
                       </div>
                     )
                   )}
@@ -99,7 +102,9 @@ const projectListTitle = "My Work";
                     <div>
                       <p class="font-bold">{title}</p>
                       <p>{location}</p>
-                      <p class="text-gray-500">{date}</p>
+                      <p class="text-sm text-gray-500 dark:text-gray-400">
+                        {date}
+                      </p>
                     </div>
                   ))}
                 </div>
