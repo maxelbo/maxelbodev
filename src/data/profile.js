@@ -51,35 +51,31 @@ const profile = {
       company: "Deloitte",
       title: "Deloitte Tohmatsu Consulting",
       logo: "deloitte",
-      date: "2020 - present",
+      date: "2020 – present",
       place: "Tokyo, Japan",
       direction: "dir-r",
       positions: [
         {
           role: "Design Engineer",
           subrole: "Specialist Senior",
-          date: "2024 - present",
+          date: "2024 – present",
           description:
-            "I am currently working at Deloitte Consulting as a Design Engineer, bridging the gap between both worlds. I've worked on corporate websites, and CRM apps to help the Japanese Government improve its DX.",
-          // actions: [
-          //   "Lead the design and frontend development of CRM apps",
-          // ],
-          // clients: ["Yokohama City", "Fujisawa City", "Chiyoda Ward", "Tokyo Metropolitan Government, Epson"],
-          // skills: [
-          //   "Frontend Development",
-          //   "JavaScript",
-          //   "LWC",
-          //   "CSS",
-          //   "SASS",
-          //   "Node.js",
-          //   "UI Design",
-          //   "Illustration",
-          // ],
+            "I am currently working at Deloitte Consulting as a Design Engineer, bridging the gap between design and development.",
+          actions: [
+            "Designed and developed the frontend of CRM apps and branding websites.",
+          ],
+          clients: ["Yokohama City", "Fujisawa City", "Chiyoda Ward", "Tokyo Metropolitan Government", "Epson"],
+          skills: [
+            "Frontend Development",
+            "UI Design",
+            "Illustration",
+            "JavaScript"
+          ],
         },
         {
           role: "Frontend Developer/Art Director",
           subrole: "Specialist",
-          date: "2020 - 2024",
+          date: "2020 – 2024",
           description:
             "I worked at Deloitte Consulting as a frontend developer and a designer, bridging the gap between both worlds. I've worked on corporate websites, and CRM apps to help the Japanese Government improve its DX.",
           actions: [
@@ -110,7 +106,7 @@ const profile = {
       company: "AMP",
       title: "AMP",
       logo: "amp",
-      date: "2018 - 2020",
+      date: "2018 – 2020",
       place: "Tokyo, Japan",
       direction: "dir-l",
       positions: [
@@ -142,7 +138,7 @@ const profile = {
       company: "JWT Dubai",
       title: "J. Walter Thompson Dubai",
       logo: "jwt",
-      date: "2016 - 2017",
+      date: "2016 – 2017",
       place: "Dubai, UAE",
       direction: "dir-r",
       positions: [
@@ -170,7 +166,7 @@ const profile = {
       company: "Elborium",
       title: "Elborium",
       logo: "elborium",
-      date: "2013 - 2016",
+      date: "2013 – 2016",
       place: "Multiple Locations",
       direction: "dir-l",
       positions: [
@@ -203,7 +199,7 @@ const profile = {
       company: "BBDO",
       title: "BBDO Buenos Aires",
       logo: "bbdo",
-      date: "2012 - 2013",
+      date: "2012 – 2013",
       place: "Buenos Aires, Argentina",
       direction: "dir-r",
       positions: [
@@ -225,7 +221,7 @@ const profile = {
       company: "Ogilvy",
       title: "Ogilvy & Mather Argentina",
       logo: "ogilvy",
-      date: "2011 - 2012",
+      date: "2011 – 2012",
       place: "Buenos Aires, Argentina",
       direction: "dir-l",
       positions: [
@@ -249,7 +245,7 @@ const profile = {
       logo: "snhu",
       institution: "Southern New Hampshire University",
       degree: "Bachelor of Science in Computer Science",
-      date: "2026 (expected)",
+      date: "2023 – 2026 (expected)"
     },
     {
       logo: "google",
@@ -271,9 +267,9 @@ const profile = {
     },
     {
       logo: "escuelita",
-      institution: "Escuela superior de creativos publicitarios",
+      institution: "Escuela Superior de Creativos Publicitarios",
       degree: "Technical Diploma in Art Direction",
-      date: "2011",
+      date: "2009 – 2011",
     },
   ],
   creativeAwards: [
