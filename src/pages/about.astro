@@ -50,7 +50,7 @@ const projectListTitle = "My Work";
               <Accordion title="Education" client:load>
                 <div class="my-4 space-y-4">
                   {profile.educationData.map(
-                    ({ date, institution, degree, logo }) => (
+                    ({ logo, institution, degree, date }) => (
                       <div>
                         <Image
                           src={`/assets/about/education/logo-${logo}.webp`}
@@ -61,10 +61,9 @@ const projectListTitle = "My Work";
                         />
                         <p class="text-lg font-bold">{institution}</p>
                         <p>{degree}</p>
-                        <p 
-                          class="text-sm text-gray-500 dark:text-gray-400"
-                          set:html={date}
-                        />
+                        <p class="text-sm text-gray-500 dark:text-gray-400">
+                          {date}
+                        </p>
                       </div>
                     )
                   )}
