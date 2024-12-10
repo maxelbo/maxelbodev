@@ -36,18 +36,18 @@ const { timelineData } = Astro.props;
                 {item.company}
               </span>
               <div class="details-wrapper relative z-10 mt-1 flex flex-col gap-1 text-xs leading-3">
-                <span class="date m-auto inline-block w-fit bg-slate-100 px-2 py-1">
+                <span class="date m-auto inline-block w-fit bg-slate-100 dark:bg-slate-900 px-2 py-1">
                   {item.date}
                 </span>
                 {item.place && (
-                  <span class="place m-auto inline-block w-fit bg-slate-100 px-2 py-1">
+                  <span class="place m-auto inline-block w-fit bg-slate-100 dark:bg-slate-900 px-2 py-1">
                     {item.place}
                   </span>
                 )}
               </div>
             </div>
             {item.positions.map((position) => (
-              <div class="desc relative z-10 mx-auto mt-2 mb-0 max-w-sm bg-slate-100 p-4 text-left text-sm shadow-sm md:mt-4 md:group-[.dir-l]:mr-3 md:group-[.dir-r]:ml-3">
+              <div class="desc rounded-lg relative z-10 mx-auto mt-2 mb-0 max-w-sm bg-slate-100 dark:bg-slate-900 p-4 text-left text-sm shadow-sm md:mt-4 md:group-[.dir-l]:mr-3 md:group-[.dir-r]:ml-3">
                 {roleActive && (
                   <p class="text-base font-bold">{position.role}</p>
                 )}
@@ -73,7 +73,7 @@ const { timelineData } = Astro.props;
                       <strong>Clients:</strong>
                       <ul class="m-0 flex list-none flex-row flex-wrap gap-1 p-0">
                         {position.clients.map((client) => (
-                          <li class="bg-slate-200 py-0 px-2 shadow-md">
+                          <li class="bg-slate-200 dark:bg-slate-700 rounded-sm py-0 px-2 shadow-md">
                             {client}
                           </li>
                         ))}
@@ -85,7 +85,7 @@ const { timelineData } = Astro.props;
                       <strong>Skills:</strong>
                       <ul class="m-0 flex list-none flex-row flex-wrap gap-1 p-0">
                         {position.skills.map((skill) => (
-                          <li class="bg-slate-200 py-0 px-2 shadow-md">
+                          <li class="bg-slate-200 dark:bg-slate-700 rounded-sm py-0 px-2 shadow-md">
                             {skill}
                           </li>
                         ))}
@@ -199,6 +199,11 @@ const { timelineData } = Astro.props;
       margin-top: -5%;
       border-width: 5px;
       border-bottom-color: white;
+    }
+
+    .dark .dir-l .flag::after,
+    .dark .dir-r .flag::after {
+      border-bottom-color: rgb(41 37 36 / var(--tw-bg-opacity));
     }
 
     .dir-l .flag::after {
