@@ -11,26 +11,22 @@ const { title, img, video, body, pubDate } = Astro.props.frontmatter;
   <article>
     <div class="space-y-4">
       {
-        img.length > 0 &&
-          img.map((src: string) => (
+        img?.length > 0 &&
+          img?.map((src: string, i: number) => (
             <Image
               {src}
-              alt={title}
+              alt={`${title} - ${i + 1}`}
               width={600}
               height={300}
               class="w-full"
             />
           ))
       }
-      {
-        video && (
-          <YTiframe {title} {video} />
-        )
-      }
+      { video && <YTiframe {title} {video} /> }
     </div>
     <div class="mx-4 my-4 max-w-3xl space-y-2 lg:mx-8">
       <div class="text-left">
-        {body && <p set:html={body} />}
+        { body && <p set:html={body} /> }
         <slot />
       </div>
       <p class="text-left text-xs text-gray-500">
