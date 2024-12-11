@@ -4,18 +4,18 @@ import { Image } from "astro:assets";
 import YTiframe from "@/components/YTiframe.astro";
 
 const projectListTitle = "More Work";
-const { frontmatter } = Astro.props;
+const { title, img, video, body, pubDate } = Astro.props.frontmatter;
 ---
 
-<PortfolioLayout pageTitle={frontmatter.title} {projectListTitle}>
+<PortfolioLayout pageTitle={title} {projectListTitle}>
   <article>
     <div class="space-y-4">
       {
-        frontmatter?.img.length > 0 &&
-          frontmatter?.img.map((src: string) => (
+        img.length > 0 &&
+          img.map((src: string) => (
             <Image
-              src={src}
-              alt={frontmatter.title}
+              {src}
+              alt={title}
               width={600}
               height={300}
               class="w-full"
@@ -23,21 +23,21 @@ const { frontmatter } = Astro.props;
           ))
       }
       {
-        frontmatter.video && (
-          <YTiframe title={frontmatter.title} video={frontmatter.video} />
+        video && (
+          <YTiframe {title} {video} />
         )
       }
     </div>
     <div class="mx-4 my-4 max-w-3xl space-y-2 lg:mx-8">
       <div class="text-left">
-        {frontmatter?.body && <p>{frontmatter?.body}</p>}
+        {body && <p set:html={body} />}
         <slot />
       </div>
       <p class="text-left text-xs text-gray-500">
         {
           new Intl.DateTimeFormat("en-US", {
             dateStyle: "medium",
-          }).format(new Date(frontmatter.pubDate))
+          }).format(new Date(pubDate))
         }
       </p>
     </div>
