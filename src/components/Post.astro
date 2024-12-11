@@ -2,44 +2,34 @@
 import { Image } from "astro:assets";
 import YTiframe from "@/components/YTiframe.astro";
 
-const { post } = Astro.props;
+const { title, img, video, body, pubDate } = Astro.props.frontmatter;
 ---
 
-<article class="mx-auto my-4 max-w-6xl py-4">
-  <a href={post.url} aria-label="Go to post.">
-    <div class="space-y-4">
-      {
-        post.frontmatter.img &&
-          post.frontmatter.img?.length > 0 &&
-          post.frontmatter.img?.map((src: string, i: number) => (
-            <Image
-              src={src}
-              alt={`${post.frontmatter.title} - ${i + 1}`}
-              width={600}
-              height={300}
-            />
-          ))
-      }
-      {
-        post.frontmatter.video && (
-          <YTiframe
-            title={post.frontmatter.title}
-            video={post.frontmatter.video}
-          />
-        )
-      }
-    </div>
-    <div class="mx-4 mb-4 max-w-3xl space-y-2 lg:mx-8">
-      <div class="text-left">
-        {post.frontmatter?.body && <p set:html={post.frontmatter?.body} />}
-      </div>
-      <p class="text-left text-xs text-gray-500">
-        {
-          new Intl.DateTimeFormat("en-US", {
-            dateStyle: "medium",
-          }).format(new Date(post.frontmatter.pubDate))
-        }
-      </p>
-    </div>
-  </a>
-</article>
+<div class="space-y-4">
+  { 
+    img && img.length > 0 && 
+    img.map((src: string, i: number) => (
+      <Image
+        {src}
+        alt={`${title} - ${i + 1}`}
+        width={600}
+        height={300}
+        class="w-full"
+      />
+    ))
+  }
+  { video && <YTiframe {title} {video} /> }
+</div>
+<div class="mx-4 mb-4 max-w-3xl space-y-2 lg:mx-8">
+  <div class="text-left">
+    { body && <p set:html={body} /> }
+    <slot/>
+  </div>
+  <p class="text-left text-xs text-gray-500">
+    {
+      new Intl.DateTimeFormat("en-US", {
+        dateStyle: "medium",
+      }).format(new Date(pubDate))
+    }
+  </p>
+</div>
