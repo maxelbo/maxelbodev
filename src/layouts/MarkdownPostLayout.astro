@@ -1,42 +1,16 @@
 ---
 import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
-import { Image } from "astro:assets";
-import YTiframe from "@/components/YTiframe.astro";
+import Post from "@/components/Post.astro";
 
 const projectListTitle = "More Work";
-const { title, img, video, body, pubDate } = Astro.props.frontmatter;
+const { frontmatter } = Astro.props;
 ---
 
-<PortfolioLayout pageTitle={title} {projectListTitle}>
+<PortfolioLayout pageTitle={frontmatter.title} {projectListTitle}>
   <article>
-    <div class="space-y-4">
-      {
-        img?.length > 0 &&
-          img?.map((src: string, i: number) => (
-            <Image
-              {src}
-              alt={`${title} - ${i + 1}`}
-              width={600}
-              height={300}
-              class="w-full"
-            />
-          ))
-      }
-      { video && <YTiframe {title} {video} /> }
-    </div>
-    <div class="mx-4 my-4 max-w-3xl space-y-2 lg:mx-8">
-      <div class="text-left">
-        { body && <p set:html={body} /> }
-        <slot />
-      </div>
-      <p class="text-left text-xs text-gray-500">
-        {
-          new Intl.DateTimeFormat("en-US", {
-            dateStyle: "medium",
-          }).format(new Date(pubDate))
-        }
-      </p>
-    </div>
+    <Post {frontmatter}>
+      <slot />
+    </Post>
   </article>
   <div
     class="flex items-center justify-center border-t border-gray-200 px-4 text-xl sm:px-0 sm:text-lg"
