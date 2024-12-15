@@ -25,11 +25,17 @@ const { page } = Astro.props;
 
 <PortfolioLayout {pageTitle} {projectListTitle}>
   <section>
-    <h1>What&apos;s New</h1>
+    <h1>What's New</h1>
 
     <!-- Posts -->
     <div class="mx-auto max-w-6xl divide-y divide-gray-200">
-      {page.data.map((post: PostType) => <Post {post} />)}
+      {page.data.map(({url, frontmatter}: PostType) => (
+        <article class="mx-auto my-4 max-w-6xl py-4">
+          <a href={url} aria-label="Go to post.">
+            <Post {frontmatter} />
+          </a>
+        </article>
+      ))}
     </div>
 
     <!-- Pagination -->
