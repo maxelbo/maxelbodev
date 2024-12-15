@@ -3,6 +3,7 @@ const { page } = Astro.props;
 ---
 
 <nav
+  aria-label="Pagination."
   class="flex items-center justify-between border-t border-gray-200 px-4 text-xl sm:px-0 sm:text-lg"
 >
   <div class="-mt-px flex w-0 flex-1">
@@ -10,7 +11,7 @@ const { page } = Astro.props;
       page.url.prev ? (
         <a
           href={page.url.prev}
-          class="inline-flex items-center border-t-2 border-transparent pr-1 pt-4 font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+          class="inline-flex items-center border-t-2 border-transparent pr-1 pt-4 font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-200 dark:hover:border-gray-300"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +34,7 @@ const { page } = Astro.props;
   </div>
   <div class="flex">
     <p
-      class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-xs text-gray-500"
+      class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-xs text-gray-500 dark:text-gray-200"
     >
       Page {page.currentPage} of {page.lastPage}
     </p>
@@ -43,7 +44,7 @@ const { page } = Astro.props;
       page.url.next ? (
         <a
           href={page.url.next}
-          class="inline-flex items-center border-t-2 border-transparent pl-1 pt-4 font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+          class="inline-flex items-center border-t-2 border-transparent pr-1 pt-4 font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-200 dark:hover:border-gray-300"
         >
           Past
           <svg
