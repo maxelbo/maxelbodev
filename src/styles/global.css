@@ -6,13 +6,12 @@
   --tw-text-opacity: 1;
   --gray-600: rgb(75 85 99 / var(--tw-text-opacity));
   --gray-800: rgb(31 41 55 / var(--tw-text-opacity));
-  --black: #333;
+  --black: rgb(0 0 0 / var(--tw-bg-opacity));
   --accordion-icon-space: 6em;
 }
 
 html {
   font-family: "Jost", "Zen Kaku Gothic Antique", "Noto Color Emoji", sans-serif !important;
-  color: var(--black);
 }
 
 * {
