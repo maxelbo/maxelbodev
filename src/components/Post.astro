@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import YTiframe from "@/components/YTiframe.astro";
+import { formatDate } from '@/scripts/utils';
 
 const { title, img, video, body, pubDate } = Astro.props.frontmatter;
 ---
@@ -25,11 +26,7 @@ const { title, img, video, body, pubDate } = Astro.props.frontmatter;
     { body && <p set:html={body} /> }
     <slot/>
   </div>
-  <p class="text-left text-xs text-gray-500">
-    {
-      new Intl.DateTimeFormat("en-US", {
-        dateStyle: "medium",
-      }).format(new Date(pubDate))
-    }
+  <p class="text-left text-xs text-gray-500 dark:text-gray-300">
+    {formatDate(pubDate)}
   </p>
 </div>
