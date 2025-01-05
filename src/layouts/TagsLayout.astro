@@ -3,11 +3,11 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Tagbox from "@/components/Tagbox.jsx";
 import Tagtabs from "@/components/Tagtabs.astro";
 
-const allPosts = await Astro.glob("../pages/projects/*.mdx");
+const allProjects = Object.values(import.meta.glob("../pages/projects/*.mdx", { eager: true }));
 const tagList = [
   ...new Set(
-    allPosts
-      .map((post) => post.frontmatter.tags)
+    allProjects
+      .map((post: ProjectType) => post.frontmatter.tags)
       .flat()
       .sort()
   ),
@@ -18,11 +18,16 @@ const { pageTitle } = Astro.props;
 
 <BaseLayout {pageTitle}>
   <h1 class="mb-8">More Work</h1>
+  
+  <!-- Mobile Category Select -->
   <div class="relative px-12 sm:hidden">
     <Tagbox {pageTitle} {tagList} client:only="react" />
   </div>
+  <!-- Desktop Category Tabs -->
   <div class="hidden sm:block">
     <Tagtabs {pageTitle} {tagList} />
   </div>
+
+  <!-- Projects -->
   <slot />
 </BaseLayout>
