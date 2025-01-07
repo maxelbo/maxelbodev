@@ -1,6 +1,5 @@
 ---
 import Card from "@/components/Card.astro";
-import type { ProjectType } from "@/types";
 
 const { projectListTitle, projects } = Astro.props;
 ---
@@ -9,7 +8,8 @@ const { projectListTitle, projects } = Astro.props;
   {projectListTitle && <h2 class="mt-16 capitalize">{projectListTitle}</h2>}
   <div class="flex flex-wrap justify-center">
     {
-      projects.length !== 0 ? (
+      projects.length !== 0 
+      ? (
         projects.map((project: ProjectType) => (
           <Card
             displayTitle={project.frontmatter.displayTitle}
@@ -18,8 +18,9 @@ const { projectListTitle, projects } = Astro.props;
             title={project.frontmatter.title}
           />
         ))
-      ) : (
-        <span class="m-4 text-gray-700">Coming soon…</span>
+      ) 
+      : (
+        <span class="m-4 text-gray-700 dark:text-gray-200">Coming soon…</span>
       )
     }
   </div>
