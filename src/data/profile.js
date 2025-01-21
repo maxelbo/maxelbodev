@@ -62,7 +62,9 @@ const profile = {
           description:
             "I am currently working at Deloitte Consulting as a Design Engineer, bridging the gap between design and development.",
           actions: [
-            "Designed and developed the frontend of CRM apps and branding websites.",
+            "Designed and developed the frontend of CRM apps and branding sites.",
+            "Prototyped in production-ready code for efficient reuse.",
+            "Created app store materials and promotional content to engage users.",
           ],
           clients: ["Yokohama City", "Fujisawa City", "Chiyoda Ward", "Tokyo Metropolitan Government", "Epson"],
           skills: [
@@ -79,9 +81,9 @@ const profile = {
           description:
             "I worked at Deloitte Consulting as a frontend developer and a designer, bridging the gap between both worlds. I've worked on corporate websites, and CRM apps to help the Japanese Government improve its DX.",
           actions: [
-            "Designed, implemented, and refined the frontend of super-apps, CRM apps, and landing pages.",
-            "Bridged the gap between designers and engineers, ensuring the technical feasibility of designs prior to handoff, and implementing them in production according to the intended design vision.",
-            "Coded fully-functional prototypes directly in the framework used in production, developing reusable components and logic for production, significantly reducing the time from design to implementation.",
+            "Designed and implemented the frontend of apps and landing pages.",
+            "Reviewed designs to ensure their technical feasibility.",
+            "Coded fully-functional prototypes, reducing the time from design to implementation.",
           ],
           clients: [
             "Tokyo Bureau of Social Welfare",
@@ -117,7 +119,7 @@ const profile = {
           actions: [
             "Designed websites for Japanese brands.",
             "Created animations for museum exhibitions.",
-            "Crafted illustrations for advertising campaigns.",
+            "Crafted award-winning illustrations for advertising campaigns.",
           ],
           clients: [
             "Tokyo National Museum",
@@ -147,9 +149,9 @@ const profile = {
           description:
             "I moved to Dubai and worked as an Art Director at JWT (J. Walter Thompson, not JSON Web Token). I won some awards, including a Grand Prix at the Dubai Lynx.",
           actions: [
+            "Won local and international creative awards.",
             "Conceptualized advertising campaigns.",
             "Art directed television commercials and print ads.",
-            "Won local and international creative awards.",
           ],
           clients: [
             "Coca-Cola",
@@ -176,7 +178,7 @@ const profile = {
             "I started working as an Illustrator, freelancing for publishing companies and advertising agencies, while living in different countries.",
           actions: [
             "Illustrated content for books and magazines.",
-            "Created illustrations for advertising campaigns and theater posters.",
+            "Created award-winning illustrations for ad campaigns and theater posters.",
             "Storyboarded commercials for ad agencies.",
           ],
           clients: [
@@ -208,9 +210,9 @@ const profile = {
           description:
             "I moved to BBDO as an Art Director, and had the chance to work with PepsiCo brands.",
           actions: [
+            "Won local creative awards.",
             "Conceptualized advertising campaigns.",
             "Art directed television commercials and print ads.",
-            "Won local creative awards.",
           ],
           clients: ["Doritos", "7up", "Dr Lemon"],
           skills: ["Art Direction"],
@@ -230,9 +232,9 @@ const profile = {
           description:
             "I started my career working as a Junior Art Director at Ogilvy & Mather Argentina. I did my first TV commercial here, and I won my first awards, including a silver lion at Cannes.",
           actions: [
+            "Won international creative awards.",
             "Conceptualized advertising campaigns.",
             "Art directed television commercials and print ads.",
-            "Won international creative awards.",
           ],
           clients: ["Tang", "AMIA", "Mr. Muscle"],
           skills: ["Art Direction"],
