@@ -10,11 +10,6 @@ import partytown from "@astrojs/partytown";
 export default defineConfig({
   site: "https://maxelbo.dev",
   trailingSlash: "always",
-
-  // prefetch: { prefetchAll: true },
-  // experimental: {
-  //   viewTransitions: true,
-  // },
   integrations: [tailwind(), mdx(), react(), partytown()],
 
   // output: "server",
