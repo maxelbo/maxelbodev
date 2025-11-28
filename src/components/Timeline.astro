@@ -63,7 +63,7 @@ const { timelineData } = Astro.props;
                 {actionsActive && position.actions && (
                   <ul class="ml-4 list-disc">
                     {position.actions.map((action) => (
-                      <li>{action}</li>
+                      <li class="leading-tight">{action}</li>
                     ))}
                   </ul>
                 )}
@@ -105,8 +105,9 @@ const { timelineData } = Astro.props;
 <style is:global>
   .timeline::before {
     position: absolute;
-    left: 50%;
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     content: " ";
     display: block;
     width: 1px;
@@ -179,11 +180,11 @@ const { timelineData } = Astro.props;
   .dir-r .flag::after {
     content: "";
     position: absolute;
-    left: 50%;
     top: -15px;
+    left: 50%;
+    translateX: -50%;
     height: 0;
     width: 0;
-    margin-left: -8px;
     border: solid transparent;
     border-bottom-color: var(--black);
     border-width: 8px;
@@ -193,8 +194,9 @@ const { timelineData } = Astro.props;
   @media (min-width: 768px) {
     .dir-l .flag::after,
     .dir-r .flag::after {
-      left: auto;
       top: 50%;
+      left: auto;
+      translateX: none;
       margin-left: auto;
       margin-top: -5%;
       border-width: 5px;
