@@ -11,6 +11,7 @@ import shoesImage from "~/public/assets/about/shoes.webp";
 import profile from "@/data/profile.js";
 
 const educationActive = true;
+const certificationsActive = true;
 const awardsActive = true;
 const exhibitionsActive = true;
 
@@ -63,6 +64,34 @@ const projectListTitle = "My Work";
                         <p>{degree}</p>
                         <p class="text-sm text-gray-500 dark:text-gray-400">
                           {date}
+                        </p>
+                      </div>
+                    )
+                  )}
+                </div>
+              </Accordion>
+            </div>
+          )
+        }
+        {
+          certificationsActive && (
+            <div>
+              <Accordion title="Certifications" client:load>
+                <div class="my-4 space-y-4">
+                  {profile.certificationsData.map(
+                    ({ logo, certification, id, date }) => (
+                      <div>
+                        <Image
+                          src={`/assets/about/education/logo-${logo}.webp`}
+                          alt={`logo of ${certification}`}
+                          width={32}
+                          height={32}
+                          class="mx-auto rounded-full md:h-10 md:w-10"
+                        />
+                        <p class="text-lg font-bold">{certification}</p>
+                        <p>Credential ID {id}</p>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">
+                          Issued {date}
                         </p>
                       </div>
                     )

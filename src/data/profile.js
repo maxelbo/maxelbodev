@@ -250,28 +250,36 @@ const profile = {
       date: "2023–2026 (expected)"
     },
     {
-      logo: "google",
-      institution: "Google",
-      degree: "Google UX Design Certificate",
-      date: "2023",
-    },
-    {
       logo: "ztm",
       institution: "ZTM Academy",
       degree: "Fullstack Web Developer Bootcamp",
       date: "2022",
     },
     {
-      logo: "jlpt",
-      institution: "JLPT",
-      degree: "Japanese-Language Proficiency Test N2",
-      date: "2021",
-    },
-    {
       logo: "escuelita",
       institution: "Escuela Superior de Creativos Publicitarios",
       degree: "Technical Diploma in Art Direction",
       date: "2009–2011",
+    },
+  ],
+  certificationsData: [
+    {
+      logo: "salesforce-dev",
+      certification: "Salesforce Certified Platform Developer",
+      id: "7031962",
+      date: "2025",
+    },
+    {
+      logo: "google",
+      certification: "Google UX Design Certificate",
+      id: "RKY92BXJ2D49",
+      date: "2023",
+    },
+    {
+      logo: "jlpt",
+      certification: "Japanese-Language Proficiency Test N2",
+      id: "130920180",
+      date: "2021",
     },
   ],
   creativeAwards: [
