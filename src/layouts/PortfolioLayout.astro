@@ -2,15 +2,15 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import ProjectList from "@/components/ProjectList.astro";
 
-const allProjects = await Astro.glob("../pages/projects/*.mdx");
-const projects = allProjects.filter((project) => {
+const allProjects = Object.values(import.meta.glob("../pages/projects/*.mdx", { eager: true }));
+const projects = allProjects.filter((project: ProjectType) => {
   return !project.frontmatter.archived && !project.frontmatter.private;
 });
-projects.sort((a, b) => {
+projects.sort((a: ProjectType, b: ProjectType) => {
   return a.frontmatter.order - b.frontmatter.order;
 });
 
-const { pageTitle, frontmatter, projectListTitle } = Astro.props;
+const { pageTitle, projectListTitle, frontmatter } = Astro.props;
 ---
 
 <BaseLayout {pageTitle} {frontmatter}>

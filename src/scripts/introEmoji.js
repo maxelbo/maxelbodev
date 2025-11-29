@@ -38,13 +38,13 @@ function japanEmojiSwap() {
     "🚅",
     "🥷",
   ];
-  let index = 0;
+  let i = 0;
 
   setInterval(() => {
     if (japanEmoji) {
-      japanEmoji.textContent = emojiList[index];
+      japanEmoji.textContent = emojiList[i];
     }
-    index = (index + 1) % emojiList.length;
+    i = (i + 1) % emojiList.length;
   }, 1000);
 }
 

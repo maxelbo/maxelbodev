@@ -1,17 +1,17 @@
 ---
-import { dekebabize } from "@/scripts/tagActions";
+import { dekebabize } from "@/scripts/utils";
 
 const { pageTitle, tagList } = Astro.props;
 ---
 
 <div
-  class="isolate flex divide-x divide-gray-200 rounded-lg shadow"
+  class="isolate flex divide-x divide-gray-200 dark:divide-gray-700 rounded-lg shadow"
   aria-label="Tabs"
 >
   {
     tagList.map((tag: string) => (
       <a
-        class="group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium text-gray-900 first:rounded-l-lg last:rounded-r-lg hover:bg-gray-50 focus:z-10"
+        class="group relative min-w-0 flex-1 overflow-hidden bg-white dark:bg-black py-4 px-4 text-center text-sm font-medium text-gray-900 dark:text-gray-100 first:rounded-l-lg last:rounded-r-lg hover:bg-gray-50 dark:hover:bg-gray-900 focus:z-10"
         aria-current={pageTitle === dekebabize(tag) ? "page" : "false"}
         id={tag}
         href={`/projects/${tag}/`}
@@ -20,7 +20,7 @@ const { pageTitle, tagList } = Astro.props;
         {pageTitle === dekebabize(tag) && (
           <span
             aria-hidden="true"
-            class="absolute inset-x-0 bottom-0 h-0.5 bg-slate-200"
+            class="absolute inset-x-0 bottom-0 h-0.5 bg-slate-200 dark:bg-slate-700"
           />
         )}
       </a>

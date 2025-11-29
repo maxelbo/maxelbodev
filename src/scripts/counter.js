@@ -1,19 +1,20 @@
 function setCounterAnimation() {
-  let counter = document.getElementById("error-counter");
+  const counter = document.getElementById("error-counter");
 
   if (counter) {
-    let dataFrom = counter.dataset.from;
-    let dataTo = counter.dataset.to;
-    let dataSpeed = counter.dataset.speed;
+    const dataFrom = counter.dataset.from;
+    const dataTo = counter.dataset.to;
+    const dataSpeed = counter.dataset.speed;
 
     if (dataFrom && dataTo && dataSpeed) {
       let from = parseInt(dataFrom);
-      let to = parseInt(dataTo);
-      let speed = parseInt(dataSpeed);
-      let animation = setInterval(() => {
+      const to = parseInt(dataTo);
+      const speed = parseInt(dataSpeed);
+      const animation = setInterval(() => {
         if (from <= to) {
           counter.textContent = (from++).toString();
-        } else {
+        }
+        else {
           clearInterval(animation);
         }
       }, speed);
@@ -22,6 +23,4 @@ function setCounterAnimation() {
 }
 
 document.addEventListener("astro:after-swap", setCounterAnimation);
-document.addEventListener("astro:page-load", () => {
-  setCounterAnimation();
-});
+document.addEventListener("astro:page-load", () => setCounterAnimation());

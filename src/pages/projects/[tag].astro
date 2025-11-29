@@ -7,9 +7,12 @@ import { dekebabize } from "@/scripts/utils";
 export async function getStaticPaths() {
   const allProjects = Object.values(import.meta.glob("./*.mdx", { eager: true }));
   // const allProjects = await getCollection('portfolio');
+  
   const uniqueTags = [
     ...new Set(
-      allProjects.map((project: ProjectType) => project.frontmatter.tags).flat()
+      allProjects
+        .map((project: ProjectType) => project.frontmatter.tags)
+        .flat()
     ),
   ];
 

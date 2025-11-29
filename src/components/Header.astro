@@ -3,14 +3,12 @@ import Logo from "@/components/Logo.astro";
 import NavMenu from "@/components/NavMenu";
 import profile from "@/data/profile.js";
 
-let menuLinks = profile.siteData.menuLinks;
-let pathname = Astro.url.pathname;
+const menuLinks = profile.siteData.menuLinks;
+const pathname = Astro.url.pathname;
 ---
 
-<header class="fixed top-0 right-0 left-0 z-50 w-full bg-white">
-  <div
-    class="mx-auto max-w-4xl p-0 sm:flex sm:flex-wrap sm:justify-between sm:px-4"
-  >
+<header class="fixed top-0 right-0 left-0 z-50 w-full bg-white dark:bg-gray-900">
+  <div class="mx-auto max-w-4xl p-0 sm:flex sm:flex-wrap sm:justify-between sm:px-4">
     <div class="flex flex-1 flex-row items-center justify-between gap-0">
       <Logo />
       <nav aria-label="Header menu for SP.">
@@ -26,10 +24,10 @@ let pathname = Astro.url.pathname;
       {
         menuLinks.map(({ url, title, path }) => (
           <a
-            class={`decoration-slate-400 underline-offset-2 hover:text-gray-800 hover:underline ${
+            class={`decoration-slate-400 underline-offset-2 hover:text-gray-800 dark:hover:text-gray-400 hover:underline ${
               pathname.indexOf(path)
-                ? "text-gray-600 no-underline"
-                : "text-gray-800 underline"
+                ? "text-gray-600 dark:text-gray-200 no-underline"
+                : "text-gray-800 dark:text-gray-400 underline"
             }`}
             href={url}
           >

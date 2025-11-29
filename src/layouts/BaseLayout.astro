@@ -6,9 +6,10 @@ import Footer from "@/components/Footer.astro";
 import "@/styles/global.css";
 
 const { pageTitle, image, frontmatter, robots } = Astro.props;
+const mode = ""; // dark
 ---
 
-<html lang="en" class="mx-auto scroll-smooth bg-white">
+<html lang="en" class=`${mode} mx-auto scroll-smooth bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100`>
   <Head {pageTitle} {image} {frontmatter} {robots} />
   <body
     class="mx-auto flex h-screen max-w-4xl flex-col justify-between p-4 text-center leading-normal sm:leading-relaxed"

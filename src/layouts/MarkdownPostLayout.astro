@@ -7,32 +7,38 @@ const { frontmatter } = Astro.props;
 ---
 
 <PortfolioLayout pageTitle={frontmatter.title} {projectListTitle}>
-  <article>
-    <Post {frontmatter}>
-      <slot />
-    </Post>
-  </article>
-  <div
-    class="flex items-center justify-center border-t border-gray-200 px-4 text-xl sm:px-0 sm:text-lg"
-  >
-    <a
-      href="javascript:history.back()"
-      class="inline-flex cursor-pointer items-center border-t-2 border-transparent pr-1 pt-4 font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+  <section>
+    <!-- Post -->
+    <article>
+      <Post {frontmatter}>
+        <slot />
+      </Post>
+    </article>
+    
+    <!-- Back Button -->
+    <hr/>
+    <div
+      class="flex items-center justify-center px-4 text-xl sm:px-0 sm:text-lg"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="h-6 w-6"
+      <a
+        href="javascript:history.back()"
+        class="inline-flex cursor-pointer items-center border-t-2 border-transparent pr-1 pt-4 font-medium text-gray-500 hover:border-gray-300 dark:text-gray-200 dark:hover:text-gray-400 hover:text-gray-700"
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M15.75 19.5L8.25 12l7.5-7.5"></path>
-      </svg>
-      Back
-    </a>
-  </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="h-6 w-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5L8.25 12l7.5-7.5"></path>
+        </svg>
+        Back
+      </a>
+    </div>
+  </section>
 </PortfolioLayout>
