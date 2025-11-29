@@ -61,7 +61,7 @@ const { timelineData } = Astro.props;
                 )}
                 {descriptionActive && <p>{position.description}</p>}
                 {actionsActive && position.actions && (
-                  <ul class="ml-4 list-disc">
+                  <ul class="ml-4 pt-1 list-disc grid gap-1">
                     {position.actions.map((action) => (
                       <li class="leading-tight">{action}</li>
                     ))}
