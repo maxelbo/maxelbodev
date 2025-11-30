@@ -2,11 +2,9 @@
 import TagsLayout from "@/layouts/TagsLayout.astro";
 import ProjectList from "@/components/ProjectList.astro";
 import { dekebabize } from "@/scripts/utils";
-// import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const allProjects = Object.values(import.meta.glob("./*.mdx", { eager: true }));
-  // const allProjects = await getCollection('portfolio');
   
   const uniqueTags = [
     ...new Set(
