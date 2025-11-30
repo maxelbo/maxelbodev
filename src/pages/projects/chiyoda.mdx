@@ -1,0 +1,27 @@
+---
+layout: "../../layouts/MarkdownProjectLayout.astro"
+title: "chiyoda"
+displayTitle: "Chiyoda Ward"
+description: "CRM App"
+order: 0.6
+tags: ["all", "development"]
+archived: true
+private: false
+---
+
+I worked on the frontend development and design for Chiyoda Portal.
+
+---
+
+import { Image } from "astro:assets";
+import chiyoda0 from "~/public/assets/projects/chiyoda/chiyoda-0.webp";
+
+<section>
+  <Image src={chiyoda0} alt="chiyoda0" />
+  <p>
+    You can visit it here:
+    <a href="https://chiyoda-portal.my.site.com/ctz/topPage" class="underline">
+      chiyoda-portal.my.site.com
+    </a>
+  </p>
+</section>
