@@ -4,7 +4,9 @@ import ProjectList from "@/components/ProjectList.astro";
 import { dekebabize } from "@/scripts/utils";
 
 export async function getStaticPaths() {
-  const allProjects = Object.values(import.meta.glob("./*.mdx", { eager: true }));
+  const allProjects = Object.values(
+    import.meta.glob("./*.mdx", { eager: true })
+  );
   
   const uniqueTags = [
     ...new Set(
@@ -15,8 +17,8 @@ export async function getStaticPaths() {
   ];
 
   return uniqueTags.map((tag: string) => {
-    const filteredProjects = allProjects.filter((project: ProjectType) =>
-      project.frontmatter.tags.includes(tag)
+    const filteredProjects = allProjects.filter(
+      (project: ProjectType) => project.frontmatter.tags.includes(tag)
     );
     const pubProjects = filteredProjects
       .filter((project: ProjectType) => !project.frontmatter.private)
