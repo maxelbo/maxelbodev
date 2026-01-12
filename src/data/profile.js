@@ -3,7 +3,6 @@ import { getAge } from "@/scripts/profileActions";
 const profile = {
   siteData: {
     siteName: "Max Elbo's Portfolio",
-    title: "Max Elbo | Developer & Designer",
     description:
       "Hello, I am Max Elbo, a digital artisan. Welcome to my portfolio.",
     // keywords: [
@@ -13,7 +12,7 @@ const profile = {
     // ],
     author: "Max Elbo",
     age: getAge(),
-    role: "Designer / Developer",
+    role: "Product Design + Engineering",
     company: "Deloitte",
     city: "Tokyo",
     country: "Japan",
@@ -246,19 +245,22 @@ const profile = {
     {
       logo: "snhu",
       institution: "Southern New Hampshire University",
-      degree: "Bachelor of Science in Computer Science",
+      degree: "Bachelor of Science",
+      field: "Computer Science",
       date: "2023–2026 (expected)"
     },
     {
       logo: "ztm",
       institution: "ZTM Academy",
-      degree: "Fullstack Web Developer Bootcamp",
+      degree: "Bootcamp",
+      field: "Full-stack Web Development",
       date: "2022",
     },
     {
       logo: "escuelita",
       institution: "Escuela Superior de Creativos Publicitarios",
-      degree: "Technical Diploma in Art Direction",
+      degree: "Diploma",
+      field: "Art Direction",
       date: "2009–2011",
     },
   ],
