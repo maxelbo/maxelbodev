@@ -24,6 +24,7 @@ const { pageTitle, image, frontmatter, robots } = Astro.props;
     description={siteData.description}
     url={Astro.url}
     image={new URL(image?.src || siteData.image.src, siteData.url).href}
+    logo={new URL(siteData.logo, siteData.url).href}
     {frontmatter}
     {robots}
   />

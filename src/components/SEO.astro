@@ -7,6 +7,7 @@ const {
   description,
   url = Astro.url,
   image,
+  logo,
   frontmatter,
   robots,
 } = Astro.props;
@@ -22,8 +23,10 @@ const jsonLD = jsonLDGenerator({
 <link rel="canonical" href={url} />
 
 <!-- Open Graph -->
+<meta property="og:type" content={frontmatter ? "article" : "website"} />
 <meta property="og:site_name" content={siteName} />
 <meta property="og:title" content={pageTitle} />
+<meta property="og:logo" content={logo} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={url} />
 <meta property="og:image" content={image} />
