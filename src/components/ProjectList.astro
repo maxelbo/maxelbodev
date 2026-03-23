@@ -6,7 +6,7 @@ const { projectListTitle, projects } = Astro.props;
 
 <section transition:name="ProjectList">
   {projectListTitle && <h2 class="mt-16 capitalize">{projectListTitle}</h2>}
-  <div class="flex flex-wrap justify-center">
+  <div class="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4 justify-items-center">
     {
       projects.length !== 0 
       ? (

@@ -8,18 +8,20 @@ const pathname = Astro.url.pathname;
 ---
 
 <header class="fixed top-0 right-0 left-0 z-50 w-full bg-white dark:bg-gray-900">
-  <div class="mx-auto max-w-4xl p-0 sm:flex sm:flex-wrap sm:justify-between sm:px-4">
+  <div class="mx-auto max-w-6xl p-0 sm:flex sm:flex-wrap sm:justify-between sm:px-4">
     <div class="flex flex-1 flex-row items-center justify-between gap-0">
       <Logo />
-      <nav aria-label="Header menu for SP.">
-        <NavMenu {menuLinks} client:only="react" />
-      </nav>
+      <div class="flex items-center">
+        <nav aria-label="Header menu for SP.">
+          <NavMenu {menuLinks} client:only="react" />
+        </nav>
+      </div>
     </div>
     <nav
       id="nav"
       aria-label="Header menu for PC."
       style="width:100%;max-width:100%;"
-      class="top-20 right-8 hidden min-w-fit justify-center gap-7 border-none px-1 py-4 text-lg text-gray-600 shadow-none ring-0 ring-black ring-opacity-5 transition-all duration-75 focus:outline-none sm:flex"
+      class="top-20 right-8 hidden min-w-fit items-center justify-center gap-7 border-none px-1 py-4 text-lg text-gray-600 shadow-none ring-0 ring-black ring-opacity-5 transition-all duration-75 focus:outline-none sm:flex"
     >
       {
         menuLinks.map(({ url, title, path }) => (
