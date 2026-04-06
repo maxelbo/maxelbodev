@@ -5,7 +5,7 @@ import Accordion from "@/components/Accordion.jsx";
 import Timeline from "@/components/Timeline.astro";
 
 import { Image } from "astro:assets";
-import headImage from "~/public/assets/about/head.webp";
+import headImage from "~/public/assets/about/head-w.webp";
 import shoesImage from "~/public/assets/about/shoes.webp";
 
 import profile from "@/data/profile.js";
@@ -25,7 +25,7 @@ const projectListTitle = "My Work";
       alt="head"
       src={headImage}
       loading="eager"
-      class="mx-auto mb-2 w-4/5 sm:mb-4 sm:w-3/5"
+      class="mx-auto mb-2 w-32 sm:mb-4"
       transition:name="face"
     />
     <div class="mx-auto max-w-3xl space-y-12 px-8 text-center">
@@ -142,6 +142,6 @@ const projectListTitle = "My Work";
         }
       </section>
     </div>
-    <Image alt="shoes" src={shoesImage} class="mx-auto my-8 w-4/5 sm:w-7/12" />
+    <!-- <Image alt="shoes" src={shoesImage} class="mx-auto my-8 w-4/5 sm:w-7/12" /> -->
   </section>
 </PortfolioLayout>

@@ -12,6 +12,13 @@
 
 html {
   font-family: "Jost", "Zen Kaku Gothic Antique", "Noto Color Emoji", sans-serif !important;
+  background-color: white;
+  color: rgb(17 24 39);
+
+  &.dark {
+    background-color: rgb(17 24 39);
+    color: rgb(243 244 246);
+  }
 }
 
 * {
@@ -38,56 +45,76 @@ summary {
   cursor: pointer;
 }
 
-article img {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
+article {
+  img {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 
-article img:last-of-type {
-  padding-bottom: 2rem;
-}
+    &:last-of-type {
+      padding-bottom: 2rem;
+    }
+  }
 
-article hr {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
+  hr {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
 
-article h2 {
-  padding: 40px 0 10px;
+  h2 {
+    padding: 40px 0 10px;
+  }
 }
 
 /* Accordion */
-.accordion-title[aria-expanded="false"]::before {
-  content: url(/assets/about/eye-closed.webp);
-  position: absolute;
-  right: var(--accordion-icon-space);
-}
+.accordion-title {
+  &[aria-expanded="false"] {
+    &::before {
+      content: url(/assets/about/eye-closed.webp);
+      position: absolute;
+      right: var(--accordion-icon-space);
+    }
 
-.accordion-title[aria-expanded="false"]::after {
-  content: url(/assets/about/eye-closed.webp);
-  transform: scaleX(-1);
-  position: absolute;
-  top: 0;
-  left: var(--accordion-icon-space);
-}
+    &::after {
+      content: url(/assets/about/eye-closed.webp);
+      transform: scaleX(-1);
+      position: absolute;
+      top: 0;
+      left: var(--accordion-icon-space);
+    }
+  }
 
-.accordion-title[aria-expanded="true"]::before {
-  content: url(/assets/about/eye-open.webp);
-  position: absolute;
-  right: var(--accordion-icon-space);
-}
+  &[aria-expanded="true"] {
+    &::before {
+      content: url(/assets/about/eye-open.webp);
+      position: absolute;
+      right: var(--accordion-icon-space);
+    }
 
-.accordion-title[aria-expanded="true"]::after {
-  content: url(/assets/about/eye-open.webp);
-  transform: scaleX(-1);
-  position: absolute;
-  top: 0;
-  left: var(--accordion-icon-space);
+    &::after {
+      content: url(/assets/about/eye-open.webp);
+      transform: scaleX(-1);
+      position: absolute;
+      top: 0;
+      left: var(--accordion-icon-space);
+    }
+  }
+
+  html.dark & {
+    &[aria-expanded="false"] {
+      &::before { content: url(/assets/about/eye-closed-dark.webp); }
+      &::after  { content: url(/assets/about/eye-closed-dark.webp); }
+    }
+
+    &[aria-expanded="true"] {
+      &::before { content: url(/assets/about/eye-open-dark.webp); }
+      &::after  { content: url(/assets/about/eye-open-dark.webp); }
+    }
+  }
 }
 
 .accordion-content {
@@ -100,6 +127,7 @@ article h2 {
   opacity: 1;
   max-height: 5000px;
 }
+
 .closed {
   max-height: 0px;
   overflow: hidden;

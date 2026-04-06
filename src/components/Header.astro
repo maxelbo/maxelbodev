@@ -1,6 +1,7 @@
 ---
 import Logo from "@/components/Logo.astro";
 import NavMenu from "@/components/NavMenu";
+import ThemeToggle from "@/components/ThemeToggle.astro";
 import profile from "@/data/profile.js";
 
 const menuLinks = profile.siteData.menuLinks;
@@ -15,6 +16,7 @@ const pathname = Astro.url.pathname;
         <nav aria-label="Header menu for SP.">
           <NavMenu {menuLinks} client:only="react" />
         </nav>
+        <ThemeToggle class="sm:hidden" />
       </div>
     </div>
     <nav
@@ -37,6 +39,7 @@ const pathname = Astro.url.pathname;
           </a>
         ))
       }
+      <ThemeToggle class="hidden sm:block" />
     </nav>
   </div>
 </header>
