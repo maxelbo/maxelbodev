@@ -247,7 +247,7 @@ const profile = {
       institution: "Southern New Hampshire University",
       degree: "Bachelor of Science",
       field: "Computer Science",
-      date: "2023–2026 (expected)"
+      date: "2023–2026"
     },
     {
       logo: "ztm",
